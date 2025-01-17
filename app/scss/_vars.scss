@@ -1,0 +1,75 @@
+$primary: #ff6838;
+$text: #31352b;
+$text-2: #363853;
+$shadow: #ececec;
+
+$white: #ffffff;
+$silver: #fff2ed;
+
+$main-font: Rubik, Arial, Helvetica, sans-serif;
+$title-lh: 1.3;
+$price-lh: 1.4;
+$contact-lh: 2;
+
+%bg {
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+%bg-cover-center {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+%bg-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+%bg-contain-center {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%ai-center {
+  display: flex;
+  align-items: center;
+}
+
+%jc-center {
+  display: flex;
+  justify-content: center;
+}
+
+%jc-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+%fill-none {
+  fill: none;
+}
+
+%stroke-none {
+  stroke: none;
+}
+
+%outline-none {
+  outline: transparent;
+}
+
+%bx-shdw {
+  box-shadow: 0 0 0 2px rgba($primary, 0.7);
+}
+
+%txt-shdw {
+  text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.5);
+}

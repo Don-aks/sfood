@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple food</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <nav class="header__inner">
+      <a class="logo header__logo" href="#">
+        <span class="logo--highlighted">Simple</span>Food
+      </a>
+      <div class="header__menu">
+        <ul class="header__list">
+          <li class="header__item">
+            <a class="header__link header__link--active animation-link" href="index.html">Головна</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link animation-link" href="#">Страви</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link animation-link" href="#">Контакти</a>
+          </li>
+        </ul>
+        <ul class="user-action">
+          <li class="user-action__item">
+            <a class="user-action__link" href="#">
+              <svg class="user-action__svg user-action__svg-search">
+                <use xlink:href="img/sprite.svg#search"></use>
+              </svg>
+              <span class="sr-only">Пошук</span>
+            </a>
+          </li>
+          <li class="user-action__item">
+            <a class="user-action__link" href="#">
+              <svg class="user-action__svg user-action__svg-cart">
+                <use xlink:href="img/sprite.svg#cart"></use>
+              </svg>
+              <span class="sr-only">Кошик</span>
+              <span class="user-action__num">4</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+<main class="page" id="page">
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner" style="background-image: url('img/scooter_guy.png');">
+        <h1 class="hero__title">
+          Доставка<br> 
+          <span class="hero__title--highlighted">за 15 ХВИЛИН</span>
+        </h1>
+        <p class="hero__text">
+          Найшвидший сервіс доставки їжі у вашому місті. Якщо запізнемось - то доставка за наш рахунок
+        </p>
+        <div class="hero__buttons">
+          <a class="btn hero__btn" href="#">Замовити</a>
+          <a class="link hero__link" href="#">Детальніше</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="products section">
+    <div class="container">
+      <h2 class="title">Популярне в категоріях</h2>
+      <ul class="tabs products__tabs">
+        <li class="tabs__item">
+          <button class="tabs__tab tabs__tab--active" type="button" data-tab="1">
+            <svg class="tabs__svg">
+              <use xlink:href="img/sprite.svg#burger"></use>
+            </svg>
+            Бургери
+          </button>
+        </li>
+        <li class="tabs__item">
+          <button class="tabs__tab" type="button" data-tab="2">
+            <svg class="tabs__svg">
+              <use xlink:href="img/sprite.svg#pizza"></use>
+            </svg>
+            Піца
+          </button>
+        </li>
+        <li class="tabs__item">
+          <button class="tabs__tab tabs__tab--sandwiches" type="button" data-tab="3">
+            <svg class="tabs__svg">
+              <use xlink:href="img/sprite.svg#sandwich"></use>
+            </svg>
+            Сендвічі
+          </button>
+        </li>
+        <li class="tabs__item">
+          <button class="tabs__tab tabs__tab--asian" type="button" data-tab="4">
+            <svg class="tabs__svg">
+              <use xlink:href="img/sprite.svg#asian"></use>
+            </svg>
+            Азійська кухня
+          </button>
+        </li>
+        <li class="tabs__item">
+          <button class="tabs__tab tabs__tab--stores" type="button" data-tab="5">
+            <svg class="tabs__svg">
+              <use xlink:href="img/sprite.svg#sets"></use>
+            </svg>
+            Cети
+          </button>
+        </li>
+      </ul>
+      <div class="products__inner">
+        <ul class="products__list products__list--active" data-tab="1">
+          <li class="product products__product">
+            <img class="product__img" src="img/cheeseburger-with-lettuce-leaves.jpg" alt="Чізбургер з листям салату">
+            <span class="product__name">Чізбургер з листям салату</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/beefburger.jpg" alt="Біфбургер">
+            <span class="product__name">Біфбургер</span>
+            <span class="product__price">190 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/king-cheeseburger.jpg" alt="Королівський чізбургер">
+            <span class="product__name">Королівський чізбургер</span>
+            <span class="product__price">260 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/black-burger.jpg" alt="Чорний гамбургер">
+            <span class="product__name">Чорний гамбургер</span>
+            <span class="product__price">199 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/chickenburger.jpg" alt="Чікен бургер">
+            <span class="product__name">Чікен бургер</span>
+            <span class="product__price">180 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/cheeseburger-with-lettuce-leaves.jpg" alt="Чізбургер з листям салату">
+            <span class="product__name">Чізбургер з листям салату</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/beefburger.jpg" alt="Біфбургер">
+            <span class="product__name">Біфбургер</span>
+            <span class="product__price">190 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/king-cheeseburger.jpg" alt="Королівський чізбургер">
+            <span class="product__name">Королівський чізбургер</span>
+            <span class="product__price">260 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/black-burger.jpg" alt="Чорний гамбургер">
+            <span class="product__name">Чорний гамбургер</span>
+            <span class="product__price">199 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/chickenburger.jpg" alt="Чікен бургер">
+            <span class="product__name">Чікен бургер</span>
+            <span class="product__price">180 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+        </ul>
+
+        <ul class="products__list" data-tab="2">
+          <li class="product products__product">
+            <img class="product__img" src="img/pizza.jpg" alt="Гавайська піца">
+            <span class="product__name">Гавайська піца</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/pizza.jpg" alt="Гавайська піца">
+            <span class="product__name">Гавайська піца</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/pizza.jpg" alt="Гавайська піца">
+            <span class="product__name">Гавайська піца</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/pizza.jpg" alt="Гавайська піца">
+            <span class="product__name">Гавайська піца</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/pizza.jpg" alt="Гавайська піца">
+            <span class="product__name">Гавайська піца</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/pizza.jpg" alt="Гавайська піца">
+            <span class="product__name">Гавайська піца</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/pizza.jpg" alt="Гавайська піца">
+            <span class="product__name">Гавайська піца</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/pizza.jpg" alt="Гавайська піца">
+            <span class="product__name">Гавайська піца</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/pizza.jpg" alt="Гавайська піца">
+            <span class="product__name">Гавайська піца</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/pizza.jpg" alt="Гавайська піца">
+            <span class="product__name">Гавайська піца</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+        </ul>
+  
+        <ul class="products__list" data-tab="3">
+          <li class="product products__product">
+            <img class="product__img" src="img/sandwich.jpg" alt="Сендвіч Чікен Стар">
+            <span class="product__name">Сендвіч Чікен Стар</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/sandwich.jpg" alt="Сендвіч Чікен Стар">
+            <span class="product__name">Сендвіч Чікен Стар</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/sandwich.jpg" alt="Сендвіч Чікен Стар">
+            <span class="product__name">Сендвіч Чікен Стар</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/sandwich.jpg" alt="Сендвіч Чікен Стар">
+            <span class="product__name">Сендвіч Чікен Стар</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/sandwich.jpg" alt="Сендвіч Чікен Стар">
+            <span class="product__name">Сендвіч Чікен Стар</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/sandwich.jpg" alt="Сендвіч Чікен Стар">
+            <span class="product__name">Сендвіч Чікен Стар</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/sandwich.jpg" alt="Сендвіч Чікен Стар">
+            <span class="product__name">Сендвіч Чікен Стар</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/sandwich.jpg" alt="Сендвіч Чікен Стар">
+            <span class="product__name">Сендвіч Чікен Стар</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/sandwich.jpg" alt="Сендвіч Чікен Стар">
+            <span class="product__name">Сендвіч Чікен Стар</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/sandwich.jpg" alt="Сендвіч Чікен Стар">
+            <span class="product__name">Сендвіч Чікен Стар</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+        </ul>
+
+        <ul class="products__list" data-tab="4">
+          <li class="product products__product">
+            <img class="product__img" src="img/cheeseburger-with-lettuce-leaves.jpg" alt="Чізбургер з листям салату">
+            <span class="product__name">Чізбургер з листям салату</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/beefburger.jpg" alt="Біфбургер">
+            <span class="product__name">Біфбургер</span>
+            <span class="product__price">190 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/king-cheeseburger.jpg" alt="Королівський чізбургер">
+            <span class="product__name">Королівський чізбургер</span>
+            <span class="product__price">260 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/black-burger.jpg" alt="Чорний гамбургер">
+            <span class="product__name">Чорний гамбургер</span>
+            <span class="product__price">199 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/chickenburger.jpg" alt="Чікен бургер">
+            <span class="product__name">Чікен бургер</span>
+            <span class="product__price">180 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/cheeseburger-with-lettuce-leaves.jpg" alt="Чізбургер з листям салату">
+            <span class="product__name">Чізбургер з листям салату</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/beefburger.jpg" alt="Біфбургер">
+            <span class="product__name">Біфбургер</span>
+            <span class="product__price">190 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/king-cheeseburger.jpg" alt="Королівський чізбургер">
+            <span class="product__name">Королівський чізбургер</span>
+            <span class="product__price">260 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/black-burger.jpg" alt="Чорний гамбургер">
+            <span class="product__name">Чорний гамбургер</span>
+            <span class="product__price">199 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/chickenburger.jpg" alt="Чікен бургер">
+            <span class="product__name">Чікен бургер</span>
+            <span class="product__price">180 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+        </ul>
+
+        <ul class="products__list" data-tab="5">
+          <li class="product products__product">
+            <img class="product__img" src="img/cheeseburger-with-lettuce-leaves.jpg" alt="Чізбургер з листям салату">
+            <span class="product__name">Чізбургер з листям салату</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/beefburger.jpg" alt="Біфбургер">
+            <span class="product__name">Біфбургер</span>
+            <span class="product__price">190 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/king-cheeseburger.jpg" alt="Королівський чізбургер">
+            <span class="product__name">Королівський чізбургер</span>
+            <span class="product__price">260 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/black-burger.jpg" alt="Чорний гамбургер">
+            <span class="product__name">Чорний гамбургер</span>
+            <span class="product__price">199 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/chickenburger.jpg" alt="Чікен бургер">
+            <span class="product__name">Чікен бургер</span>
+            <span class="product__price">180 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/cheeseburger-with-lettuce-leaves.jpg" alt="Чізбургер з листям салату">
+            <span class="product__name">Чізбургер з листям салату</span>
+            <span class="product__price">160 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/beefburger.jpg" alt="Біфбургер">
+            <span class="product__name">Біфбургер</span>
+            <span class="product__price">190 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/king-cheeseburger.jpg" alt="Королівський чізбургер">
+            <span class="product__name">Королівський чізбургер</span>
+            <span class="product__price">260 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/black-burger.jpg" alt="Чорний гамбургер">
+            <span class="product__name">Чорний гамбургер</span>
+            <span class="product__price">199 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+          <li class="product products__product">
+            <img class="product__img" src="img/chickenburger.jpg" alt="Чікен бургер">
+            <span class="product__name">Чікен бургер</span>
+            <span class="product__price">180 грн.</span>
+            <button class="btn product__btn" type="button">До кошика</button>
+          </li>
+        </ul>
+      </div>
+      <button class="link products__see-more">
+        Показати ще
+      </button>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__form-wrapper">
+        <a class="logo footer__logo" href="index.html">
+          <span class="logo--highlighted">Simple</span>Food
+        </a>
+        <form class="footer__form" action="#">
+          <input class="input footer__input" name="email" type="text" placeholder="Ваш email">
+          <button class="btn footer__btn" type="submit">
+            <svg class="btn__svg footer__btn-svg">
+              <use xlink:href="img/sprite.svg#airplane"></use>
+            </svg>
+            Підписатися
+          </button>
+        </form>
+      </div>
+      <nav class="footer__menu">
+        <ul class="footer__column">
+          <li class="footer__item">
+            <a class="footer__link animation-link" href="#">Як це працює</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link animation-link" href="#">Продукти</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link animation-link" href="#">Страви</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link animation-link" href="#">Меню</a>
+          </li>
+        </ul>
+        <ul class="footer__column">
+          <li class="footer__item">
+            <a class="footer__link animation-link" href="#">Про нас</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link animation-link" href="#">Новини</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link animation-link" href="#">Партнери</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link animation-link" href="#">ЧаПи</a>
+          </li>
+        </ul>
+        <ul class="footer__column">
+          <li class="footer__item">
+            <a class="footer__link animation-link" href="#">Застосунок</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link animation-link" href="#">Блог</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link animation-link" href="#">Що нового?</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link animation-link" href="#">Мапа сайту</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="contact footer__contact">
+        <address class="contact__span contact__address">
+          <svg class="contact__svg">
+            <use xlink:href="img/sprite.svg#address"></use>
+          </svg>
+          вул. Т.Г.Шевченка, 1
+        </address>
+        <a class="contact__span contact__tel" href="tel:+380501112233">
+          <svg class="contact__svg">
+            <use xlink:href="img/sprite.svg#tel"></use>
+          </svg>
+          380501112233
+        </a>
+        <a class="contact__span contact__email" href="mailto:support@sfood.com">
+          <svg class="contact__svg">
+            <use xlink:href="img/sprite.svg#email"></use>
+          </svg>
+          support@sfood.com
+        </a>
+        <div class="contact__networks">
+          <a class="contact-social contact__social" href="#" aria-label="Facebook">
+            <svg class="contact-social__svg">
+              <use xlink:href="img/sprite.svg#fb"></use>
+            </svg>
+          </a>
+          <a class="contact-social contact__social" href="#" aria-label="Twitter">
+            <svg class="contact-social__svg">
+              <use xlink:href="img/sprite.svg#twitter"></use>
+            </svg>
+          </a>
+          <a class="contact-social contact__social" href="#" aria-label="Instagram">
+            <svg class="contact-social__svg">
+              <use xlink:href="img/sprite.svg#inst"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__copy">
+    <div class="container">
+      <div class="footer__copy-inner">
+        <p class="footer__copy-text">© 2023 Simple Food</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.min.js"></script>
+</body>
+</html>
