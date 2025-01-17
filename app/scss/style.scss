@@ -417,8 +417,12 @@
     top: 3px;
   }
 
-  &__networks {
+  &__social-list {
     @extend %ai-center;
+  }
+
+  &__social-item:not(:last-child) {
+    margin-right: 13px;
   }
 
   &-social {
