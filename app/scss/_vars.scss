@@ -4,12 +4,20 @@ $text-2: #363853;
 $shadow: #ececec;
 
 $white: #ffffff;
+$blue: #00aaff;
 $silver: #fff2ed;
+$silver-2: #c2c2c2;
+$red: #ff2222;
 
 $main-font: Rubik, Arial, Helvetica, sans-serif;
+$normal-lh: 1.5;
 $title-lh: 1.3;
 $price-lh: 1.4;
 $contact-lh: 2;
+
+$radius: 5px;
+$shadow-size: 2px;
+$shadow-color: rgba($primary, 0.7);
 
 %bg {
   background-position: center;
@@ -27,49 +35,13 @@ $contact-lh: 2;
   background-repeat: no-repeat;
 }
 
-%bg-contain-center {
-  background-position: center;
+%bg-contain {
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-%flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-%ai-center {
-  display: flex;
-  align-items: center;
-}
-
-%jc-center {
-  display: flex;
-  justify-content: center;
-}
-
-%jc-space-between {
-  display: flex;
-  justify-content: space-between;
-}
-
-%fill-none {
-  fill: none;
-}
-
-%stroke-none {
-  stroke: none;
-}
-
-%outline-none {
-  outline: transparent;
-}
-
-%bx-shdw {
-  box-shadow: 0 0 0 2px rgba($primary, 0.7);
-}
-
-%txt-shdw {
-  text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.5);
+%bg-contain-center {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }

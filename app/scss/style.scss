@@ -1,6 +1,7 @@
 @use 'vars' as *;
 @use 'fonts';
 @use 'reset';
+@use 'libs';
 @use 'global';
 
 
@@ -8,58 +9,56 @@
 
 .header {
   &__inner {
-    @extend %ai-center;
-    justify-content: space-between;
-    padding: 56px 0 59px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  
+    max-width: 1200px;
+    padding: 59px 15px 56px;
+    margin: 0 auto;
+
+    background-color: $white;
   }
 
   &__logo {
     transform: translateX(6px);
   }
 
-  &__menu,
-  &__list {
-    @extend %ai-center;
-  }
+  .menu {
+    &__list {
+      margin-right: 52px;
+    }
+  
+    &__item:not(:last-child) {
+      margin-right: 40px;
+    }
+  
+    &__link {
+      font-size: 18px;
+      letter-spacing: 0.01em;
 
-  &__list {
-    margin-right: 52px;
-  }
-
-  &__item:not(:last-child) {
-    margin-right: 40px;
-  }
-
-  &__link {
-    font-size: 18px;
-    line-height: $title-lh;
-    letter-spacing: 0.01em;
-  }
-
-  &__link--active {
-    color: $primary;
-    pointer-events: none;
+      &--active {
+        color: $primary;
+        pointer-events: none;
+      }
+    }
   }
 }
 
 .user-action {
-  display: flex;
-
   &__link {
     position: relative;
 
-    @extend %flex-center;
     width: 44px;
     height: 44px;
-
-    border-radius: 5px;
-    @extend %outline-none;
 
     transition: background-color 0.3s;
 
     &:focus {
       background-color: rgba($primary, 0.1);
-      box-shadow: 0 0 0 2px rgba($primary, 0.7);
+      box-shadow: 0 0 0 $shadow-size $shadow-color;
     }
 
     @media (any-hover: hover) {
@@ -80,10 +79,6 @@
     &:active {
       background-color: $silver;
     }
-
-    &:last-child {
-      transform: translateX(-1px);
-    }
   }
   
   &__item:not(:last-child) {
@@ -91,11 +86,12 @@
   }
 
   &__svg {
-    max-width: 24px;
-    max-height: 21px;
+    width: 24px;
+    height: 21px;
 
-    @extend %fill-none;
+    fill: none;
     stroke: $text-2;
+    stroke-width: 1.5;
 
     transition: stroke 0.3s;
   }
@@ -103,19 +99,20 @@
   &__num {
     position: absolute;
     top: 8px;
-    right: 3px;
+    left: 26px;
 
     display: block;
-    width: 14px;
-    height: 14px;
+    // min-width: 14px;
+    // min-height: 14px;
+    padding: 0 4px;
   
     font-size: 11px;
-    line-height: 16px;
+    line-height: 1.38;
     text-align: center;
 
     color: $white;
     background-color: $primary;
-    border-radius: 50%;
+    border-radius: 7px;
   
     transition: background-color 0.3s, color 0.3s;
   }
@@ -125,29 +122,46 @@
 // ======= HERO ======= //
 
 .hero {
+  // height: 100vh;
+  padding-bottom: 60px;
+
   &__inner {
-    padding: 149px 566px 166px 0;
-    background: right bottom no-repeat;
+    position: relative;
+
+    padding: (156px + 159px) 59.3% 156px 0;
+    max-width: 476px;
+
+    box-sizing: content-box;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      background: url("../img/scooter_guy.png") right bottom/560px 660px no-repeat;
+    }
   }
 
   &__title {
     margin-bottom: 20px;
 
     font-size: 66px;
-    line-height: $title-lh;
     text-transform: uppercase;
     font-weight: 500;
   
     color: $text-2;
 
-    &--highlighted {
+    &-text--highlighted {
       color: $primary;
     }
   }
 
   &__text {
+    margin-bottom: 20px;
     max-width: 450px;
-    margin-bottom: 30px;
   }
 
   &__btn {
@@ -161,9 +175,6 @@
 
 .products {
   &__tabs {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 45px;
   }
   
@@ -179,7 +190,8 @@
   }
 
   &__product {
-    width: 210px;
+    width: 100%;
+    max-width: 210px;
     margin: 0 30px 30px 0;
   }
 
@@ -195,30 +207,25 @@
   }
 
   &__tab {
-    @extend %flex-center;
     padding: 13px 32px;
 
     font-size: 20px;
-    line-height: $title-lh;
   
     color: $text-2;
-    border-radius: 5px;
     box-shadow: 0 0 0 1px $shadow;
     transition: background-color 0.3s, 
                 color 0.3s,
                 box-shadow 0.3s;
-
-    @extend %outline-none;
     
     &:focus {
-      @extend %bx-shdw;
+      box-shadow: 0 0 0 $shadow-size $shadow-color;
     }
     
     @media (any-hover: hover) {
-      .tabs__tab:hover {
+      &:hover {
         background-color: rgba($primary, 0.1);
         color: $primary;
-        box-shadow: 0 0 0 2px rgba($primary, 0.7);
+        box-shadow: 0 0 0 $shadow-size $shadow-color;
     
         .tabs__svg {
           fill: $primary;
@@ -250,49 +257,424 @@
     margin-right: 10px;
 
     fill: $text-2;
-    @extend %stroke-none;
+    stroke: none;
 
     transition: fill 0.3s;
   }
 }
 
 .product {
-  display: flex;
-  align-items: center;
   flex-direction: column;
   padding: 20px 15px;
 
   font-size: 15px;
   text-align: center;
 
-  border-radius: 5px;
+  border-radius: $radius;
   box-shadow: 0 0 0 1px $shadow;
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 0 1px $primary;
+  }
 
   &__img {
     margin: 0 auto 10px;
   }
 
   &__name {
-    display: block;
-    margin-bottom: 11px;
+    margin-bottom: 9px;
     flex: 1 1 auto;
-  
-    line-height: normal;
+
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.1;
   }
 
   &__price {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 
     font-weight: 500;
     line-height: $price-lh;
 
     color: $text-2;
+    transform: translateY(6px);
   }
 
   &__btn {
     padding: 5px 14px;
     font-size: 14px;
+  }
+}
+
+
+// ======= DELIVERY ======= //
+
+.delivery {
+  &__inner {
+    position: relative;
+
+    max-width: 470px;
+    padding: 59px 0 46px 120px + 440px + 70px;
+  
+    box-sizing: content-box;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+
+      background: url("../img/food-delivery.png") 70px center no-repeat;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+  }
+
+  &__list {
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &__svg {
+    width: 34px;
+    height: 34px;
+    margin-right: 30px;
+  
+    &--fast {
+      fill: $primary;
+    }
+  
+    &--couriers {
+      fill: $blue;
+    }
+  
+    &--restaurants {
+      fill: $red;
+    }
+  }
+
+  &__link {
+    padding-bottom: 8px;
+    letter-spacing: 0.03em;
+  }
+}
+
+
+// ======= RESTAURANTS ======= //
+
+.restaurants {
+  padding-top: 70px;
+
+  &__inner {
+    flex-wrap: wrap;
+    margin: 0 -30px -31px 0;
+  }
+
+  &__restaurant {
+    max-width: 370px;
+    width: 100%;
+    margin: 0 30px 26px 0;
+
+    border-radius: 10px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+.restaurant {
+  flex-direction: column;
+  padding: 315px 22px 23px 19px;
+
+  background: top no-repeat;
+
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: 0 3px 15px 0 rgba($primary, 0.5);
+    }
+  }
+
+  &__info {
+    align-items: flex-start;
+  }
+
+  &__name {
+    flex: 1 1 auto;
+    margin-bottom: 22px;
+
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  &__time {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.67;
+
+    &-svg {
+      width: 22px;
+      height: 22px;
+      margin-right: 10px;
+    }
+  }
+
+  &__link {
+    padding: 5px 25px 5px 29px;
+    max-width: 79px;
+
+    border-radius: 20px;
+
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: 0 0 0 $shadow-size $shadow-color;
+
+        .restaurant__link-svg {
+          transform: translateX(16px);
+        }
+      }
+    }
+
+    &-svg {
+      width: 24px;
+      height: 22px;
+
+      fill: $white;
+
+      transition: transform 0.3s;
+    }
+  }
+}
+
+
+// ======= REVIEWS ======= //
+
+.reviews {
+  padding: 62px 0 53px;
+}
+
+.reviews-slider {
+  max-width: 990px;
+  max-height: 370px;
+
+  &__inner {
+    position: relative;
+    padding-bottom: 30px + 34px + 4px;
+  }
+
+  &__nav {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    z-index: 1;
+
+    transform: translateX(-50%);
+  }
+
+  &__btn {
+    width: 38px;
+    height: 38px;
+  
+    border: 3px solid $silver-2;
+    border-radius: 50%;
+
+    &:focus {
+      box-shadow: 0 0 0 $shadow-size $shadow-color;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        border: 3px solid rgba($primary, 0.5);
+        background-color: $silver;
+
+        .reviews-slider__svg {
+          fill: rgba($primary, 0.5);
+        }
+      }
+    }
+
+    &:active {
+      background-color: $silver;
+      border: 3px solid $silver;
+      box-shadow: none;
+
+      .reviews-slider__svg {
+        fill: $primary;
+      }
+    }
+  }
+
+  &__svg {
+    height: 19px;
+    width: 11px;
+
+    fill: $silver-2;
+  }
+
+  &__btn--prev {
+    margin-right: 24px;
+  }
+
+  &__btn--next {
+    transform: rotateY(180deg);
+  }
+
+  &__pagination {
+    margin-right: 18px;
+    transform: translateX(-3px);
+  
+    .swiper-pagination-bullet {
+      display: block;
+      width: 15px;
+      height: 15px;
+
+      background-color: $silver-2;
+      border-radius: 50%;
+      outline: transparent;
+
+      transition: background-color 0.3s;
+      cursor: pointer;
+
+      &:focus {
+        box-shadow: 0 0 0 2px $primary;
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: $silver;
+          box-shadow: 0 0 0 2px rgba($primary, 0.5);
+        }
+      }
+
+      &:active {
+        background-color: rgba($primary, 0.5);
+        box-shadow: none;
+      }
+    }
+
+    .swiper-pagination-bullet:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: $primary;
+    }
+  }
+}
+
+.review {
+  &__inner {
+    max-width: 570px;
+  }
+
+  &__img {
+    margin-right: 80px;
+    border-radius: 50%;
+  }
+
+  &__quote {
+    position: relative;
+    margin-bottom: 26px;
+    
+    font-style: italic;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -16px - 24px;
+
+      display: block;
+      width: 24px;
+      height: 19px;
+
+      @extend %bg-contain-center;
+      background-image: url("../img/quote-left.svg");
+    }
+
+    &::after {
+      top: auto;
+      left: auto;
+      bottom: 0;
+      right: -16px - 24px;
+
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__cite,
+  &__author,
+  &__position {
+    display: block;
+  }
+  
+  &__cite {
+    font-style: normal;
+    transform: translate(1px, 5px);
+  }
+
+  &__author {
+    margin-bottom: 15px;
+  
+    letter-spacing: 0.01em;
+    color: $primary;
+  }
+
+  &__position {
+    font-size: 14px;
+  }
+}
+
+
+// ======= APPLICATION ======= //
+
+.application {
+  padding-bottom: 118px;
+
+  &__inner {
+    padding: 41px 570px + 130px 40px 0;
+    background: right center no-repeat;
+  }
+
+  &__title {
+    margin-bottom: 45px;
+    text-align: left;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+  }
+}
+
+.applications {
+  &__link {
+    border-radius: 5px;
+
+    &:focus {
+      box-shadow: 0 0 0 $shadow-size $shadow-color;
+    }
+  }
+
+  &__link:not(:last-child) {
+    margin-right: 30px;
   }
 }
 
@@ -303,8 +685,7 @@
   font-size: 18px;
 
   &__inner {
-    @extend %jc-space-between;
-    padding-bottom: 61px;
+    padding-bottom: 62px;
   }
 
   &__form-wrapper {
@@ -317,56 +698,13 @@
     margin-bottom: 30px;
   }
 
-  &__btn {
-    position: relative;
-  
-    display: block;
-    width: 200px;
-    padding-left: 67px;
-    padding-top: 15px;
-
-    font-size: 14px;
-    line-height: $title-lh;
-
-    &-svg {
-      position: absolute;
-      top: 15px;
-      left: 36px;
-
-      width: 17px;
-      height: 16px;
-
-      @extend %stroke-none;
-      fill: $white;
-    }
-  }
-
-  &__input {
-    width: 100%;
-    margin-bottom: 9px;
-  }
-
-  &__menu {
-    @extend %jc-center;
-    margin-right: 114px;
-  }
-
-  &__column {
-    &:not(:last-child) {
-      margin-right: 96px;
-    }
-
-    &:nth-child(2) {
-      transform: translateX(-4px);
-    }
-
-    &:nth-child(3) {
-      transform: translateX(-6px);
-    }
-  }
-
-  &__item:not(:last-child) {
-    margin-bottom: 17px;
+  &__list {
+    display: grid;
+    grid-template-columns: 119px 89px 108px;
+    grid-template-rows: repeat(4, 1fr);
+    grid-auto-flow: column;
+    gap: 16px 92px;
+    margin: 4px 115px 0 0;
   }
 
   &__contact {
@@ -374,7 +712,7 @@
   }
 
   &__copy {
-    padding: 30px 0;
+    padding: 29px 0 30px;
 
     font-size: 14px;
     text-align: center;
@@ -384,9 +722,43 @@
   }
 }
 
+.email-form {
+  &__input {
+    width: 100%;
+    max-height: 44px;
+    margin-bottom: 17px;
+  }
+
+  &__btn {
+    position: relative;
+  
+    display: block;
+    width: 200px;
+    padding: 14px 29px 12px 65px;
+    
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+
+  &__svg {
+    position: absolute;
+    top: 50%;
+    left: 36px;
+
+    width: 17px;
+    height: 16px;
+
+    stroke: none;
+    fill: $white;
+
+    transform: translateY(-50%);
+  }
+}
+
 .contact {
   font-size: 16px;
   line-height: $contact-lh;
+  font-style: normal;
 
   &__span {
     position: relative;
@@ -394,39 +766,38 @@
     display: block;
     margin-bottom: 16px;
     padding-left: 31px;
+
+    &:focus {
+      box-shadow: 0 0 0 $shadow-size $shadow-color;
+    }
+
+    &--address {
+      font-style: normal;
+    }
   }
 
   &__svg {
     position: absolute;
-    top: 4px;
+    top: 50%;
     left: 0;
 
     display: block;
     width: 24px;
     height: 24px;
 
-    @extend %fill-none;
+    fill: none;
     stroke: $text;
-  }
 
-  &__address {
-    font-style: normal;
+    transform: translateY(-50%);
   }
+}
 
-  &__email &__svg {
-    top: 3px;
-  }
-
-  &__social-list {
-    @extend %ai-center;
-  }
-
-  &__social-item:not(:last-child) {
+.social-list {
+  &__item:not(:last-child) {
     margin-right: 13px;
   }
 
-  &-social {
-    @extend %flex-center;
+  &__social {
     width: 39px;
     height: 39px;
 
@@ -440,40 +811,36 @@
     }
 
     &:focus {
-      @extend %bx-shdw;
+      box-shadow: 0 0 0 $shadow-size $shadow-color;
       background-color: $silver;
-    }
-
-    &__svg {
-      width: 21px;
-      height: 20px;
-
-      @extend %stroke-none;
-      fill: $text;
-      
-      transition: fill 0.3s;
-      transform: translateY(-2px);
     }
   }
 
+  &__svg {
+    width: 21px;
+    height: 20px;
+
+    stroke: none;
+    fill: $text;
+    
+    transition: fill 0.3s;
+  }
+  
   @media (any-hover: hover) {
-    &-social:hover {
+    &__social:hover {
       background-color: $primary;
 
-      .contact-social__svg {
+      .social-list__svg {
         fill: $white;
       }
     }
   }
 
-  &-social:active {
+  &__social:active {
     background-color: $silver;
 
-    .contact-social__svg {
+    .social-list__svg {
       fill: $primary;
     }
   }
 }
-
-
-@import 'media'

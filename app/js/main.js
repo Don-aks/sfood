@@ -8,7 +8,6 @@ tabsWrap.addEventListener("click", function(e){
   ))
     return;
 
-  console.log(e.target.tagName);
   let activeClass = "tabs__tab--active";
   tabsWrap.querySelector("." + activeClass).classList.remove(activeClass);
 
@@ -30,4 +29,22 @@ tabsWrap.addEventListener("click", function(e){
   );
   if (listTarget)
     listTarget.classList.add(activeClass);
+});
+
+const swiper = new Swiper('.reviews-slider', {
+  loop: true,
+
+  navigation: {
+    nextEl: '.reviews-slider__btn--next',
+    prevEl: '.reviews-slider__btn--prev',
+  },
+  a11y: {
+    prevSlideMessage: 'Попередній слайд',
+    nextSlideMessage: 'Наступний слайд'
+  },
+  pagination: {
+    el: '.reviews-slider__pagination',
+    type: 'bullets',
+    clickable: true
+  }
 });
