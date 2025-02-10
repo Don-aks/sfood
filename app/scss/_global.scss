@@ -1,4 +1,5 @@
 @use 'vars' as *;
+@use 'mixins' as *;
 
 body {
   display: flex;
@@ -10,6 +11,10 @@ body {
   
   background-color: $white;
   color: $text;
+
+  @include mq("tablet") {
+    font-size: 14px;
+  }
 }
 
 a,
@@ -30,6 +35,60 @@ input {
 
 .section {
   padding: 60px 0;
+
+  @include mq("phone") {
+    padding: 22px 0;
+  }
+}
+
+.navigation {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  z-index: 1;
+
+  transform: translateX(-50%);
+}
+
+.pagination {
+  margin-right: 18px;
+
+  .swiper-pagination-bullet {
+    display: block;
+    width: 15px;
+    height: 15px;
+
+    background-color: $silver-2;
+    border-radius: 50%;
+    outline: transparent;
+
+    transition: background-color 0.3s;
+    cursor: pointer;
+
+    &:focus {
+      box-shadow: 0 0 0 2px $primary;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $silver;
+        box-shadow: 0 0 0 2px rgba($primary, 0.5);
+      }
+    }
+
+    &:active {
+      background-color: rgba($primary, 0.5);
+      box-shadow: none;
+    }
+  }
+
+  .swiper-pagination-bullet:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $primary;
+  }
 }
 
 .logo {
@@ -57,6 +116,11 @@ input {
   text-align: center;
 
   color: $text-2;
+
+  @include mq("tablet") {
+    margin-bottom: 27px;
+    font-size: 24px;
+  }
 }
 
 .btn {
@@ -105,6 +169,11 @@ input {
       fill: $primary;
     }
   }
+
+  @include mq("phone") {
+    padding: 8px 24px;
+    font-size: 14px;
+  }
 }
 
 .link {
@@ -130,6 +199,10 @@ input {
   &:active {
     color: $text;
     text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.5);
+  }
+
+  @include mq("phone") {
+    font-size: 16px;
   }
 }
 
