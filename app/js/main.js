@@ -73,25 +73,18 @@ window.addEventListener("resize", debounce(loadRestaurantsSwiper));
 
 function loadRestaurantsSwiper() {
   if (window.innerWidth <= 768) {
-    if (document.querySelector(".restaurants__swiper-wrap.swiper-initialized")) {
-      console.log("init");
+    if (document.querySelector(".restaurants__swiper-wrap.swiper-initialized"))
       return;
-    }
-
-    console.log("initiate");
 
     restaurantsSwiper = new Swiper(".restaurants__swiper-wrap", {
-      slidesPerView: 1,
-
       pagination: {
         el: ".restaurants__swiper-pagination",
         type: "bullets",
         clickable: true
       }
     });
-  } else if (document.querySelector(".restaurants__swiper-wrap.swiper-initialized")) {
+  } else if (document.querySelector(".restaurants__swiper-wrap.swiper-initialized"))
     restaurantsSwiper.destroy();
-  }
 }
 
 function debounce(func){
