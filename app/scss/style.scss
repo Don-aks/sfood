@@ -19,6 +19,7 @@
   margin: 0 auto;
 
   background-color: $white;
+  transition: box-shadow 0.3s;
 
   &--fixed {
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
@@ -30,7 +31,7 @@
 
   &__inner {
     padding: 59px 0 56px;
-    transition: padding 0.3s, box-shadow 0.3s;
+    transition: padding 0.3s;
   }
 
   &__logo {
@@ -59,13 +60,12 @@
   @include mq("tablet") {
     &--fixed {
       .header__inner {
-        padding: 10px 0 0;
+        padding: 10px 0 5px;
       }
     }
 
     &__inner {
-      align-items: flex-start;
-      padding: 20px 0 8px;
+      padding: 14px 0 8px;
     }
 
     &__logo {
@@ -100,8 +100,6 @@
     align-items: center;
     width: 44px;
     height: 44px;
-  
-    transform: translateX(-5px);
   
     &--close {
       position: absolute;
@@ -160,7 +158,6 @@
 
     &__btn {
       display: flex;
-      transform: translate(-16px, -6px);
     }
   }
 }
@@ -233,8 +230,7 @@
   }
 
   @include mq("tablet") {
-    margin-right: 20px;
-    transform: translate(-6px, -6px);
+    margin-right: 10px;
   }
 }
 

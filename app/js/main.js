@@ -1,9 +1,8 @@
 const header = document.querySelector(".header");
-const headerOffsetHeight = header.offsetHeight;
 
 window.addEventListener("scroll", function(){
   const className = "header--fixed";
-  if (this.scrollY > headerOffsetHeight)
+  if (this.scrollY > 0)
     header.classList.add(className);
   else
     header.classList.remove(className);
