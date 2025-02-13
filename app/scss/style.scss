@@ -807,6 +807,10 @@
 
 .reviews {
   padding: 62px 0 53px;
+
+  @include mq("phone") {
+    padding: 15px 0 19px;
+  }
 }
 
 .reviews-slider {
@@ -829,7 +833,7 @@
     }
 
     @media (any-hover: hover) {
-      &:hover {
+      &:hover:not(.swiper-button-disabled) {
         border: 3px solid rgba($primary, 0.5);
         background-color: $silver;
 
@@ -839,7 +843,7 @@
       }
     }
 
-    &:active {
+    &:active:not(.swiper-button-disabled) {
       background-color: $silver;
       border: 3px solid $silver;
       box-shadow: none;
@@ -875,6 +879,37 @@
 
   &__pagination {
     transform: translateX(-3px);
+  }
+
+  @include mq("phone") {
+    position: relative;
+  
+    &__inner {
+      padding-bottom: 0;
+    }
+
+    &__nav {
+      position: static;
+      transform: none;
+    }
+
+    &__pagination {
+      display: none;
+    }
+
+    &__btn {
+      position: absolute;
+      top: 34px;
+      left: 36px;
+      z-index: 1;
+      
+      margin-right: 0;
+
+      &--next {
+        left: auto;
+        right: 37px;
+      }
+    }
   }
 }
 
@@ -978,11 +1013,31 @@
     flex-direction: column;
 
     &__img {
-      margin: 0 auto 20px;
+      margin: 0 auto 32px;
+      width: 100px;
+      height: 100px;
     }
 
     &__quote {
-      padding: 0 (10px + 24px);
+      padding: 0 40px;
+
+      &::before {
+        top: -7px;
+        left: 4px;
+      }
+
+      &::after {
+        bottom: 13px;
+        right: 7px;
+      }
+    }
+
+    &__cite {
+      transform: none;
+    }
+
+    &__author {
+      letter-spacing: 0;
     }
   }
 }
