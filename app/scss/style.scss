@@ -1086,7 +1086,7 @@
     }
 
     &__title {
-      margin-bottom: 15px;
+      margin-bottom: 13px;
     }
   }
 }
@@ -1185,7 +1185,7 @@
     &__list {
       grid-template-columns: repeat(1, auto);
       grid-auto-flow: row;
-      gap: 20px 0;
+      gap: 16px 0;
     }
 
     &__contact {
@@ -1230,6 +1230,12 @@
 
     transform: translateY(-50%);
   }
+
+  @include mq("phone") {
+    &__input {
+      margin-bottom: 12px;
+    }
+  }
 }
 
 .contact {
@@ -1268,6 +1274,10 @@
     stroke-width: 1.5;
 
     transform: translateY(-50%);
+  }
+
+  @include mq("phone") {
+    margin-bottom: 21px;
   }
 }
 
