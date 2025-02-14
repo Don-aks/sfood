@@ -1,11 +1,28 @@
-const header = document.querySelector(".header");
+const header = document.querySelector(".header__wrapper");
 
 window.addEventListener("scroll", function(){
-  const className = "header--fixed";
+  const className = "header__wrapper--fixed";
   if (this.scrollY > 0)
     header.classList.add(className);
   else
     header.classList.remove(className);
+});
+
+const menuBtn = document.querySelectorAll(".menu__btn");
+const menu = document.querySelector(".menu--mobile");
+const body = document.querySelector("body");
+
+body.addEventListener("click", function(e) {
+  for(let i = 0; i < menuBtn.length; i++) {
+    if (e.target === menuBtn[i]) {
+      body.classList.toggle("locked");
+      menu.classList.toggle("menu--active");
+      return;
+    }
+  }
+
+  body.classList.remove("locked");
+  menu.classList.remove("menu--active");
 });
 
 const tabsWrap = document.querySelector(".tabs");

@@ -12,8 +12,28 @@ body {
   background-color: $white;
   color: $text;
 
+  &::before {
+    content: '';
+    transition: background-color 0.3s;
+  }
+
   @include mq("tablet") {
     font-size: 14px;
+  }
+
+  &.locked {
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba($black, 0.5);
+      z-index: 2;
+    }
   }
 }
 
@@ -92,6 +112,8 @@ input {
 }
 
 .logo {
+  display: block;
+
   &:focus {
     background-color: rgba($white, 0.01);
     box-shadow: 0 0 0 $shadow-size $shadow-color;
@@ -217,7 +239,7 @@ input {
   }
 
   &:focus {
-    box-shadow: 0 0 0 2px $primary;
+    box-shadow: 0 0 0 $shadow-size $primary;
   }
 
   @media (any-hover: hover) {

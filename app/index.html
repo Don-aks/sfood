@@ -21,54 +21,140 @@
 </head>
 <body>
 <header class="header">
-  <div class="container">
-    <nav class="header__inner d-f ai-c jc-sb">
-      <a class="logo header__logo" href="#">
-        <img class="logo__img header__logo-img" src="img/logo.svg" alt="Логотип SimpleFood" width="200" height="39">
-      </a>
-      <div class="menu header__menu d-f ai-c">
-        <ul class="menu__list header__list d-f ai-c">
-          <li class="menu__item header__item">
-            <a class="menu__link menu__link--active animation-link lh-title" href="index.html">
-              Головна
-            </a>
-          </li>
-          <li class="menu__item header__item">
-            <a class="menu__link animation-link lh-title" href="#">
-              Страви
-            </a>
-          </li>
-          <li class="menu__item header__item">
-            <a class="menu__link animation-link lh-title" href="#">
-              Контакти
-            </a>
-          </li>
-        </ul>
-        <ul class="user-action d-f">
-          <li class="user-action__item">
-            <a class="user-action__link d-f ai-c jc-c" href="#">
-              <svg class="user-action__svg user-action__svg--search">
-                <use xlink:href="img/sprite.svg#search"></use>
-              </svg>
-              <span class="sr-only">Пошук</span>
-            </a>
-          </li>
-          <li class="user-action__item">
-            <a class="user-action__link d-f ai-c jc-c" href="#">
-              <svg class="user-action__svg user-action__svg--cart">
-                <use xlink:href="img/sprite.svg#cart"></use>
-              </svg>
-              <span class="sr-only">Кошик</span>
-              <span class="user-action__num">4</span>
-            </a>
-          </li>
-        </ul>
-        <button class="menu__btn d-f ai-c jc-c" type="button">
-          <span class="menu__line"></span>
-        </button>
-      </div>
-    </nav>
+  <div class="header__wrapper">
+    <div class="container">
+      <nav class="header__inner d-f ai-c jc-sb">
+        <a class="logo header__logo" href="index.html">
+          <img class="logo__img header__logo-img" src="img/logo.svg" alt="Логотип SimpleFood" width="200" height="39">
+        </a>
+        <div class="menu d-f ai-c">
+          <div class="menu d-f ai-c">
+            <ul class="menu__list header__list d-f ai-c">
+              <li class="menu__item header__item">
+                <a class="menu__link menu__link--active animation-link lh-title" href="index.html">
+                  Головна
+                </a>
+              </li>
+              <li class="menu__item header__item">
+                <a class="menu__link animation-link lh-title" href="#">
+                  Страви
+                </a>
+              </li>
+              <li class="menu__item header__item">
+                <a class="menu__link animation-link lh-title" href="#">
+                  Контакти
+                </a>
+              </li>
+            </ul>
+            <ul class="user-action d-f">
+              <li class="user-action__item">
+                <a class="user-action__link d-f ai-c jc-c" href="#">
+                  <svg class="user-action__svg user-action__svg--search">
+                    <use xlink:href="img/sprite.svg#search"></use>
+                  </svg>
+                  <span class="sr-only">Пошук</span>
+                </a>
+              </li>
+              <li class="user-action__item">
+                <a class="user-action__link d-f ai-c jc-c" href="#">
+                  <svg class="user-action__svg user-action__svg--cart">
+                    <use xlink:href="img/sprite.svg#cart"></use>
+                  </svg>
+                  <span class="sr-only">Кошик</span>
+                  <span class="user-action__num">4</span>
+                </a>
+              </li>
+            </ul>
+            <button class="menu__btn d-f ai-c jc-c" type="button">
+              <span class="menu__line"></span>
+              <span class="sr-only">Відкрити меню</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
   </div>
+  <nav class="menu menu--mobile d-f ai-c">
+    <div class="menu__header d-f ai-c jc-sb">
+      <a class="logo menu__logo" href="index.html">
+        <img class="logo__img menu__logo-img" src="img/logo.svg" alt="Логотип SimpleFood" width="200" height="39">
+      </a>
+      <button class="menu__btn menu__btn--close d-f ai-c jc-c" type="button">
+        <span class="sr-only">Закрити меню</span>
+        <span class="menu__line"></span>
+      </button>
+    </div>
+    <ul class="menu__list d-f ai-c">
+      <li class="menu__item">
+        <a class="menu__link menu__link--active animation-link lh-title" href="index.html">
+          Головна
+        </a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link animation-link lh-title" href="#">
+          Страви
+        </a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link animation-link lh-title" href="#">
+          Контакти
+        </a>
+      </li>
+    </ul>
+    <address class="contact menu__contact footer__contact">
+      <ul class="contact__list">
+        <li class="contact__item">
+          <span class="contact__span">
+            <svg class="contact__svg">
+              <use xlink:href="img/sprite.svg#address"></use>
+            </svg>
+            вул. Т.Г. Шевченка, 1
+          </span>
+        </li>
+        <li class="contact__item">
+          <a class="contact__span" href="tel:+380501112233">
+            <svg class="contact__svg">
+              <use xlink:href="img/sprite.svg#tel"></use>
+            </svg>
+            380501112233
+          </a>
+        </li>
+        <li class="contact__item">
+          <a class="contact__span" href="mailto:support@sfood.com">
+            <svg class="contact__svg">
+              <use xlink:href="img/sprite.svg#email"></use>
+            </svg>
+            support@sfood.com
+          </a>
+        </li>
+      </ul>
+      <ul class="social-list d-f ai-c">
+        <li class="social-list__item">
+          <a class="social-list__social contact__social d-f ai-c jc-c" href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg class="social-list__svg">
+              <use xlink:href="img/sprite.svg#fb"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li class="social-list__item">
+          <a class="social-list__social contact__social d-f ai-c jc-c" href="#" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+            <svg class="social-list__svg">
+              <use xlink:href="img/sprite.svg#twitter"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li class="social-list__item">
+          <a class="social-list__social contact__social d-f ai-c jc-c" href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg class="social-list__svg">
+              <use xlink:href="img/sprite.svg#inst"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </address>
+  </nav>
 </header>
 
 <main class="page" id="page">
