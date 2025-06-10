@@ -1,22 +1,24 @@
-const {src, dest, watch, parallel, series} = require('gulp');
+const { src, dest, watch, parallel, series } = require('gulp');
 
-const sass          = require('gulp-sass')(require('sass'));
-const concat        = require('gulp-concat');
-const autoprefixer  = require('gulp-autoprefixer');
-const uglify        = require('gulp-uglify');
-const imagemin      = require('gulp-imagemin');
-const svgSprite     = require('gulp-svg-sprite');
-const cheerio       = require('gulp-cheerio');
-const del           = require('del');
-const browserSync   = require('browser-sync').create();
+const sass = require('gulp-sass')(require('sass'));
+const concat = require('gulp-concat');
+const rename = require('gulp-rename');
+const autoprefixer = require('gulp-autoprefixer');
+const uglify = require('gulp-uglify');
+const imagemin = require('gulp-imagemin');
+const svgSprite = require('gulp-svg-sprite');
+const cheerio = require('gulp-cheerio');
+const del = require('del');
+const browserSync = require('browser-sync').create();
+const fileInclude = require('gulp-file-include');
 
 function browsersync() {
   browserSync.init({
     server: {
-      baseDir: 'app/'
+      baseDir: 'app/',
     },
-    notify: false
-  })
+    notify: false,
+  });
 }
 
 function styles() {
@@ -28,7 +30,7 @@ function styles() {
       grid: true
     }))
     .pipe(dest('app/css/'))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream());
 }
 
 function scripts() {
@@ -39,41 +41,45 @@ function scripts() {
     .pipe(concat('main.min.js'))
     .pipe(uglify())
     .pipe(dest('app/js'))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream());
 }
 
 function images() {
   return src('app/img/**/*.*')
-    .pipe(imagemin([
-      imagemin.gifsicle({interlaced: true}),
-      imagemin.mozjpeg({quality: 75, progressive: true}),
-      imagemin.optipng({optimizationLevel: 5}),
-      imagemin.svgo({
-        plugins: [
-          {
-            name: 'removeViewBox',
-            active: true
-          },
-          {
-            name: 'cleanupIDs',
-            active: false
-          }
-        ]
-      })
-    ]))
-    .pipe(dest('dist/img'))
+    .pipe(
+      imagemin([
+        imagemin.gifsicle({ interlaced: true }),
+        imagemin.mozjpeg({ quality: 75, progressive: true }),
+        imagemin.optipng({ optimizationLevel: 5 }),
+        imagemin.svgo({
+          plugins: [
+            {
+              name: 'removeViewBox',
+              active: true,
+            },
+            {
+              name: 'cleanupIDs',
+              active: false,
+            },
+          ],
+        }),
+      ])
+    )
+    .pipe(dest('dist/img'));
 }
 
 function svgSprites() {
   return src('app/img/icons/*.svg')
-    .pipe(cheerio({
-      run: ($) => {
-        $("[fill]").removeAttr("fill");
-        $("[stroke]").removeAttr("stroke");
-        $("[style]").removeAttr("style");
-      },
-      parserOptions: {xmlMode: true},
-    }))
+    .pipe(
+      cheerio({
+        run: $ => {
+          $('[fill]').removeAttr('fill');
+          $('[stroke]').removeAttr('stroke');
+          $('[style]').removeAttr('style');
+        },
+        parserOptions: { xmlMode: true },
+      })
+    )
     .pipe(
       svgSprite({
         mode: {
@@ -83,16 +89,22 @@ function svgSprites() {
         },
       })
     )
-		.pipe(dest('app/img'));
+    .pipe(dest('app/img'));
 }
 
 function build() {
-  return src([
+  return src(
+    [
       'app/**/*.html',
       'app/css/style.min.css',
-      'app/js/main.min.js'
-    ], {base: 'app'})
-    .pipe(dest('dist'))
+      'app/css/index.min.css',
+      'app/css/product.min.css',
+      'app/js/main.min.js',
+    ],
+    {
+      base: 'app',
+    }
+  ).pipe(dest('dist'));
 }
 
 function cleanDist() {
@@ -106,13 +118,23 @@ function watching() {
   watch(['app/img/icons/*.svg'], svgSprites);
 }
 
-exports.styles      = styles;
-exports.scripts     = scripts;
+exports.styles = styles;
+exports.scripts = scripts;
 exports.browsersync = browsersync;
-exports.watching    = watching;
-exports.images      = images;
-exports.cleanDist   = cleanDist;
-exports.build       = series(cleanDist, images, svgSprites, build);
-exports.svgSprites  = svgSprites;
+exports.watching = watching;
+exports.images = images;
+exports.cleanDist = cleanDist;
+exports.build = series(cleanDist, images, svgSprites, build);
+exports.svgSprites = svgSprites;
+exports.svgOriginalSprites = svgSpritesWithoutRemovingAttributes;
+exports.htmlInclude = htmlInclude;
 
-exports.default  = parallel(styles, scripts, browsersync, svgSprites, watching);
+exports.default = parallel(
+  styles,
+  scripts,
+  browsersync,
+  svgSprites,
+  svgSpritesWithoutRemovingAttributes,
+  htmlInclude,
+  watching
+);

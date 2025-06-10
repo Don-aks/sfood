@@ -2,10 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link
       rel="icon"
@@ -247,6 +244,13 @@
               Каталог продуктів
             </h1>
             <div class="sort catalog-page__sorting d-f">
+              <button class="catalog-page__filters-btn filters-btn" type="button">
+                <span class="sr-only">Відкрити фільтри</span>
+                <svg class="filters-btn__icon">
+                  <use xlink:href="img/sprite.svg#filters"></use>
+                </svg>
+              </button>
+
               <label class="sr-only" for="sorting">Сортувати за</label>
               <select
                 class="sort__select js-select"
@@ -287,6 +291,10 @@
       <div class="container">
         <div class="catalog-page__wrapper d-f">
           <div class="filters catalog-page__filters">
+            <button class="filters__btn filters-btn" type="button">
+              <span class="sr-only">Закрити фільтри</span>
+              <span class="filters__btn-line"></span>
+            </button>
             <div class="filters__filter filter">
               <h2 class="filter__title">Категорії</h2>
 
@@ -416,7 +424,7 @@
             </div>
           </div>
 
-          <div class="catalog-page__catalog catalog">
+          <!-- <div class="catalog-page__catalog catalog">
             <ul class="catalog__list d-f jc-c">
               <li class="catalog__product">
                 <article class="product d-f ai-c">
@@ -760,7 +768,7 @@
               </a>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <section class="application section">
@@ -892,18 +900,21 @@
                 height="39"
               />
             </a>
-            <form class="form footer__form" action="#">
+            <form class="footer-form footer__form" action="#">
               <label class="sr-only" for="email">Ваш email</label>
               <input
-                class="input form__input"
+                class="input footer-form__input"
                 name="email"
                 id="email"
                 type="email"
                 placeholder="Ваш email"
                 required
               />
-              <button class="btn form__btn lh-title d-f ai-c jc-sb" type="submit">
-                <svg class="btn__svg form__svg">
+              <button
+                class="btn footer-form__btn lh-title d-f ai-c jc-sb"
+                type="submit"
+              >
+                <svg class="btn__svg footer-form__svg">
                   <use xlink:href="img/sprite.svg#airplane"></use>
                 </svg>
                 Підписатися
