@@ -1,0 +1,106 @@
+@use '../scss/vars' as *;
+@use '../scss/mixins' as *;
+
+.footer {
+  font-size: 18px;
+
+  &__inner {
+    padding-bottom: 62px;
+
+    @include mq('tablet-2') {
+      flex-wrap: wrap;
+      padding-bottom: 20px;
+    }
+
+    @include mq('phone') {
+      flex-direction: column;
+      padding-bottom: 0;
+    }
+  }
+
+  &__form-wrapper {
+    margin-right: 89px;
+    max-width: 200px;
+
+    @include mq('tablet-2') {
+      margin-bottom: 30px;
+      margin-right: 40px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  &__menu {
+    @include mq('phone') {
+      order: 3;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(4, auto);
+    grid-auto-flow: column;
+    gap: 16px 92px;
+    margin-right: 126px;
+
+    transform: translateX(-18px);
+
+    @include mq('desktop') {
+      gap: 16px 30px;
+      margin-right: 72px;
+    }
+
+    @include mq('tablet-2') {
+      transform: translateX(0);
+      margin-bottom: 30px;
+      margin-right: 40px;
+    }
+
+    @include mq('phone') {
+      grid-template-columns: repeat(1, auto);
+      grid-auto-flow: row;
+      gap: 16px 0;
+    }
+  }
+
+  &__contact {
+    min-width: 265px;
+
+    @include mq('desktop') {
+      min-width: 0;
+    }
+
+    @include mq('phone') {
+      order: 2;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__social-list {
+    @include mq('tablet-2') {
+      justify-content: center;
+    }
+
+    @include mq('phone') {
+      justify-content: flex-start;
+    }
+  }
+
+  &__copy {
+    padding: 29px 0 30px;
+
+    font-size: 14px;
+    text-align: center;
+
+    background-color: $text-2;
+    color: $white;
+
+    @include mq('phone') {
+      padding: 20px 0;
+    }
+  }
+}

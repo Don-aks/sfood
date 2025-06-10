@@ -1,0 +1,35 @@
+@use 'sass:map';
+@use 'vars' as *;
+
+@mixin mq($width, $type: max) {
+  @if map.has_key($breakpoints, $width) {
+    $width: map.get($breakpoints, $width);
+  }
+
+  @if $type == max {
+    $width: $width - 1px;
+  }
+
+  @media only screen and (#{$type}-width: $width) {
+    @content;
+  }
+}
+
+@mixin pseudo(
+  $width: auto, 
+  $height: auto, 
+  $display: block, 
+  $pos: absolute, 
+  $content: ''
+){
+  content: $content;
+  position: $pos;
+  
+  display: $display;
+  @if $width != auto {
+    width: $width;
+  }
+  @if $height != auto {
+    height: $height;
+  }
+}

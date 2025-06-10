@@ -22,13 +22,18 @@ function browsersync() {
 }
 
 function styles() {
-  return src('app/scss/style.scss')
-    .pipe(sass({outputStyle: 'compressed'}))
-    .pipe(concat('style.min.css'))
-    .pipe(autoprefixer({
-      overrideBrowserslist: ['last 10 versions'],
-      grid: true
-    }))
+  return src(['app/scss/**/*.scss', 'app/components/**/*.scss'])
+    .pipe(sass({ outputStyle: 'compressed' }))
+    .pipe(
+      rename({
+        suffix: '.min',
+      })
+    )
+    .pipe(
+      autoprefixer({
+        overrideBrowserslist: ['last 10 versions'],
+        grid: true,
+      })
     .pipe(dest('app/css/'))
     .pipe(browserSync.stream());
 }

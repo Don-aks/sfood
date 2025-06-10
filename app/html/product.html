@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    @include('../components/_head.html')
+    <title>Simple food - Чізбургер з листям салату</title>
+    <link rel="stylesheet" href="css/product.min.css" />
+  </head>
+  <body>
+    @include('../components/_header.html')
+
+    <main class="page product-page">
+      <h1 class="sr-only">Чізбургер з листям салату - Simple food</h1>
+      <div class="breadcrumbs product-page__breadcrumbs">
+        <div class="container">
+          <ul class="breadcrumbs__inner d-f ai-c">
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="index.html">Головна</a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="catalog.html">
+                Каталог продуктів
+              </a>
+            </li>
+            <li class="breadcrumbs__item">
+              <span class="breadcrumbs__link">Чізбургер з листям салату</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <article class="product-one product-page__product-one">
+        <div class="container">
+          <div class="product-one__inner d-f">
+            <div class="product-one__swiper product-swiper swiper">
+              <ul class="product-swiper__wrapper swiper-wrapper">
+                <li class="product-swiper__img-item swiper-slide d-f ai-c jc-c">
+                  <img
+                    class="product-one__img"
+                    src="img/products/cheeseburger-with-lettuce-leaves-big.jpg"
+                    width="400"
+                    height="400"
+                    alt="Чізбургер з листям салату"
+                  />
+                </li>
+                <li class="product-swiper__img-item swiper-slide d-f ai-c jc-c">
+                  <img
+                    class="product-one__img"
+                    src="img/products/cheeseburger-with-lettuce-leaves-big.jpg"
+                    width="400"
+                    height="400"
+                    alt="Чізбургер з листям салату"
+                  />
+                </li>
+                <li class="product-swiper__img-item swiper-slide d-f ai-c jc-c">
+                  <img
+                    class="product-one__img"
+                    src="img/products/cheeseburger-with-lettuce-leaves-big.jpg"
+                    width="400"
+                    height="400"
+                    alt="Чізбургер з листям салату"
+                  />
+                </li>
+              </ul>
+              <div class="product-swiper__buttons">
+                <button
+                  class="product-swiper__btn product-swiper__btn--prev swiper-button-prev d-f jc-c ai-c"
+                  type="button"
+                >
+                  <svg class="product-swiper__icon">
+                    <use xlink:href="img/sprite.svg#swiper-arrow-right"></use>
+                  </svg>
+                </button>
+                <button
+                  class="product-swiper__btn product-swiper__btn--next swiper-button-next d-f jc-c ai-c"
+                  type="button"
+                >
+                  <svg class="product-swiper__icon">
+                    <use xlink:href="img/sprite.svg#swiper-arrow-right"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-one__content">
+              <h2 class="title product-one__title lh-title">
+                Чізбургер з листям салату
+              </h2>
+              <div
+                class="rating product-one__rating"
+                aria-label="Рейтинг: 4 із 5"
+                style="--rating: 4"
+              >
+                <svg class="rating__stars" viewBox="0 0 110 16">
+                  <use
+                    class="rating__star"
+                    xlink:href="img/sprite.svg#star"
+                    x="0"
+                    width="22"
+                  ></use>
+                  <use
+                    class="rating__star"
+                    xlink:href="img/sprite.svg#star"
+                    x="22"
+                    width="22"
+                  ></use>
+                  <use
+                    class="rating__star"
+                    xlink:href="img/sprite.svg#star"
+                    x="44"
+                    width="22"
+                  ></use>
+                  <use
+                    class="rating__star"
+                    xlink:href="img/sprite.svg#star"
+                    x="66"
+                    width="22"
+                  ></use>
+                  <use
+                    class="rating__star"
+                    xlink:href="img/sprite.svg#star"
+                    x="88"
+                    width="22"
+                  ></use>
+                </svg>
+              </div>
+              <span class="product-one__price">
+                160
+                <span class="product-one__currency">грн.</span>
+              </span>
+              <div class="product-one__buttons d-f ai-c">
+                <div class="product-one__product-count product-count d-f ai-c">
+                  <button
+                    class="btn product-count__btn product-count__btn--minus js-product-minus"
+                    type="button"
+                  >
+                    <span class="sr-only">
+                      Зменшити кількість товару в кошику
+                    </span>
+                  </button>
+                  <input
+                    class="count-input product-count__input js-product-counter"
+                    type="number"
+                    name="count"
+                    id="count"
+                    value="1"
+                    min="1"
+                    max="99"
+                  />
+                  <button
+                    class="btn product-count__btn product-count__btn--plus js-product-plus"
+                    type="button"
+                  >
+                    <span class="sr-only">
+                      Збільшити кількість товару в кошику
+                    </span>
+                  </button>
+                </div>
+                <button class="btn product-one__btn d-f ai-c" type="button">
+                  <svg class="btn__svg btn__svg--stroke">
+                    <use xlink:href="img/sprite.svg#cart"></use>
+                  </svg>
+                  Додати до кошика
+                </button>
+              </div>
+              <h3 class="product-one__subtitle">Доставка та оплата</h3>
+              <p class="product-one__description">
+                Мінімальна сума замовлення — 160 грн.
+                <br />
+                Час доставки замовлення — 80-140 мин.
+                <br />
+                Оплата здійснюється тільки банківською карткою.
+                <br />
+                Остаточна сума замовлення формується після збору товарів.
+              </p>
+              <a class="link product-one__link" href="#">Детальніше</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="container">
+        <div class="product-page__tabs-container">
+          <ul
+            class="product-page__tabs js-tabs d-f ai-c"
+            data-tab-group="product"
+          >
+            <li class="product-page__tab-item">
+              <button
+                class="product-page__tab animation-link js-tab is-active"
+                id="description-tab"
+                type="button"
+                data-tab="description"
+              >
+                Опис
+              </button>
+            </li>
+            <li class="product-page__tab-item">
+              <button
+                class="product-page__tab animation-link js-tab"
+                id="characteristics-tab"
+                type="button"
+                data-tab="characteristics"
+              >
+                Характеристики
+              </button>
+            </li>
+            <li class="product-page__tab-item">
+              <!-- prettier-ignore -->
+              <button
+                class="product-page__tab animation-link js-tab"
+                id="reviews-tab"
+                type="button"
+                data-tab="reviews"
+              >
+                Відгуки (<span class="product-page__reviews-count">2</span>)
+              </button>
+            </li>
+          </ul>
+          <div
+            class="product-page__tabs-content js-tab-contents"
+            data-tab-group="product"
+          >
+            <section
+              class="product-page__tab-content js-tab-content is-active"
+              id="description"
+              data-tab="description"
+            >
+              <h2 class="sr-only">Опис продукту</h2>
+              <p class="product-page__text">
+                Рубаний біфштекс із натуральної яловичини на карамелізованій
+                булочці, зі скибочкою сиру "Чеддер", кетчупом, гірчицею, цибулею
+                та маринованими огірочками.
+              </p>
+              <p class="product-page__text">
+                Алергени: глютен, молоко, гірчиця. Може містити сою, яйце, сліди
+                кунжуту
+              </p>
+              <p class="product-page__text">
+                Зовнішній вигляд товару може відрізнятися від зображень,
+                представлених на сайті.
+              </p>
+            </section>
+
+            <section
+              class="product-page__tab-content js-tab-content"
+              id="characteristics"
+              data-tab="characteristics"
+            >
+              <h2 class="sr-only">Характеристики продукту</h2>
+              <ul class="product-page__characteristics-list">
+                <li class="product-page__characteristic-item">
+                  <span class="product-page__characteristic-name">
+                    Діаметр:
+                  </span>
+                  <span class="product-page__characteristic-value">20 см</span>
+                </li>
+                <li class="product-page__characteristic-item">
+                  <span class="product-page__characteristic-name">Вага:</span>
+                  <span class="product-page__characteristic-value">300 гр</span>
+                </li>
+                <li class="product-page__characteristic-item">
+                  <span class="product-page__characteristic-name">
+                    Калорійність (на 100г):
+                  </span>
+                  <span class="product-page__characteristic-value">
+                    295 ккал
+                  </span>
+                </li>
+                <li class="product-page__characteristic-item">
+                  <span class="product-page__characteristic-name">
+                    Термін зберігання:
+                  </span>
+                  <span class="product-page__characteristic-value">
+                    до 3 діб
+                  </span>
+                </li>
+              </ul>
+            </section>
+
+            <section
+              class="product-page__tab-content js-tab-content"
+              id="reviews"
+              data-tab="reviews"
+            >
+              <h2 class="product-page__reviews-title">Думки наших клієнтів</h2>
+
+              <ul class="reviews product-page__reviews-list">
+                <li class="review reviews__item">
+                  <div class="review__header d-f ai-c jc-sb">
+                    <div class="review__user d-f">
+                      <img
+                        class="review__avatar"
+                        loading="lazy"
+                        width="70"
+                        height="70"
+                        src="img/avatar.jpg"
+                        alt="Аватар користувача Андрій"
+                      />
+                      <div class="review__info">
+                        <h3 class="review__author">Андрій</h3>
+                        <time class="review__date" datetime="2021-06-10">
+                          10.06.2021
+                        </time>
+                      </div>
+                    </div>
+                    <div
+                      class="rating reviews__rating"
+                      aria-label="Рейтинг: 5 із 5"
+                      style="--rating: 5"
+                    >
+                      <svg class="rating__stars" viewBox="0 0 110 16">
+                        <use
+                          class="rating__star"
+                          xlink:href="img/sprite.svg#star"
+                          x="0"
+                          width="22"
+                        ></use>
+                        <use
+                          class="rating__star"
+                          xlink:href="img/sprite.svg#star"
+                          x="22"
+                          width="22"
+                        ></use>
+                        <use
+                          class="rating__star"
+                          xlink:href="img/sprite.svg#star"
+                          x="44"
+                          width="22"
+                        ></use>
+                        <use
+                          class="rating__star"
+                          xlink:href="img/sprite.svg#star"
+                          x="66"
+                          width="22"
+                        ></use>
+                        <use
+                          class="rating__star"
+                          xlink:href="img/sprite.svg#star"
+                          x="88"
+                          width="22"
+                        ></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="review__text">
+                    Доставили швидко. Товар свіжий та дуже смачний, буду ще
+                    обов’язково куштувати!
+                  </p>
+                </li>
+                <li class="review reviews__item">
+                  <div class="review__header d-f ai-c jc-sb">
+                    <div class="review__user d-f">
+                      <img
+                        class="review__avatar"
+                        loading="lazy"
+                        width="70"
+                        height="70"
+                        src="img/avatar.jpg"
+                        alt="Аватар користувача Андрій"
+                      />
+                      <div class="review__info">
+                        <h3 class="review__author">Катерина Біла</h3>
+                        <time class="review__date" datetime="2021-06-07">
+                          7.06.2021
+                        </time>
+                      </div>
+                    </div>
+                    <div
+                      class="rating reviews__rating"
+                      aria-label="Рейтинг: 4 із 5"
+                      style="--rating: 4"
+                    >
+                      <svg class="rating__stars" viewBox="0 0 110 16">
+                        <use
+                          class="rating__star"
+                          xlink:href="img/sprite.svg#star"
+                          x="0"
+                          width="22"
+                        ></use>
+                        <use
+                          class="rating__star"
+                          xlink:href="img/sprite.svg#star"
+                          x="22"
+                          width="22"
+                        ></use>
+                        <use
+                          class="rating__star"
+                          xlink:href="img/sprite.svg#star"
+                          x="44"
+                          width="22"
+                        ></use>
+                        <use
+                          class="rating__star"
+                          xlink:href="img/sprite.svg#star"
+                          x="66"
+                          width="22"
+                        ></use>
+                        <use
+                          class="rating__star"
+                          xlink:href="img/sprite.svg#star"
+                          x="88"
+                          width="22"
+                        ></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="review__text">
+                    Цей бургер непоганий на смак, особливо, коли немає
+                    можливості або часу щось готувати. Це чудовий варіант, щоб
+                    перекусити находу, але, щоб себе побалувати, краще замовлю
+                    піцу
+                  </p>
+                </li>
+              </ul>
+              <div class="product-page__review-form review-form">
+                <h3 class="product-page__reviews-title">Залишити відгук</h3>
+                <form class="review-form__form d-f ai-c jc-sb" action="#">
+                  <label class="review-form__label" for="review-rating">
+                    Ваша оцінка *
+                  </label>
+                  <select
+                    class="review-form__select js-review-rating"
+                    name="rating"
+                    id="review-rating"
+                    required
+                  >
+                    <option value="" disabled selected>Оцінка продукту</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                  <div class="review-form__info">
+                    <label class="sr-only" for="review-author">Ім’я</label>
+                    <input
+                      class="input review-form__input"
+                      type="text"
+                      name="author"
+                      id="review-author"
+                      placeholder="Введіть ваше ім’я"
+                      autocomplete="name"
+                    />
+                  </div>
+                  <div class="review-form__info">
+                    <label class="sr-only" for="review-email">Email *</label>
+                    <input
+                      class="input review-form__input"
+                      type="email"
+                      autocomplete="email"
+                      name="author"
+                      id="review-email"
+                      placeholder="youremail@mail.com"
+                      required
+                    />
+                  </div>
+                  <div class="review-form__textarea-wrapper">
+                    <label class="sr-only" for="review-textarea">
+                      Текст відгуку
+                    </label>
+                    <textarea
+                      class="input review-form__textarea"
+                      name="text"
+                      id="review-textarea"
+                      placeholder="Ваш відгук про товар..."
+                      autocomplete="off"
+                      required
+                    ></textarea>
+                  </div>
+                  <label>
+                    <input
+                      class="review-form__checkbox js-review-checkbox"
+                      id="review-checkbox"
+                      type="checkbox"
+                    />
+                    Зберегти моє ім’я, email та адресу сайта в цьому браузері
+                    для наступних моїх коментарів.
+                  </label>
+                  <button
+                    class="btn review-form__btn btn--primary d-f ai-c jc-c js-review-submit"
+                    type="submit"
+                  >
+                    Залишити відгук
+                  </button>
+                </form>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <section class="offerts product-page__offerts">
+        <div class="container offerts__container">
+          <h2 class="title title--in-catalog offerts__title">
+            Вас може зацікавити
+          </h2>
+          <div class="offerts__inner swiper">
+            <div class="pfferts__navigation swiper-navigation">
+              <button
+                class="offerts__arrow offerts__arrow--prev"
+                type="button"
+              ></button>
+              <button
+                class="offerts__arrow offerts__arrow--next"
+                type="button"
+              ></button>
+            </div>
+            <ul class="offerts__list swiper-wrapper d-f jc-sb">
+              <li class="offerts__product swiper-slide">
+                <article class="product d-f ai-c">
+                  <img
+                    class="product__img"
+                    src="img/products/cheeseburger-with-lettuce-leaves.jpg"
+                    loading="lazy"
+                    alt="Чізбургер з листям салату"
+                    width="140"
+                    height="140"
+                  />
+                  <h3 class="product__name">Чізбургер з листям салату</h3>
+                  <span class="product__price">
+                    160
+                    <span class="product__currency">грн.</span>
+                  </span>
+                  <button class="btn product__btn" type="button">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="offerts__product swiper-slide">
+                <article class="product d-f ai-c jc-sb">
+                  <img
+                    class="product__img"
+                    src="img/products/beefburger.jpg"
+                    loading="lazy"
+                    alt="Біфбургер"
+                    width="140"
+                    height="140"
+                  />
+                  <h3 class="product__name">Біфбургер</h3>
+                  <span class="product__price">
+                    190
+                    <span class="product__currency">грн.</span>
+                  </span>
+                  <button class="btn product__btn" type="button">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="offerts__product swiper-slide">
+                <article class="product d-f ai-c">
+                  <img
+                    class="product__img"
+                    src="img/products/king-cheeseburger.jpg"
+                    loading="lazy"
+                    alt="Королівський чізбургер"
+                    width="140"
+                    height="140"
+                  />
+                  <h3 class="product__name">Королівський чізбургер</h3>
+                  <span class="product__price">
+                    260
+                    <span class="product__currency">грн.</span>
+                  </span>
+                  <button class="btn product__btn" type="button">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="offerts__product swiper-slide">
+                <article class="product d-f ai-c">
+                  <img
+                    class="product__img"
+                    src="img/products/black-burger.jpg"
+                    loading="lazy"
+                    alt="Чорний гамбургер"
+                    width="140"
+                    height="140"
+                  />
+                  <h3 class="product__name">Чорний гамбургер</h3>
+                  <span class="product__price">
+                    199
+                    <span class="product__currency">грн.</span>
+                  </span>
+                  <button class="btn product__btn" type="button">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="offerts__product swiper-slide">
+                <article class="product d-f ai-c">
+                  <img
+                    class="product__img"
+                    src="img/products/chickenburger.jpg"
+                    loading="lazy"
+                    alt="Чікен бургер"
+                    width="140"
+                    height="140"
+                  />
+                  <h3 class="product__name">Чікен бургер</h3>
+                  <span class="product__price">
+                    180
+                    <span class="product__currency">грн.</span>
+                  </span>
+                  <button class="btn product__btn" type="button">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="offerts__product swiper-slide">
+                <article class="product d-f ai-c">
+                  <img
+                    class="product__img"
+                    src="img/products/cheeseburger-with-lettuce-leaves.jpg"
+                    loading="lazy"
+                    alt="Чізбургер з листям салату"
+                    width="140"
+                    height="140"
+                  />
+                  <h3 class="product__name">Чізбургер з листям салату</h3>
+                  <span class="product__price">
+                    160
+                    <span class="product__currency">грн.</span>
+                  </span>
+                  <button class="btn product__btn" type="button">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="offerts__product swiper-slide">
+                <article class="product d-f ai-c jc-sb">
+                  <img
+                    class="product__img"
+                    src="img/products/beefburger.jpg"
+                    loading="lazy"
+                    alt="Біфбургер"
+                    width="140"
+                    height="140"
+                  />
+                  <h3 class="product__name">Біфбургер</h3>
+                  <span class="product__price">
+                    190
+                    <span class="product__currency">грн.</span>
+                  </span>
+                  <button class="btn product__btn" type="button">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="offerts__product swiper-slide">
+                <article class="product d-f ai-c">
+                  <img
+                    class="product__img"
+                    src="img/products/king-cheeseburger.jpg"
+                    loading="lazy"
+                    alt="Королівський чізбургер"
+                    width="140"
+                    height="140"
+                  />
+                  <h3 class="product__name">Королівський чізбургер</h3>
+                  <span class="product__price">
+                    260
+                    <span class="product__currency">грн.</span>
+                  </span>
+                  <button class="btn product__btn" type="button">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="offerts__product swiper-slide">
+                <article class="product d-f ai-c">
+                  <img
+                    class="product__img"
+                    src="img/products/black-burger.jpg"
+                    loading="lazy"
+                    alt="Чорний гамбургер"
+                    width="140"
+                    height="140"
+                  />
+                  <h3 class="product__name">Чорний гамбургер</h3>
+                  <span class="product__price">
+                    199
+                    <span class="product__currency">грн.</span>
+                  </span>
+                  <button class="btn product__btn" type="button">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="offerts__product swiper-slide">
+                <article class="product d-f ai-c">
+                  <img
+                    class="product__img"
+                    src="img/products/chickenburger.jpg"
+                    loading="lazy"
+                    alt="Чікен бургер"
+                    width="140"
+                    height="140"
+                  />
+                  <h3 class="product__name">Чікен бургер</h3>
+                  <span class="product__price">
+                    180
+                    <span class="product__currency">грн.</span>
+                  </span>
+                  <button class="btn product__btn" type="button">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    @include('../components/_footer.html')
+
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

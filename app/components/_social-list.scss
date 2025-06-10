@@ -1,0 +1,55 @@
+@use '../scss/vars' as *;
+@use '../scss/mixins' as *;
+
+.social-list {
+  &__item:not(:last-child) {
+    margin-right: 13px;
+  }
+
+  &__social {
+    width: 39px;
+    height: 39px;
+
+    background-color: $shadow;
+    border-radius: 50%;
+
+    transition: background-color 0.3s;
+
+    &:not(:last-child) {
+      margin-right: 13px;
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 $shadow-size $shadow-color;
+      background-color: $silver;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $primary;
+
+        .social-list__svg {
+          fill: $white;
+        }
+      }
+    }
+
+    &:active {
+      background-color: $silver;
+
+      .social-list__svg {
+        fill: $primary;
+      }
+    }
+  }
+
+  &__svg {
+    width: 21px;
+    height: 20px;
+
+    stroke: none;
+    fill: $text;
+
+    transition: fill 0.3s;
+  }
+}

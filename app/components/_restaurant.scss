@@ -1,0 +1,183 @@
+@use '../scss/vars' as *;
+@use '../scss/mixins' as *;
+
+.restaurant {
+  flex-direction: column;
+  height: 100%;
+
+  border-radius: 10px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+  outline: transparent;
+
+  transition: box-shadow 0.3s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: 0 3px 15px 0 rgba($primary, 0.5);
+    }
+  }
+
+  &:focus-visible,
+  &:active {
+    box-shadow: 0 3px 15px 0 rgba($primary, 0.5);
+  }
+
+  @include mq('tablet') {
+    width: 100%;
+    max-width: 370px;
+    // max-height: 422px;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    aspect-ratio: 37 / 30;
+    object-fit: cover;
+
+    @include mq('tablet-2') {
+      max-height: 200px;
+    }
+
+    @include mq('tablet') {
+      max-height: 300px;
+    }
+  }
+
+  &__inner {
+    flex-direction: column;
+    height: 100%;
+    padding: 15px 22px 21px 19px;
+
+    @include mq('tablet-2') {
+      padding: 15px;
+    }
+  }
+
+  &__name {
+    flex: 1 1 auto;
+    margin-bottom: 20px;
+
+    font-size: 24px;
+    font-weight: 400;
+
+    @include mq('tablet-2') {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+  }
+
+  &__info {
+    align-items: flex-start;
+    // margin-top: 22px;
+
+    @include mq('tablet-2') {
+      align-items: center;
+      // margin-top: 10px;
+    }
+  }
+
+  &__time {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.67;
+
+    @include mq('tablet-2') {
+      font-size: 14px;
+    }
+
+    @include mq('tablet') {
+      font-size: 18px;
+    }
+
+    @include mq('phone-2') {
+      font-size: 14px;
+    }
+  }
+
+  &__time-svg {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+
+    @include mq('tablet-2') {
+      width: 16px;
+      height: 16px;
+      margin-right: 7px;
+    }
+
+    @include mq('tablet') {
+      width: 22px;
+      height: 22px;
+      margin-right: 10px;
+    }
+
+    @include mq('phone-2') {
+      width: 16px;
+      height: 16px;
+      margin-right: 7px;
+    }
+  }
+
+  &__time-text {
+    @include mq('tablet-2') {
+      position: relative;
+      top: 1px;
+    }
+
+    @include mq('tablet') {
+      position: static;
+    }
+  }
+
+  &__link {
+    padding: 4px 25px 5px 29px;
+    max-width: 79px;
+
+    border-radius: 20px;
+
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: 0 0 0 $shadow-size $shadow-color;
+
+        .restaurant__link-svg {
+          transform: translateX(16px);
+
+          @include mq('tablet-2') {
+            transform: translateX(10px);
+          }
+
+          @include mq('tablet') {
+            transform: translateX(16px);
+          }
+        }
+      }
+    }
+
+    @include mq('tablet-2') {
+      padding: 8px 15px;
+    }
+
+    @include mq('tablet') {
+      padding: 5px 25px 5px 29px;
+      max-width: 79px;
+    }
+
+    @include mq('phone-2') {
+      padding: 8px 15px;
+    }
+  }
+
+  &__link-svg {
+    width: 24px;
+    height: 22px;
+
+    fill: $white;
+
+    transition: transform 0.3s;
+  }
+}

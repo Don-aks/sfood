@@ -1,0 +1,25 @@
+@use '../scss/vars' as *;
+@use '../scss/mixins' as *;
+
+.applications {
+  &__link {
+    border-radius: 5px;
+
+    &:nth-child(2) img {
+      width: 134px;
+      height: 46px;
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 $shadow-size $shadow-color;
+    }
+
+    &:not(:last-child) {
+      margin-right: 30px;
+
+      @include mq('phone-2') {
+        margin-right: 15px;
+      }
+    }
+  }
+}

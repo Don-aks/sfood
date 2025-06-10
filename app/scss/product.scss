@@ -1,0 +1,566 @@
+@use 'vars' as *;
+@use 'mixins' as *;
+@use 'reset';
+@use 'libs';
+@use 'utils';
+@use 'global';
+
+@use '../components/header';
+@use '../components/contact';
+@use '../components/social-list';
+@use '../components/product';
+@use '../components/footer';
+@use '../components/footer-form';
+
+.product-page {
+  &__breadcrumbs {
+    margin-bottom: 61px;
+
+    @include mq('tablet-2') {
+      margin-bottom: 30px;
+    }
+
+    .breadcrumbs__item:nth-child(1) {
+      transform: translateX(8px);
+
+      @include mq('phone') {
+        transform: translateX(0);
+      }
+    }
+
+    .breadcrumbs__item:nth-child(2) {
+      margin-left: 6px;
+
+      @include mq('phone') {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__product-one {
+    padding-bottom: 60px;
+    border-bottom: 1px solid $silver-5;
+
+    @include mq('phone') {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__tabs-container {
+    max-width: 676px;
+    margin: 0 auto;
+    padding: 30px 0 60px;
+
+    @include mq('phone') {
+      padding-bottom: 8px;
+    }
+  }
+
+  &__tabs {
+    margin-bottom: 30px;
+
+    font-size: 24px;
+    white-space: nowrap;
+
+    color: $text-2;
+    border-radius: $radius;
+
+    overflow-x: auto;
+
+    @include mq('phone') {
+      font-size: 20px;
+    }
+
+    &.is-focus {
+      box-shadow: 0 0 0 $shadow-size $shadow-color;
+    }
+  }
+
+  &__tab-item:not(:last-child) {
+    margin-right: 60px;
+
+    @include mq('phone') {
+      margin-right: 30px;
+    }
+  }
+
+  &__tab {
+    &:focus-visible {
+      box-shadow: none;
+    }
+
+    &.is-active {
+      color: $primary;
+      text-shadow: none;
+    }
+  }
+
+  &__tab-content {
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+
+    @include mq('phone') {
+      font-size: 16px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+
+      @include mq('phone') {
+        margin-bottom: 13px;
+      }
+    }
+  }
+
+  &__characteristic-item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__characteristic-name {
+    font-weight: 500;
+  }
+
+  &__reviews-title {
+    margin-bottom: 30px;
+
+    font-size: 24px;
+    line-height: $filters-lh;
+    font-weight: 500;
+    color: $text-2;
+
+    @include mq('phone') {
+      font-size: 20px;
+    }
+  }
+}
+
+// ======= PRODUCT-ONE ======= //
+
+.product-one {
+  &__inner {
+    @include mq('tablet-2') {
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
+  &__swiper {
+    flex-shrink: 1;
+    width: 100%;
+    max-width: 616px;
+    margin: 0 31px 0 0;
+
+    @include mq('desktop') {
+      margin-right: 50px;
+    }
+
+    @include mq('tablet-2') {
+      margin: 0 0 30px;
+    }
+  }
+
+  &__img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+
+    @include mq('phone') {
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+  &__content {
+    flex-shrink: 1;
+    width: 100%;
+    max-width: 530px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @include mq('phone') {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__rating {
+    margin-bottom: 10px;
+    transform: translateX(-3px);
+  }
+
+  &__price {
+    display: block;
+    margin-bottom: 20px;
+
+    font-size: 25px;
+    font-weight: 500;
+    line-height: $price-lh;
+
+    color: $text-2;
+
+    @include mq('phone') {
+      margin-bottom: 17px;
+    }
+  }
+
+  &__buttons {
+    margin-bottom: 26px;
+
+    @include mq('phone') {
+      flex-direction: column;
+      align-items: start;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__product-count {
+    margin-right: 21px;
+
+    @include mq('phone') {
+      margin-right: 0;
+      margin-bottom: 18px;
+    }
+  }
+
+  &__btn {
+    padding: 13px 28px 10px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    border-radius: $radius-sm;
+
+    .btn__svg {
+      width: 16px;
+      height: 16px;
+      margin-right: 14px;
+
+      fill: none;
+      stroke: $white;
+      stroke-width: 1.5;
+    }
+  }
+
+  &__subtitle {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+
+    font-size: 24px;
+    line-height: $filters-lh;
+    letter-spacing: 0.03em;
+    font-weight: 400;
+
+    border-bottom: 1px solid $silver-5;
+
+    @include mq('phone') {
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+
+      font-size: 18px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 20px;
+
+    font-size: 16px;
+    letter-spacing: 0.03em;
+
+    @include mq('phone') {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+// ======= PRODUCT-SWIPER ======= //
+
+.product-swiper {
+  height: 550px;
+
+  border-radius: $radius;
+  box-shadow: 0 0 0 1px $shadow;
+  aspect-ratio: 609 / 550;
+
+  @include mq('desktop') {
+    height: auto;
+  }
+
+  @include mq('phone') {
+    height: 345px;
+    aspect-ratio: 1 / 1;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    z-index: 1;
+
+    width: 60px;
+    height: 60px;
+
+    transform: translateY(-50%) rotate(180deg);
+
+    @include mq('desktop') {
+      left: 0;
+    }
+
+    @include mq('phone') {
+      display: none;
+    }
+
+    &--next {
+      left: auto;
+      right: 25px;
+      transform: translateY(-50%);
+
+      @include mq('desktop') {
+        right: 0;
+      }
+    }
+
+    &.swiper-button-disabled {
+      .product-swiper__icon {
+        fill: $silver-4;
+      }
+    }
+  }
+
+  &__icon {
+    width: 19px;
+    height: 32px;
+
+    fill: $text-2;
+    transition: fill 0.3s;
+  }
+}
+
+// ======= RATING ======= //
+
+.rating {
+  position: relative;
+  width: $stars-count * ($star-size + $stars-gap);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(var(--rating) / #{$stars-count} * 100%);
+    height: 100%;
+
+    background: $star;
+    mask-image: url(../img/sprite.svg#star);
+    mask-repeat: repeat-x;
+    mask-size: ($star-size + $stars-gap) $star-size;
+  }
+
+  &__stars {
+    height: $star-size;
+    vertical-align: top;
+  }
+
+  &__star {
+    display: block;
+    width: $star-size;
+    height: $star-size;
+
+    fill: rgba($silver-4, 0.3);
+
+    &:not(:last-child) {
+      margin-right: $stars-gap;
+    }
+  }
+}
+
+// ======= PRODUCT-COUNT ======= //
+
+.product-count {
+  &__btn {
+    position: relative;
+
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 0;
+
+    &:focus-visible,
+    &:active {
+      color: $primary;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      width: 20px;
+      height: 2px;
+
+      background-color: currentColor;
+      transform: translate(-50%, -50%);
+    }
+
+    &--minus {
+      border-top-left-radius: $radius-sm;
+      border-bottom-left-radius: $radius-sm;
+    }
+
+    &--plus {
+      border-top-right-radius: $radius-sm;
+      border-bottom-right-radius: $radius-sm;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: 2px;
+        height: 20px;
+
+        background-color: currentColor;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &__input {
+    height: 44px;
+  }
+}
+
+// ======= REVIEWS ======= //
+
+.reviews {
+  padding-bottom: 30px;
+
+  @include mq('phone') {
+    padding-bottom: 23px;
+  }
+
+  &__item:not(:last-child) {
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid $silver-5;
+  }
+}
+
+.review {
+  color: $breadcrumbs;
+
+  &__header {
+    margin-bottom: 20px;
+
+    @include mq('phone') {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__user {
+    align-items: flex-start;
+    line-height: 1;
+
+    @include mq('phone') {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__avatar {
+    width: 70px;
+    height: 70px;
+    margin-right: 25px;
+
+    object-fit: cover;
+  }
+
+  &__info {
+    margin-top: 7px;
+  }
+
+  &__author {
+    margin-bottom: 10px;
+
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  &__date {
+    font-size: 18px;
+  }
+
+  &__text {
+    font-size: 20px;
+    color: $breadcrumbs;
+
+    @include mq('phone') {
+      font-size: 16px;
+    }
+  }
+}
+
+// ======= REVIEW-FORM ======= //
+
+.review-form {
+  padding-top: 30px;
+
+  @include mq('phone') {
+    padding-top: 23px;
+  }
+}
+
+// ======= OFFERTS ======= //
+
+.offerts {
+  padding: 56px 0 120px;
+
+  @include mq('phone') {
+    padding-top: 8px;
+  }
+
+  &__container {
+    max-width: $container-width + 2px;
+  }
+
+  &__title {
+    transform: translateX(8px);
+  }
+
+  &__inner {
+    padding: 1px;
+  }
+
+  &__list {
+    gap: 30px;
+    height: 300px;
+  }
+
+  &__product {
+    width: 100%;
+    height: auto;
+    max-width: 210px;
+  }
+
+  &__product-wrapper {
+    box-shadow: 0 0 0 $shadow-size $shadow;
+  }
+}

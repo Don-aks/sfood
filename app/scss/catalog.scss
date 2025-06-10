@@ -1,0 +1,518 @@
+@use 'vars' as *;
+@use 'mixins' as *;
+@use 'reset';
+@use 'libs';
+@use 'utils';
+@use 'global';
+
+@use '../components/header';
+@use '../components/product';
+@use '../components/restaurant';
+@use '../components/application';
+@use '../components/applications';
+@use '../components/footer';
+@use '../components/footer-form';
+@use '../components/contact';
+@use '../components/social-list';
+
+.catalog-page {
+  background-color: #f9faff;
+
+  &__head-inner {
+    @include mq('phone') {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    @include mq('phone') {
+      margin-bottom: 17px;
+    }
+  }
+
+  &__sorting {
+    align-items: flex-start;
+    margin-top: 4px;
+
+    @include mq('phone') {
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+
+    .choices {
+      position: relative;
+
+      font-size: 14px;
+      line-height: $filters-lh;
+      letter-spacing: 0.03em;
+
+      outline: transparent;
+      cursor: pointer;
+
+      &:hover .choices__inner {
+        color: $primary;
+        border-color: $primary;
+      }
+
+      &:hover::after {
+        background-image: url('../img/sprite-original.svg#arrow-right_primary');
+      }
+
+      &:not(:last-child) {
+        margin-right: 19px;
+
+        @include mq('tablet') {
+          margin-right: 21px;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 12px;
+
+        width: 16px;
+        height: 9px;
+
+        @extend %bg-contain-center;
+        background-image: url('../img/sprite-original.svg#arrow-right');
+
+        transform: translateY(-50%) rotate(90deg);
+        pointer-events: none;
+      }
+
+      &__inner {
+        display: inline-block;
+
+        padding: 10px 14px 11px 10px;
+        border: 1px solid $silver-2;
+        border-radius: $radius-sm;
+
+        transition: color 0.3s;
+      }
+
+      &__item {
+        display: inline-block;
+        padding-right: 10px;
+        width: 100%;
+
+        &--selectable.is-highlighted {
+          color: $white;
+          background-color: $primary;
+        }
+
+        &.is-highlighted {
+          color: $white;
+          background-color: $primary;
+          border: 1px solid $primary;
+        }
+      }
+
+      &__list {
+        margin: 0;
+        list-style: none;
+
+        &--multiple {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: flex-start;
+        }
+
+        &--single {
+          display: block;
+          padding: 4px 16px 4px 4px;
+        }
+
+        &--dropdown {
+          display: none;
+          z-index: 3;
+          position: absolute;
+          width: 100%;
+          background-color: $white;
+          border: 1px solid $silver-2;
+          top: 100%;
+          margin-top: -1px;
+          border-bottom-left-radius: $radius-sm;
+          border-bottom-right-radius: $radius-sm;
+          overflow: hidden;
+          word-break: break-all;
+
+          &.is-active {
+            display: block;
+          }
+
+          .choices__item {
+            position: relative;
+            padding: 10px;
+            font-size: 14px;
+
+            [dir='rtl'] & {
+              text-align: right;
+            }
+          }
+        }
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+    }
+
+    .is-focused .choices__inner,
+    .is-open .choices__inner {
+      border-color: $primary;
+    }
+  }
+
+  &__filters {
+    width: 100%;
+    max-width: 270px;
+  }
+
+  &__wrapper {
+    padding-bottom: 60px;
+  }
+
+  &__sales {
+    padding: 60px 0 108px;
+  }
+
+  .application {
+    padding-bottom: 54px;
+  }
+}
+
+.filters-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 47px;
+  height: 47px;
+  margin-right: 19px;
+
+  background-color: rgba($primary, 0.1);
+  color: $primary;
+  border-radius: $radius-sm;
+
+  transition: transform 0.3s;
+
+  &:focus-visible {
+    box-shadow: 0 0 0 $shadow-size $primary;
+  }
+
+  @include mq('tablet') {
+    display: flex;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 36px;
+    fill: currentColor;
+  }
+}
+
+.filters {
+  @include mq('tablet') {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+    height: 100dvh;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top: 80px;
+    padding-right: 50px;
+
+    background-color: $white;
+
+    transition: transform 0.3s;
+    transform: translateX(-200%);
+
+    overflow-y: auto;
+    box-sizing: content-box;
+  }
+
+  &--active {
+    @include mq('tablet') {
+      transform: translateX(0);
+    }
+  }
+
+  @include mq('phone-2') {
+    margin-right: 10px;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: $text;
+
+    &:focus-visible {
+      box-shadow: 0 0 0 $shadow-size $primary;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+      }
+    }
+
+    &:active {
+      color: $primary;
+      background-color: rgba($primary, 0.1);
+      box-shadow: none;
+    }
+
+    .filters__btn-line {
+      background-color: transparent;
+
+      &::before {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+
+      &::after {
+        transform: rotate(45deg) translate(7px, 7px);
+      }
+    }
+
+    &__filter {
+      margin-bottom: 33px;
+    }
+  }
+
+  &__btn-line {
+    position: relative;
+
+    display: block;
+    width: 30px;
+    height: 2px;
+
+    background-color: currentColor;
+    border-radius: 2px;
+
+    &::before,
+    &::after {
+      @include pseudo(30px, 2px);
+      top: 10px;
+
+      background-color: currentColor;
+      border-radius: 2px;
+
+      transition: transform 0.3s;
+    }
+
+    &::after {
+      top: -10px;
+    }
+  }
+}
+
+.filter {
+  padding: 15px 14px 17px;
+
+  font-size: 18px;
+  letter-spacing: 0.03em;
+
+  border: 1px solid $shadow;
+  border-radius: $radius;
+
+  &__title {
+    padding-bottom: 15px;
+    margin-bottom: 23px;
+
+    font-size: 24px;
+    font-weight: 400;
+    line-height: $filters-lh;
+
+    color: $text-2;
+    border-bottom: 1px solid $shadow;
+  }
+
+  &__item {
+    padding: 4px 0;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &__label-item {
+    padding: 1px 0;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &__label {
+    &:first-child {
+      margin-right: 13px;
+    }
+
+    color: $silver-2;
+  }
+
+  &__price-inputs {
+    margin-bottom: 32px;
+  }
+
+  &__price-input {
+    height: 40px;
+    margin: 0 3px;
+
+    font-size: 16px;
+    border-radius: $radius-sm;
+  }
+
+  &__price-ranges {
+    .ui {
+      position: relative;
+      height: 2px;
+      width: 100%;
+      background: $silver-2;
+
+      .start,
+      .end {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+
+        text-align: center;
+
+        background: $primary;
+
+        transform: translate(-50%, -50%);
+        transition: background-color 0.3s;
+
+        span {
+          display: none;
+
+          user-select: none;
+          transform: translateY(-100%);
+        }
+      }
+
+      .active {
+        background: $primary;
+        z-index: 2;
+
+        span {
+          display: inline-block;
+        }
+      }
+    }
+
+    .middle {
+      height: 2px;
+      width: 100%;
+      background: $primary;
+      position: absolute;
+      z-index: 0;
+    }
+  }
+
+  &__price-range.range-start:focus-visible ~ .ui .start,
+  &__price-range.range-end:focus-visible ~ .ui .end {
+    background-color: rgba($primary, 0.6);
+    box-shadow: 0 0 0 $shadow-size $primary;
+  }
+}
+
+.catalog {
+  &__list {
+    flex-wrap: wrap;
+    margin-bottom: 45px;
+
+    transform: translateX(19px);
+  }
+
+  &__product {
+    width: 100%;
+    max-width: 210px;
+    margin: 0 10px 16px 0;
+
+    .product__name {
+      margin-bottom: 7px;
+    }
+
+    @include mq('tablet') {
+      width: 48%;
+    }
+  }
+
+  &__pagination {
+    transform: translateX(14px);
+  }
+}
+
+.sales {
+  &__inner {
+    margin: 0 -25px -21px 0;
+    // overflow: visible;
+  }
+
+  &__list {
+    height: 100%;
+
+    @include mq('desktop') {
+      flex-wrap: wrap;
+    }
+
+    @include mq('tablet') {
+      justify-content: start;
+      flex-wrap: nowrap;
+      // overflow: hidden;
+    }
+  }
+
+  &__restaurant {
+    height: auto;
+    max-width: 370px;
+    margin: 0 25px 31px 0;
+
+    @include mq('tablet') {
+      display: flex;
+      justify-content: center;
+      max-width: 100%;
+      margin: 0;
+    }
+
+    &:nth-child(3n + 1) {
+      transform: translateX(-4px);
+    }
+
+    &:nth-child(3n + 3) {
+      transform: translateX(5px);
+    }
+
+    .restaurant {
+      @include mq('tablet') {
+        max-width: 370px;
+      }
+    }
+
+    .restaurant__name {
+      margin-bottom: -8px;
+    }
+
+    .restaurant__inner {
+      @include mq('tablet-2') {
+        padding-bottom: 30px;
+      }
+    }
+  }
+}

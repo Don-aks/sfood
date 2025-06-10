@@ -1,0 +1,44 @@
+@use '../scss/vars' as *;
+@use '../scss/mixins' as *;
+
+.application {
+  padding: 55px 0 118px;
+
+  @include mq('tablet-2') {
+    padding-bottom: 40px;
+  }
+
+  &__inner {
+    padding: 41px 0 40px;
+    background: right center no-repeat;
+
+    @include mq('desktop') {
+      background-image: none !important;
+    }
+
+    @include mq('tablet') {
+      padding: 0;
+    }
+  }
+
+  &__info {
+    max-width: 470px;
+  }
+
+  &__title {
+    margin-bottom: 45px;
+    text-align: left;
+
+    @include mq('tablet') {
+      margin-bottom: 13px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+
+    @include mq('tablet') {
+      margin-bottom: 15px;
+    }
+  }
+}

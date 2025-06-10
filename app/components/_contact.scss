@@ -1,0 +1,47 @@
+@use '../scss/vars' as *;
+@use '../scss/mixins' as *;
+
+.contact {
+  font-size: 16px;
+  line-height: $contact-lh;
+  font-style: normal;
+
+  @include mq('phone') {
+    margin-bottom: 21px;
+  }
+
+  &__item {
+    margin-bottom: 14px;
+  }
+
+  &__span {
+    position: relative;
+    padding-left: 31px;
+
+    border-radius: $radius;
+
+    &:focus-visible {
+      box-shadow: 0 0 0 $shadow-size $shadow-color;
+    }
+
+    &--address {
+      font-style: normal;
+    }
+  }
+
+  &__svg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    fill: none;
+    stroke: $text;
+    stroke-width: 1.5;
+
+    transform: translateY(-50%);
+  }
+}
