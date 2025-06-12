@@ -8,6 +8,10 @@
   "author": "donaks",
   "license": "ISC",
   "description": "",
+  "dependencies": {
+    "choices.js": "^11.1.0",
+    "swiper": "^11.2.6"
+  },
   "devDependencies": {
     "browser-sync": "^3.0.3",
     "del": "^6.0.0",
@@ -18,11 +22,11 @@
     "gulp-file-include": "^2.3.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-svg-sprite": "^2.0.3",
     "gulp-uglify": "^3.0.2",
     "plumber": "^0.4.8",
-    "sass": "^1.49.0",
-    "swiper": "^11.2.1"
+    "sass": "^1.49.0"
   }
 }
