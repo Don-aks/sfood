@@ -218,25 +218,13 @@
     }
 
     &--close {
-      .menu__btn-line {
-        background-color: transparent;
-
-        &::before {
-          transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        &::after {
-          transform: rotate(45deg) translate(7px, 7px);
-        }
-      }
-
       @include mq('phone-2') {
         margin-right: 10px;
       }
-    }
 
-    @include mq('tablet') {
-      display: flex;
+      @include mq('tablet') {
+        display: flex;
+      }
     }
   }
 
