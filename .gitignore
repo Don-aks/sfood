@@ -7,6 +7,7 @@ npm-debug.*
 
 dist/
 app/*.html
+app/js/main.min.js
 node_modules/
 package-lock.json
 app/css/**/*
