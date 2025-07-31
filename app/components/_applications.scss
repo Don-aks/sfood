@@ -16,10 +16,6 @@
 
     &:not(:last-child) {
       margin-right: 30px;
-
-      @include mq('phone-2') {
-        margin-right: 15px;
-      }
     }
   }
 }

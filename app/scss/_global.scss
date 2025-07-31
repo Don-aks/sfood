@@ -4,6 +4,7 @@
 body {
   display: flex;
   flex-direction: column;
+  min-width: 320px;
   min-height: 100vh;
 
   font: 400 20px $main-font;

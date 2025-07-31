@@ -12,6 +12,7 @@
     z-index: 2;
 
     width: 100%;
+    min-width: 320px;
     margin: 0 auto;
 
     background-color: $white;
@@ -96,10 +97,6 @@
 
       overflow-y: auto;
     }
-
-    @include mq('phone-2') {
-      width: 230px;
-    }
   }
 
   &--active {
@@ -117,10 +114,6 @@
       padding: 25px 0;
 
       border-bottom: 1px solid $silver-3;
-    }
-
-    @include mq('phone-2') {
-      padding: 10px 0;
     }
   }
 
@@ -150,21 +143,12 @@
       display: block;
       padding: 10px 0;
     }
-
-    @include mq('phone-2') {
-      padding: 13px 0;
-      font-size: 14px;
-    }
   }
 
   &__logo {
     @include mq('tablet') {
       padding-left: 15px;
       margin-right: 28px;
-    }
-
-    @include mq('phone-2') {
-      margin-right: 10px;
     }
   }
 
@@ -186,18 +170,10 @@
       display: block;
       padding: 15px 0 25px 15px;
     }
-
-    @include mq('phone-2') {
-      font-size: 14px;
-    }
   }
 
   &__btn {
-    position: relative;
-
     display: none;
-    justify-content: center;
-    align-items: center;
     width: 44px;
     height: 44px;
 
@@ -205,6 +181,10 @@
     border-radius: $radius;
 
     transition: background-color 0.3s, box-shadow 0.3s;
+
+    @include mq('tablet') {
+      display: flex;
+    }
 
     &:focus-visible {
       box-shadow: 0 0 0 $shadow-size $shadow-color;
@@ -218,10 +198,6 @@
     }
 
     &--close {
-      @include mq('phone-2') {
-        margin-right: 10px;
-      }
-
       @include mq('tablet') {
         display: flex;
       }
@@ -295,10 +271,6 @@
 
   &__item:not(:last-child) {
     margin-right: 10px;
-
-    @include mq('phone-2') {
-      margin-right: 0;
-    }
   }
 
   &__svg {

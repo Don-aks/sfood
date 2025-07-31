@@ -21,6 +21,12 @@ $radius: 5px;
 $shadow-size: 2px;
 $shadow-color: rgba($primary, 0.7);
 
+$breakpoints: (
+  'phone': 560px,
+  'tablet': 768px,
+  'tablet-2': 992px,
+  'desktop': $container-width,
+);
 %bg {
   background-position: center;
   background-repeat: no-repeat;
