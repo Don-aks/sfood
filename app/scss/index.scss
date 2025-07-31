@@ -110,9 +110,9 @@
   }
 }
 
-// ======= PRODUCTS ======= //
+// ======= PRODUCT-SECTION ======= //
 
-.products {
+.product-section {
   &__tabs {
     margin-bottom: 42px;
 
@@ -264,9 +264,9 @@
   }
 }
 
-// ======= RESTAURANTS ======= //
+// ======= RESTAURANT-SECTION ======= //
 
-.restaurants {
+.restaurant-section {
   padding: 82px 0 60px;
 
   @include mq('tablet') {
