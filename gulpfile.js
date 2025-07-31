@@ -41,9 +41,24 @@ function styles() {
 
 function scripts() {
   return src([
-      'node_modules/swiper/swiper-bundle.js',
-      'app/js/main.js'
-    ])
+    'node_modules/swiper/swiper-bundle.js',
+    'node_modules/choices.js/public/assets/scripts/choices.js',
+    'app/js/libs/dual-range.js',
+    'node_modules/micromodal/dist/micromodal.js',
+
+    'app/js/_utils.js',
+    'app/js/_config.js',
+    'app/js/_header.js',
+    'app/js/_menu.js',
+    'app/js/_esc-closing.js',
+    'app/js/_tabs.js',
+    'app/js/_filters.js',
+    'app/js/_pagination.js',
+    'app/js/_product-count.js',
+    'app/js/_rating-arrows.js',
+
+    'app/js/main.js',
+  ])
     .pipe(concat('main.min.js'))
     .pipe(uglify())
     .pipe(dest('app/js'))
