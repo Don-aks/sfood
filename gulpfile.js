@@ -170,6 +170,7 @@ function watching() {
   watch(['app/**/*.html']).on('change', browserSync.reload);
   watch(['app/img/icons/*.svg'], svgSprites);
   watch(['app/img/icons-original/*.svg'], svgSpritesWithoutRemovingAttributes);
+  watch(['app/html/**/*.html', 'app/components/**/*.html'], htmlInclude);
 }
 
 exports.styles = styles;
