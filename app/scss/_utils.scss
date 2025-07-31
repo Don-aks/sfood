@@ -1,0 +1,29 @@
+@use 'vars' as *;
+
+.lh-title {
+  line-height: $title-lh;
+}
+
+.d-f {
+  display: flex;
+}
+
+.d-if {
+  display: inline-flex;
+}
+
+.jc-c {
+  justify-content: center;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.ai-c {
+  align-items: center;
+}
+
+.d-g {
+  display: grid;
+}
