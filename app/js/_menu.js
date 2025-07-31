@@ -19,6 +19,7 @@ function handleClickOnMenu(e) {
 
       menuOpenBtn.setAttribute('aria-expanded', isActive);
       menuCloseBtn.setAttribute('aria-expanded', isActive);
+      menuCloseBtn.blur();
       menu.setAttribute('aria-hidden', !isActive);
 
       for (let j = 0; j < menuLinksAndBtns.length; j++) {
