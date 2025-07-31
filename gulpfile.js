@@ -34,6 +34,7 @@ function styles() {
         overrideBrowserslist: ['last 10 versions'],
         grid: true,
       })
+    )
     .pipe(dest('app/css/'))
     .pipe(browserSync.stream());
 }
@@ -97,6 +98,38 @@ function svgSprites() {
     .pipe(dest('app/img'));
 }
 
+function svgSpritesWithoutRemovingAttributes() {
+  return src('app/img/icons-original/*.svg')
+    .pipe(
+      cheerio({
+        parserOptions: { xmlMode: true },
+      })
+    )
+    .pipe(
+      svgSprite({
+        mode: {
+          stack: {
+            sprite: '../sprite-original.svg',
+          },
+        },
+      })
+    )
+    .pipe(dest('app/img'));
+}
+
+function htmlInclude() {
+  return src(['app/html/*.html'])
+    .pipe(
+      fileInclude({
+        prefix: '@',
+        basepath: '@file',
+        indent: true,
+      })
+    )
+    .pipe(dest('app'))
+    .pipe(browserSync.stream());
+}
+
 function build() {
   return src(
     [
@@ -121,6 +154,7 @@ function watching() {
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
   watch(['app/**/*.html']).on('change', browserSync.reload);
   watch(['app/img/icons/*.svg'], svgSprites);
+  watch(['app/img/icons-original/*.svg'], svgSpritesWithoutRemovingAttributes);
 }
 
 exports.styles = styles;
