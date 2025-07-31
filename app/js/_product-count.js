@@ -15,3 +15,17 @@ function handleClickOnProductCount(e) {
     productCounter.value = val;
   }
 }
+
+function handleInputChangeOnProductCount() {
+  let val = productCounter.valueAsNumber;
+
+  if (val > productMaxCount) {
+    val = productMaxCount;
+  }
+
+  if (val < productMinCount) {
+    val = productMinCount;
+  }
+
+  productCounter.value = val;
+}

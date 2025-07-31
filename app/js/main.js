@@ -57,3 +57,4 @@ if (selects.length) {
 
 // PRODUCT COUNT
 productWrapper?.addEventListener('click', handleClickOnProductCount);
+productCounter?.addEventListener('input', handleInputChangeOnProductCount);
