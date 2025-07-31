@@ -9,7 +9,7 @@ if (window.innerWidth < 768) {
 }
 
 function handleClickOnFilters(e) {
-  let isActive = filters.classList.contains('filters--active');
+  let isActive = filters?.classList.contains('filters--active');
 
   for (let i = 0; i < filtersBtns.length; i++) {
     if (
