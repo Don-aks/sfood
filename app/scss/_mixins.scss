@@ -10,21 +10,21 @@
     $width: $width - 1px;
   }
 
-  @media only screen and (#{$type}-width: $width) {
+  @media (#{$type}-width: $width) {
     @content;
   }
 }
 
 @mixin pseudo(
-  $width: auto, 
-  $height: auto, 
-  $display: block, 
-  $pos: absolute, 
+  $width: auto,
+  $height: auto,
+  $display: block,
+  $pos: absolute,
   $content: ''
-){
+) {
   content: $content;
   position: $pos;
-  
+
   display: $display;
   @if $width != auto {
     width: $width;
