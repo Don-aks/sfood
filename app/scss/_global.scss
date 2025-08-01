@@ -19,9 +19,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
 
-  font: 400 20px $main-font;
-  line-height: $normal-lh;
-
+  font: 400 20px / #{$normal-lh} $main-font;
   background-color: $white;
   color: $text;
 
