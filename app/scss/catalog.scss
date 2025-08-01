@@ -168,8 +168,11 @@
   }
 
   &__filters {
-    width: 100%;
-    max-width: 270px;
+    @include mq('tablet-2') {
+      width: 100%;
+      max-width: 320px + 15px; // + ширина скроллбара
+    }
+  }
   }
 
   &__wrapper {
