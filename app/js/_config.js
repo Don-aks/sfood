@@ -68,4 +68,23 @@ config.offertsSwiper = {
     prevSlideMessage: 'Попередній слайд',
     nextSlideMessage: 'Наступний слайд',
   },
+
+config.modalSwiper = {
+  keyboard: {
+    enabled: true,
+  },
+  navigation: {
+    prevEl: '.modal-swiper__btn--prev',
+    nextEl: '.modal-swiper__btn--next',
+  },
+  pagination: {
+    el: '.modal-swiper__pagination',
+    type: 'bullets',
+    clickable: true,
+  },
+};
+
+config.modal = {
+  onShow: () => document.body.classList.add('locked'),
+  onClose: () => document.body.classList.remove('locked'),
 };

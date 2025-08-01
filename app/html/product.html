@@ -646,6 +646,37 @@
               </li>
               <li class="offerts__product swiper-slide">
                 <article class="product d-f ai-c">
+      <div
+        class="product-page__modal modal-swiper d-f ai-c"
+        id="modal-product-swiper"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-swiper__overlay d-f ai-c"
+          tabindex="-1"
+          data-micromodal-close
+        >
+          <div
+            class="modal-swiper__inner swiper d-f ai-c"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-product-swiper-title"
+          >
+            <header class="modal-swiper__header">
+              <h2 class="sr-only" id="modal-product-swiper-title">
+                Фото продукту Чізбургер з листям салату
+              </h2>
+              <button
+                class="close-btn modal-swiper__close-btn d-f jc-c ai-c"
+                data-micromodal-close
+              >
+                <span class="close-btn__line modal-swiper__line"></span>
+                <span class="sr-only">Закрити вікно</span>
+              </button>
+            </header>
+            <div class="modal-swiper__carousel swiper">
+              <ul class="modal-swiper__list swiper-wrapper">
+                <li class="modal-swiper__item swiper-slide d-f jc-c ai-c">
                   <img
                     class="product__img"
                     src="img/products/king-cheeseburger.jpg"
@@ -705,6 +736,30 @@
                 </article>
               </li>
             </ul>
+              <div
+                class="swiper-pagination modal-swiper__pagination d-f ai-c jc-c"
+              ></div>
+              <div class="modal-swiper__buttons navigation-arrows">
+                <button
+                  class="modal-swiper__btn modal-swiper__btn--prev navigation-arrows__btn navigation-arrows__btn--prev d-f jc-c ai-c"
+                  type="button"
+                >
+                  <span class="sr-only">Попередній слайд</span>
+                  <svg class="navigation-arrows__icon">
+                    <use xlink:href="img/sprite.svg#swiper-arrow-right"></use>
+                  </svg>
+                </button>
+                <button
+                  class="modal-swiper__btn modal-swiper__btn--next navigation-arrows__btn navigation-arrows__btn--next d-f jc-c ai-c"
+                  type="button"
+                >
+                  <span class="sr-only">Наступний слайд</span>
+                  <svg class="navigation-arrows__icon">
+                    <use xlink:href="img/sprite.svg#swiper-arrow-right"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -5,5 +5,6 @@ document.addEventListener('keydown', function (event) {
     menu?.classList.remove('menu--active');
     filters?.classList.remove('filters--active');
     document.body.classList.remove('locked');
+    MicroModal.close('modal-product-swiper');
   }
 });

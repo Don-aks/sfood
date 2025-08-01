@@ -9,8 +9,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "swiper": "^11.2.6",
     "choices.js": "^11.1.0",
-    "swiper": "^11.2.6"
+    "micromodal": "^0.6.1"
   },
   "devDependencies": {
     "browser-sync": "^3.0.3",

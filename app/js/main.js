@@ -36,6 +36,7 @@ function loadRestaurantsSwiper() {
 }
 
 new Swiper('.product-swiper', config.productSwiper);
+new Swiper('.modal-swiper__carousel', config.modalSwiper);
 
 // RANGE
 const inputMin = getEl('.js-input-min');
@@ -54,6 +55,9 @@ if (selects.length) {
     new Choices(select, config.select);
   }
 }
+
+// MODAL
+MicroModal.init(config.modal);
 
 // PRODUCT COUNT
 productWrapper?.addEventListener('click', handleClickOnProductCount);
