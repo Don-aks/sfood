@@ -412,33 +412,91 @@
               </ul>
               <div class="product-page__review-form review-form">
                 <h3 class="product-page__reviews-title">Залишити відгук</h3>
-                <form class="review-form__form d-f ai-c jc-sb" action="#">
-                  <label class="review-form__label" for="review-rating">
-                    Ваша оцінка *
-                  </label>
-                  <select
-                    class="review-form__select js-review-rating"
-                    name="rating"
-                    id="review-rating"
-                    required
+                <form class="review-form__form" action="#">
+                  <div
+                    class="review-form__rating rating rating--with-choice d-f ai-c"
+                    role="radiogroup"
+                    aria-labelledby="review-rating-legend"
                   >
-                    <option value="" disabled selected>Оцінка продукту</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select>
-                  <div class="review-form__info">
-                    <label class="sr-only" for="review-author">Ім’я</label>
-                    <input
-                      class="input review-form__input"
-                      type="text"
-                      name="author"
-                      id="review-author"
-                      placeholder="Введіть ваше ім’я"
-                      autocomplete="name"
-                    />
+                    <span
+                      class="review-form__rating-label"
+                      id="review-rating-legend"
+                    >
+                      Ваша оцінка *
+                    </span>
+
+                    <div class="rating__container d-f">
+                      <input
+                        class="rating__input sr-only"
+                        type="radio"
+                        name="review-rating"
+                        id="review-star-5"
+                        value="5"
+                        required
+                      />
+                      <label class="rating__label" for="review-star-5">
+                        <span class="sr-only">Оцінка 5</span>
+                        <svg class="rating__star">
+                          <use xlink:href="img/sprite.svg#star"></use>
+                        </svg>
+                      </label>
+
+                      <input
+                        class="rating__input sr-only"
+                        type="radio"
+                        name="review-rating"
+                        id="review-star-4"
+                        value="4"
+                      />
+                      <label class="rating__label" for="review-star-4">
+                        <span class="sr-only">Оцінка 4</span>
+                        <svg class="rating__star">
+                          <use xlink:href="img/sprite.svg#star"></use>
+                        </svg>
+                      </label>
+
+                      <input
+                        class="rating__input sr-only"
+                        type="radio"
+                        name="review-rating"
+                        id="review-star-3"
+                        value="3"
+                      />
+                      <label class="rating__label" for="review-star-3">
+                        <span class="sr-only">Оцінка 3</span>
+                        <svg class="rating__star">
+                          <use xlink:href="img/sprite.svg#star"></use>
+                        </svg>
+                      </label>
+
+                      <input
+                        class="rating__input sr-only"
+                        type="radio"
+                        name="review-rating"
+                        id="review-star-2"
+                        value="2"
+                      />
+                      <label class="rating__label" for="review-star-2">
+                        <span class="sr-only">Оцінка 2</span>
+                        <svg class="rating__star">
+                          <use xlink:href="img/sprite.svg#star"></use>
+                        </svg>
+                      </label>
+
+                      <input
+                        class="rating__input sr-only"
+                        type="radio"
+                        name="review-rating"
+                        id="review-star-1"
+                        value="1"
+                      />
+                      <label class="rating__label" for="review-star-1">
+                        <span class="sr-only">Оцінка 1</span>
+                        <svg class="rating__star">
+                          <use xlink:href="img/sprite.svg#star"></use>
+                        </svg>
+                      </label>
+                    </div>
                   </div>
                   <div class="review-form__info">
                     <label class="sr-only" for="review-email">Email *</label>

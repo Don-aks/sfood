@@ -305,6 +305,70 @@ input {
   }
 }
 
+.rating {
+  position: relative;
+  width: $stars-count * ($star-size + $stars-gap);
+
+  &--with-choice {
+    .rating__container {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(var(--rating) / #{$stars-count} * 100%);
+    height: 100%;
+
+    background: $star;
+    mask-image: url(../img/sprite.svg#star);
+    mask-repeat: repeat-x;
+    mask-size: ($star-size + $stars-gap) $star-size;
+  }
+
+  &__container {
+    gap: $stars-gap;
+    height: $star-size;
+    vertical-align: top;
+
+    &:has(.rating__input:focus-visible) {
+      box-shadow: 0 0 0 $shadow-size $shadow-color;
+      border-radius: $radius;
+    }
+  }
+
+  &__star {
+    display: block;
+    width: $star-size;
+    height: $star-size;
+
+    fill: rgba($silver-4, 0.3);
+
+    &:not(:last-child) {
+      margin-right: $stars-gap;
+    }
+  }
+
+  &__input {
+    &:focus-visible {
+      & + .rating__label .rating__star,
+      & ~ .rating__label .rating__star {
+        fill: $star;
+      }
+    }
+
+    &:checked {
+      & + .rating__label .rating__star,
+      & ~ .rating__label .rating__star {
+        fill: $star;
+      }
+    }
+  }
+}
+
 .animation-link {
   transition: color 0.3s;
 
