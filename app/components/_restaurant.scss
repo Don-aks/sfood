@@ -25,7 +25,6 @@
   @include mq('tablet') {
     width: 100%;
     max-width: 370px;
-    // max-height: 422px;
   }
 
   &__img {
@@ -73,11 +72,9 @@
 
   &__info {
     align-items: flex-start;
-    // margin-top: 22px;
 
     @include mq('tablet-2') {
       align-items: center;
-      // margin-top: 10px;
     }
   }
 
