@@ -570,17 +570,27 @@
           <h2 class="title title--in-catalog offerts__title">
             Вас може зацікавити
           </h2>
+          <div class="offerts__navigation swiper-navigation d-f ai-c">
+            <button
+              class="swiper-navigation__btn swiper-navigation__btn--prev offerts__btn offerts__btn--prev d-f jc-c ai-c"
+              type="button"
+            >
+              <span class="sr-only">Попередній слайд</span>
+              <svg class="swiper-navigation__svg">
+                <use xlink:href="img/sprite.svg#prev-arrow"></use>
+              </svg>
+            </button>
+            <button
+              class="swiper-navigation__btn swiper-navigation__btn--next offerts__btn offerts__btn--next d-f jc-c ai-c"
+              type="button"
+            >
+              <span class="sr-only">Наступний слайд</span>
+              <svg class="swiper-navigation__svg">
+                <use xlink:href="img/sprite.svg#prev-arrow"></use>
+              </svg>
+            </button>
+          </div>
           <div class="offerts__inner swiper">
-            <div class="pfferts__navigation swiper-navigation">
-              <button
-                class="offerts__arrow offerts__arrow--prev"
-                type="button"
-              ></button>
-              <button
-                class="offerts__arrow offerts__arrow--next"
-                type="button"
-              ></button>
-            </div>
             <ul class="offerts__list swiper-wrapper d-f jc-sb">
               <li class="offerts__product swiper-slide">
                 <article class="product d-f ai-c">
@@ -702,28 +712,14 @@
                   </button>
                 </article>
               </li>
-              <li class="offerts__product swiper-slide">
-                <article class="product d-f ai-c jc-sb">
-                  <img
-                    class="product__img"
-                    src="img/products/beefburger.jpg"
-                    loading="lazy"
-                    alt="Біфбургер"
-                    width="140"
-                    height="140"
-                  />
-                  <h3 class="product__name">Біфбургер</h3>
-                  <span class="product__price">
-                    190
-                    <span class="product__currency">грн.</span>
-                  </span>
-                  <button class="btn product__btn" type="button">
-                    До кошика
-                  </button>
-                </article>
-              </li>
-              <li class="offerts__product swiper-slide">
-                <article class="product d-f ai-c">
+            </ul>
+            <div
+              class="swiper-pagination offerts__pagination d-f jc-c ai-c"
+            ></div>
+          </div>
+        </div>
+      </section>
+
       <div
         class="product-page__modal modal-swiper d-f ai-c"
         id="modal-product-swiper"
@@ -756,64 +752,32 @@
               <ul class="modal-swiper__list swiper-wrapper">
                 <li class="modal-swiper__item swiper-slide d-f jc-c ai-c">
                   <img
-                    class="product__img"
-                    src="img/products/king-cheeseburger.jpg"
-                    loading="lazy"
-                    alt="Королівський чізбургер"
-                    width="140"
-                    height="140"
+                    class="modal-swiper__img"
+                    src="img/products/cheeseburger-with-lettuce-leaves-big.jpg"
+                    alt="Чізбургер з листям салату"
+                    width="750"
+                    height="750"
                   />
-                  <h3 class="product__name">Королівський чізбургер</h3>
-                  <span class="product__price">
-                    260
-                    <span class="product__currency">грн.</span>
-                  </span>
-                  <button class="btn product__btn" type="button">
-                    До кошика
-                  </button>
-                </article>
-              </li>
-              <li class="offerts__product swiper-slide">
-                <article class="product d-f ai-c">
+                </li>
+                <li class="modal-swiper__item swiper-slide d-f jc-c ai-c">
                   <img
-                    class="product__img"
-                    src="img/products/black-burger.jpg"
-                    loading="lazy"
-                    alt="Чорний гамбургер"
-                    width="140"
-                    height="140"
+                    class="modal-swiper__img"
+                    src="img/products/cheeseburger-with-lettuce-leaves-big.jpg"
+                    alt="Чізбургер з листям салату"
+                    width="750"
+                    height="750"
                   />
-                  <h3 class="product__name">Чорний гамбургер</h3>
-                  <span class="product__price">
-                    199
-                    <span class="product__currency">грн.</span>
-                  </span>
-                  <button class="btn product__btn" type="button">
-                    До кошика
-                  </button>
-                </article>
-              </li>
-              <li class="offerts__product swiper-slide">
-                <article class="product d-f ai-c">
+                </li>
+                <li class="modal-swiper__item swiper-slide d-f jc-c ai-c">
                   <img
-                    class="product__img"
-                    src="img/products/chickenburger.jpg"
-                    loading="lazy"
-                    alt="Чікен бургер"
-                    width="140"
-                    height="140"
+                    class="modal-swiper__img"
+                    src="img/products/cheeseburger-with-lettuce-leaves-big.jpg"
+                    alt="Чізбургер з листям салату"
+                    width="750"
+                    height="750"
                   />
-                  <h3 class="product__name">Чікен бургер</h3>
-                  <span class="product__price">
-                    180
-                    <span class="product__currency">грн.</span>
-                  </span>
-                  <button class="btn product__btn" type="button">
-                    До кошика
-                  </button>
-                </article>
-              </li>
-            </ul>
+                </li>
+              </ul>
               <div
                 class="swiper-pagination modal-swiper__pagination d-f ai-c jc-c"
               ></div>
@@ -840,7 +804,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </main>
 
     @include('../components/_footer.html')
