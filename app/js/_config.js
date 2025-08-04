@@ -14,8 +14,8 @@ config.range = {
 
 config.reviewsSwiper = {
   navigation: {
-    nextEl: '.reviews-slider__btn--next',
     prevEl: '.reviews-slider__btn--prev',
+    nextEl: '.reviews-slider__btn--next',
   },
   pagination: {
     el: '.reviews-slider__pagination',
