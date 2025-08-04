@@ -48,10 +48,10 @@ config.restaurantsSwiper = {
   },
 };
 
-config.productSwiper = {
+config.productGallerySwiper = {
   navigation: {
-    nextEl: '.product-swiper__btn--next',
-    prevEl: '.product-swiper__btn--prev',
+    prevEl: '.product-gallery__btn--prev',
+    nextEl: '.product-gallery__btn--next',
   },
   a11y: {
     prevSlideMessage: 'Попередній слайд',
