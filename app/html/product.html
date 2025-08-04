@@ -518,46 +518,65 @@
                       </label>
                     </div>
                   </div>
-                  <div class="review-form__info">
-                    <label class="sr-only" for="review-email">Email *</label>
-                    <input
-                      class="input review-form__input"
-                      type="email"
-                      autocomplete="email"
-                      name="author"
-                      id="review-email"
-                      placeholder="youremail@mail.com"
-                      required
-                    />
-                  </div>
-                  <div class="review-form__textarea-wrapper">
-                    <label class="sr-only" for="review-textarea">
-                      Текст відгуку
+
+                  <div class="review-form__row d-f">
+                    <label
+                      class="review-form__label review-form__message-label d-f"
+                    >
+                      Ваш відгук *
+                      <textarea
+                        class="input review-form__field review-form__textarea"
+                        name="text"
+                        placeholder="Ваш відгук про товар..."
+                        autocomplete="off"
+                        required
+                      ></textarea>
                     </label>
-                    <textarea
-                      class="input review-form__textarea"
-                      name="text"
-                      id="review-textarea"
-                      placeholder="Ваш відгук про товар..."
-                      autocomplete="off"
-                      required
-                    ></textarea>
+                    <div class="review-form__column">
+                      <div class="review-form__cell">
+                        <label class="review-form__label">
+                          Ім’я
+                          <input
+                            class="input review-form__field"
+                            type="text"
+                            name="author"
+                            placeholder="Введіть ваше ім’я"
+                            autocomplete="name"
+                          />
+                        </label>
+                      </div>
+                      <div class="review-form__cell">
+                        <label class="review-form__label">
+                          Email *
+                          <input
+                            class="input review-form__field"
+                            type="email"
+                            name="email"
+                            placeholder="youremail@mail.com"
+                            autocomplete="email"
+                            required
+                          />
+                        </label>
+                      </div>
+                    </div>
                   </div>
-                  <label>
-                    <input
-                      class="review-form__checkbox js-review-checkbox"
-                      id="review-checkbox"
-                      type="checkbox"
-                    />
-                    Зберегти моє ім’я, email та адресу сайта в цьому браузері
-                    для наступних моїх коментарів.
-                  </label>
-                  <button
-                    class="btn review-form__btn btn--primary d-f ai-c jc-c js-review-submit"
-                    type="submit"
-                  >
-                    Залишити відгук
-                  </button>
+                  <div class="review-form__cell review-form__checkbox-cell">
+                    <label class="review-form__checkbox-label d-if lh-title">
+                      <input
+                        class="sr-only review-form__checkbox-input checkbox-input"
+                        name="is-save"
+                        type="checkbox"
+                      />
+                      <span class="checkbox review-form__checkbox"></span>
+                      Зберегти моє ім’я, email та адресу сайта в цьому браузері
+                      для наступних моїх коментарів.
+                    </label>
+                  </div>
+                  <div class="review-form__cell">
+                    <button class="btn review-form__btn" type="submit">
+                      Залишити відгук
+                    </button>
+                  </div>
                 </form>
               </div>
             </section>
