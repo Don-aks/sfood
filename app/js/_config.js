@@ -28,7 +28,6 @@ config.reviewsSwiper = {
   breakpoints: {
     320: {
       pagination: {
-        el: null,
         enabled: false,
       },
     },
