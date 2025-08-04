@@ -36,6 +36,7 @@ function loadRestaurantsSwiper() {
 }
 
 new Swiper('.product-gallery', config.productGallerySwiper);
+new Swiper('.offerts__inner', config.offertsSwiper);
 new Swiper('.modal-swiper__carousel', config.modalSwiper);
 
 // RANGE

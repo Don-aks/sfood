@@ -60,14 +60,57 @@ config.productGallerySwiper = {
 };
 
 config.offertsSwiper = {
+  slidesPerView: 2,
+  slidesPerGroup: 2,
+  spaceBetween: 5,
+  simulateTouch: false,
+  keyboard: {
+    enabled: true,
+  },
   navigation: {
-    nextEl: '.product-swiper__btn--next',
-    prevEl: '.product-swiper__btn--prev',
+    prevEl: '.offerts__btn--prev',
+    nextEl: '.offerts__btn--next',
   },
-  a11y: {
-    prevSlideMessage: 'Попередній слайд',
-    nextSlideMessage: 'Наступний слайд',
+  pagination: {
+    el: '.offerts__pagination',
+    type: 'bullets',
+    clickable: true,
+    enabled: true,
   },
+  breakpoints: {
+    320: {
+      pagination: {
+        el: '.offerts__pagination',
+        type: 'bullets',
+        clickable: true,
+      },
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 5,
+    },
+
+    560: {
+      slidesPerView: 3,
+      pagination: {
+        el: null,
+        enabled: false,
+      },
+    },
+
+    768: {
+      slidesPerView: 4,
+    },
+
+    992: {
+      spaceBetween: 15,
+    },
+
+    1200: {
+      spaceBetween: 30,
+      slidesPerView: 5,
+    },
+  },
+};
 
 config.modalSwiper = {
   keyboard: {
