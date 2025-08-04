@@ -294,6 +294,11 @@
   border-radius: $radius;
   box-shadow: 0 0 0 1px $shadow;
   aspect-ratio: 609 / 550;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
 
   @include mq('desktop') {
     height: auto;
