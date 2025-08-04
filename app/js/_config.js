@@ -22,6 +22,9 @@ config.reviewsSwiper = {
     type: 'bullets',
     clickable: true,
   },
+  keyboard: {
+    enabled: true,
+  },
   breakpoints: {
     320: {
       pagination: {
@@ -46,6 +49,9 @@ config.restaurantsSwiper = {
     type: 'bullets',
     clickable: true,
   },
+  keyboard: {
+    enabled: true,
+  },
 };
 
 config.productGallerySwiper = {
@@ -53,9 +59,8 @@ config.productGallerySwiper = {
     prevEl: '.product-gallery__btn--prev',
     nextEl: '.product-gallery__btn--next',
   },
-  a11y: {
-    prevSlideMessage: 'Попередній слайд',
-    nextSlideMessage: 'Наступний слайд',
+  keyboard: {
+    enabled: true,
   },
 };
 
