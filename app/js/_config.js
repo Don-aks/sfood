@@ -12,6 +12,17 @@ config.range = {
   label: () => '',
 };
 
+config.restaurantsSwiper = {
+  pagination: {
+    el: '.restaurant-swiper__pagination',
+    type: 'bullets',
+    clickable: true,
+  },
+  keyboard: {
+    enabled: true,
+  },
+};
+
 config.reviewsSwiper = {
   navigation: {
     prevEl: '.reviews-slider__btn--prev',
@@ -39,17 +50,6 @@ config.reviewsSwiper = {
         clickable: true,
       },
     },
-  },
-};
-
-config.restaurantsSwiper = {
-  pagination: {
-    el: '.restaurant-swiper__pagination',
-    type: 'bullets',
-    clickable: true,
-  },
-  keyboard: {
-    enabled: true,
   },
 };
 
