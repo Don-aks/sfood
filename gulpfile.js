@@ -54,6 +54,7 @@ function scripts() {
     'app/js/_tabs.js',
     'app/js/_filters.js',
     'app/js/_pagination.js',
+    'app/js/_modal-swiper.js',
     'app/js/_product-count.js',
     'app/js/_rating-arrows.js',
 

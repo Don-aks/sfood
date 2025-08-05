@@ -6,10 +6,16 @@ function debounce(func) {
   };
 }
 
-function getEl(selector) {
-  return document.querySelector(selector);
+function getEl(selector, context = document) {
+  return context.querySelector(selector);
 }
 
-function getAllEls(selector) {
-  return document.querySelectorAll(selector);
+function getAllEls(selector, context = document) {
+  return context.querySelectorAll(selector);
+}
+
+function setTabIndex(elements, tabindex) {
+  for (let j = 0; j < elements.length; j++) {
+    elements[j].setAttribute('tabindex', tabindex);
+  }
 }

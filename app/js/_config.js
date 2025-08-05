@@ -131,7 +131,7 @@ config.modalSwiper = {
   },
 };
 
-config.modal = {
-  onShow: () => document.body.classList.add('locked'),
-  onClose: () => document.body.classList.remove('locked'),
-};
+// config.modal = {
+//   onShow: () => document.body.classList.add('locked'),
+//   onClose: () => document.body.classList.remove('locked'),
+// };
