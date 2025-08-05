@@ -96,13 +96,13 @@ config.offertsSwiper = {
     560: {
       slidesPerView: 3,
       pagination: {
-        el: null,
         enabled: false,
       },
     },
 
     768: {
       slidesPerView: 4,
+      slidesPerGroup: 1,
     },
 
     992: {
