@@ -52,6 +52,7 @@ function scripts() {
     'app/js/_menu.js',
     'app/js/_esc-closing.js',
     'app/js/_tabs.js',
+    'app/js/_swiper.js',
     'app/js/_filters.js',
     'app/js/_pagination.js',
     'app/js/_modal-swiper.js',

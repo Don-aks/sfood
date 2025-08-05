@@ -20,24 +20,8 @@ let restaurantsSwiper;
 loadRestaurantsSwiper();
 window.addEventListener('resize', debounce(loadRestaurantsSwiper));
 
-function loadRestaurantsSwiper() {
-  if (window.innerWidth <= 768) {
-    if (getEl('.restaurant-swiper.swiper-initialized')) {
-      return;
-    }
-
-    restaurantsSwiper = new Swiper(
-      '.restaurant-swiper',
-      config.restaurantsSwiper
-    );
-  } else if (getEl('.restaurant-swiper.swiper-initialized')) {
-    restaurantsSwiper.destroy();
-  }
-}
-
 new Swiper('.product-gallery', config.productGallerySwiper);
 new Swiper('.offerts__inner', config.offertsSwiper);
-new Swiper('.modal-swiper__carousel', config.modalSwiper);
 
 // RANGE
 const inputMin = getEl('.js-input-min');
