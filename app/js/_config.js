@@ -13,6 +13,8 @@ config.range = {
 };
 
 config.restaurantsSwiper = {
+  spaceBetween: 15,
+
   pagination: {
     el: '.restaurant-swiper__pagination',
     type: 'bullets',
@@ -24,6 +26,8 @@ config.restaurantsSwiper = {
 };
 
 config.reviewsSwiper = {
+  spaceBetween: 15,
+
   navigation: {
     prevEl: '.reviews-slider__btn--prev',
     nextEl: '.reviews-slider__btn--next',
