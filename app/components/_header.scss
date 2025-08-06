@@ -197,8 +197,8 @@
     }
 
     &--close {
-      @include mq('tablet') {
-        display: flex;
+      .menu__btn-line {
+        background-color: transparent;
       }
     }
   }
