@@ -1,5 +1,5 @@
 const filters = getEl('.filters');
-const filtersLinksAndBtns = getAllEls('.filters a, .filters button');
+const filtersLinksAndBtns = getAllEls('a, button', filters);
 const filtersOpenBtn = getEl('.filters-btn');
 const filtersCloseBtn = getEl('.filters__btn');
 const filtersBtns = [filtersOpenBtn, filtersCloseBtn];

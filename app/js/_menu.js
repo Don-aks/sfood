@@ -1,6 +1,6 @@
 const body = document.body;
 const menu = getEl('.menu--mobile');
-const menuLinksAndBtns = getAllEls('.menu--mobile a, .menu--mobile button');
+const menuLinksAndBtns = getAllEls('a, button', menu);
 const menuOpenBtn = getEl('.menu__btn');
 const menuCloseBtn = getEl('.menu__btn--close');
 const menuBtns = [menuOpenBtn, menuCloseBtn];
