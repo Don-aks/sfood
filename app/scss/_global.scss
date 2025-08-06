@@ -71,6 +71,14 @@ body {
   }
 }
 
+.tab-content {
+  display: none;
+
+  &--active {
+    display: block;
+  }
+}
+
 .swiper-navigation {
   position: absolute;
   bottom: 2px;
