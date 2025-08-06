@@ -15,11 +15,9 @@ function getAllEls(selector, context = document) {
 }
 
 function setTabIndex(elements, tabindex) {
-  if (!elements || !elements.length) return;
-
-  for (let j = 0; j < elements.length; j++) {
-    elements[j].setAttribute('tabindex', tabindex);
-  }
+  elements?.forEach(el => {
+    el?.setAttribute('tabindex', tabindex);
+  });
 }
 
 function blurEls(elements) {
