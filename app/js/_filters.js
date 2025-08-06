@@ -26,6 +26,7 @@ function handleClickOnFilters(e) {
       filters.setAttribute('aria-hidden', !isActive);
 
       filtersSetTabIndex(isActive ? '0' : '-1');
+      blurEls(menuLinksAndBtns);
       return;
     }
   }
@@ -40,5 +41,6 @@ function handleClickOnFilters(e) {
 function filtersSetTabIndex(tabindex) {
   for (let j = 0; j < filtersLinksAndBtns.length; j++) {
     filtersLinksAndBtns[j].setAttribute('tabindex', tabindex);
+    blurEls(filtersLinksAndBtns);
   }
 }

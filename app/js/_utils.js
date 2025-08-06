@@ -22,6 +22,12 @@ function setTabIndex(elements, tabindex) {
   }
 }
 
+function blurEls(elements) {
+  elements?.forEach(el => {
+    el?.blur();
+  });
+}
+
 function hideFromSR(btns, el) {
   btns?.forEach(btn => {
     btn?.setAttribute('aria-expanded', 'false');
