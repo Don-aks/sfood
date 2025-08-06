@@ -233,7 +233,17 @@
               </div>
               <div
                 class="hero__background"
-                style="background-image: url('img/scooter_guy.png')"
+                style="
+                  background-image: url('img/scooter_guy.png');
+                  background-image: image-set(
+                    url('img/scooter_guy.webp') type('image/webp'),
+                    url('img/scooter_guy.png') type('image/png')
+                  );
+                  background-image: -webkit-image-set(
+                    url('img/scooter_guy.webp') type('image/webp'),
+                    url('img/scooter_guy.jpg') type('image/png')
+                  );
+                "
               ></div>
             </div>
           </div>
