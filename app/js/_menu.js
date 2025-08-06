@@ -17,14 +17,11 @@ function handleClickOnMenu(e) {
       menu.classList.toggle('menu--active');
       isActive = !isActive;
 
-      menuOpenBtn.setAttribute('aria-expanded', isActive);
-      menuCloseBtn.setAttribute('aria-expanded', isActive);
-      menu.setAttribute('aria-hidden', !isActive);
+      if (isActive) showToSR(menuBtns, menu);
+      else hideFromSR(menuBtns, menu);
 
-      for (let j = 0; j < menuLinksAndBtns.length; j++) {
-        menuLinksAndBtns[j].setAttribute('tabindex', isActive ? '0' : '-1');
-      }
       blurEls(menuLinksAndBtns);
+      setTabIndex(menuLinksAndBtns, isActive ? '0' : '-1');
       return;
     }
   }
@@ -33,8 +30,8 @@ function handleClickOnMenu(e) {
     body.classList.remove('locked');
     menu.classList.remove('menu--active');
 
-    for (let j = 0; j < menuLinksAndBtns.length; j++) {
-      menuLinksAndBtns[j].setAttribute('tabindex', '-1');
-    }
+    setTabIndex(menuLinksAndBtns, '-1');
+    blurEls(menuLinksAndBtns);
+    hideFromSR(menuBtns, menu);
   }
 }

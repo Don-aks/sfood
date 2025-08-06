@@ -5,7 +5,8 @@ const filtersCloseBtn = getEl('.filters__btn');
 const filtersBtns = [filtersOpenBtn, filtersCloseBtn];
 
 if (window.innerWidth < 768) {
-  filtersSetTabIndex('-1');
+  setTabIndex(filtersLinksAndBtns, '-1');
+  hideFromSR(filtersBtns, filters);
 }
 
 function handleClickOnFilters(e) {
@@ -21,12 +22,11 @@ function handleClickOnFilters(e) {
       filters.classList.toggle('filters--active');
       isActive = !isActive;
 
-      filtersOpenBtn.setAttribute('aria-expanded', isActive);
-      filtersCloseBtn.setAttribute('aria-expanded', isActive);
-      filters.setAttribute('aria-hidden', !isActive);
+      if (isActive) showToSR(menuBtns, menu);
+      else hideFromSR(menuBtns, menu);
 
-      filtersSetTabIndex(isActive ? '0' : '-1');
       blurEls(menuLinksAndBtns);
+      setTabIndex(filtersLinksAndBtns, isActive ? '0' : '-1');
       return;
     }
   }
@@ -34,13 +34,7 @@ function handleClickOnFilters(e) {
   if (isActive && !(e.target.closest('.filters') === filters)) {
     body.classList.remove('locked');
     filters.classList.remove('filters--active');
-    filtersSetTabIndex('-1');
-  }
-}
 
-function filtersSetTabIndex(tabindex) {
-  for (let j = 0; j < filtersLinksAndBtns.length; j++) {
-    filtersLinksAndBtns[j].setAttribute('tabindex', tabindex);
     blurEls(filtersLinksAndBtns);
   }
 }
