@@ -68,7 +68,7 @@ function scripts() {
 }
 
 function images() {
-  return src('app/img/**/*.*')
+  return src(['app/img/**/*.*', '!**/icons/**', '!**/icons-original/**'])
     .pipe(
       imagemin([
         imagemin.gifsicle({ interlaced: true }),
@@ -150,9 +150,10 @@ function htmlInclude() {
 function build() {
   return src(
     [
-      'app/**/*.html',
-      'app/css/style.min.css',
+      'app/*.html',
+      'app/fonts/**/*',
       'app/css/index.min.css',
+      'app/css/catalog.min.css',
       'app/css/product.min.css',
       'app/js/main.min.js',
     ],
