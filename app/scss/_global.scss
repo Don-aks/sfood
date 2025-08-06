@@ -50,6 +50,11 @@ body {
 
 .page {
   flex: 1 0 auto;
+  padding-top: 159px;
+
+  @include mq('tablet') {
+    padding-top: 66px;
+  }
 }
 
 .container {
