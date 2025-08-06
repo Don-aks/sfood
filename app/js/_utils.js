@@ -21,3 +21,17 @@ function setTabIndex(elements, tabindex) {
     elements[j].setAttribute('tabindex', tabindex);
   }
 }
+
+function hideFromSR(btns, el) {
+  btns?.forEach(btn => {
+    btn?.setAttribute('aria-expanded', 'false');
+  });
+  el?.setAttribute('aria-hidden', 'true');
+}
+
+function showToSR(btns, el) {
+  btns?.forEach(btn => {
+    btn?.setAttribute('aria-expanded', 'true');
+  });
+  el?.setAttribute('aria-hidden', 'false');
+}
