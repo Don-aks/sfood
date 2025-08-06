@@ -306,53 +306,7 @@
 
   @include mq('phone') {
     height: 345px;
-    aspect-ratio: 1 / 1;
-  }
-
-  &__btn {
-    position: absolute;
-    top: 50%;
-    left: 25px;
-    z-index: 1;
-
-    width: 60px;
-    height: 60px;
-
-    transform: translateY(-50%) rotate(180deg);
-
-    @include mq('desktop') {
-      left: 0;
-    }
-
-    @include mq('phone') {
-      display: none;
-    }
-
-    &--next {
-      left: auto;
-      right: 25px;
-      transform: translateY(-50%);
-
-      @include mq('desktop') {
-        right: 0;
-      }
-    }
-
-    &.swiper-button-disabled {
-      .product-swiper__icon {
-        fill: $silver-4;
-      }
-    }
-  }
-
-  &__icon {
-    width: 19px;
-    height: 32px;
-
-    fill: $text-2;
-    transition: fill 0.3s;
-  }
-}
+    aspect-ratio: 1;
   }
 }
 
