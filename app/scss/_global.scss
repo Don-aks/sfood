@@ -459,7 +459,6 @@ body {
 }
 
 .btn {
-  display: inline-block;
   padding: 12px 32px 8px;
 
   font-size: 18px;
@@ -468,17 +467,19 @@ body {
   color: $white;
   border-radius: 6px;
 
-  transition: background-color 0.3s, 
-              color 0.3s, 
-              box-shadow 0.3s;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 
   &:focus-visible {
     box-shadow: 0 0 0 $shadow-size $shadow-color;
     background-color: rgba($primary, 0.1);
     color: $primary;
 
-    .btn__svg {
+    .btn__svg:not(.btn__svg--stroke) {
       fill: $primary;
+    }
+
+    .btn__svg--stroke {
+      stroke: $primary;
     }
   }
 
@@ -487,10 +488,14 @@ body {
       background-color: rgba($white, 0.2);
       color: $primary;
       box-shadow: 0 0 0 $shadow-size $shadow-color,
-                  0 5px 12px 0 rgba($primary, 0.2);
-      
-      .btn__svg {
+        0 5px 12px 0 rgba($primary, 0.2);
+
+      .btn__svg:not(.btn__svg--stroke) {
         fill: $primary;
+      }
+
+      .btn__svg--stroke {
+        stroke: $primary;
       }
     }
   }
@@ -500,8 +505,12 @@ body {
     background-color: rgba($primary, 0.1);
     box-shadow: none;
 
-    .btn__svg {
+    .btn__svg:not(.btn__svg--stroke) {
       fill: $primary;
+    }
+
+    .btn__svg--stroke {
+      stroke: $primary;
     }
   }
 
