@@ -464,11 +464,8 @@
 }
 
 .sales {
-  &__inner {
-    margin: 0 -25px -21px 0;
-  }
-
   &__list {
+    gap: 21px 31px;
     height: 100%;
 
     @include mq('desktop') {
@@ -484,7 +481,6 @@
   &__restaurant {
     height: auto;
     max-width: 370px;
-    margin: 0 25px 31px 0;
 
     @include mq('tablet') {
       display: flex;

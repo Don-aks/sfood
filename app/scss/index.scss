@@ -137,7 +137,9 @@
       }
 
       @include mq('phone') {
-        margin: 0 -5px 20px 0;
+        margin-bottom: 32px;
+        column-gap: 5px;
+        row-gap: 10px;
       }
     }
   }
