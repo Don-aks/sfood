@@ -536,6 +536,7 @@ body {
   &:active {
     color: $text;
     text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.5);
+    box-shadow: none;
   }
 }
 
