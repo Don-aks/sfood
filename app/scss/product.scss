@@ -450,9 +450,69 @@
 
 .review-form {
   padding-top: 30px;
+  font-size: 20px;
 
   @include mq('phone') {
     padding-top: 23px;
+  }
+
+  &__rating {
+    width: auto;
+    margin-bottom: 20px;
+  }
+
+  &__rating-label {
+    margin-right: 21px;
+  }
+
+  &__row {
+    gap: 30px;
+    margin-bottom: 30px;
+
+    @include mq('phone') {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__message-label {
+    flex-direction: column;
+    width: min(100%, 400px);
+
+    @include mq('phone') {
+      width: 100%;
+      height: 206px;
+    }
+  }
+
+  &__field {
+    display: block;
+    margin-top: 15px;
+
+    @include mq('phone') {
+      width: 100%;
+    }
+  }
+
+  &__textarea {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__cell:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__checkbox-cell:not(:last-child) {
+    margin-bottom: 30px;
+
+    @include mq('phone') {
+      font-size: 18px;
+    }
+  }
+
+  &__checkbox {
+    flex-shrink: 0;
   }
 }
 
