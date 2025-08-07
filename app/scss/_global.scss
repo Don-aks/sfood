@@ -456,6 +456,29 @@ body {
   }
 }
 
+
+.checkbox {
+  display: block;
+  width: 23px;
+  height: 23px;
+  margin-right: 12px;
+
+  background-color: rgba($primary, 0.2);
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+.checkbox-input:focus-visible + .checkbox {
+  border-color: $primary;
+}
+
+.checkbox-input:checked + .checkbox {
+  @extend %bg-contain-center;
+  background-image: url('../img/sprite-original.svg#check');
+  background-size: 12px 8px;
+  border-color: $text-2;
+}
+
 .rating {
   position: relative;
   width: $stars-count * ($star-size + $stars-gap);
