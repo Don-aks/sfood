@@ -466,7 +466,6 @@
 .sales {
   &__inner {
     margin: 0 -25px -21px 0;
-    // overflow: visible;
   }
 
   &__list {
@@ -479,7 +478,6 @@
     @include mq('tablet') {
       justify-content: start;
       flex-wrap: nowrap;
-      // overflow: hidden;
     }
   }
 
