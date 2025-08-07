@@ -162,8 +162,6 @@ body {
   }
 }
 
-.pagination {
-  margin-right: 18px;
 .navigation-arrows {
   &__btn {
     position: absolute;
@@ -347,6 +345,68 @@ body {
     }
   }
 }
+
+.pagination {
+  border-radius: $radius;
+
+  &__prev {
+    margin-right: 6px;
+  }
+
+  &__item {
+    margin-right: 6px;
+
+    &--hidden-on-mobile {
+      @include mq('phone') {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    width: 48px;
+    height: 48px;
+
+    background-color: rgba($primary, 0.1);
+    border-radius: 3px;
+
+    transition: background-color 0.3s, color 0.3s;
+
+    &--active {
+      border: 1px solid $text-2;
+    }
+
+    &--disabled {
+      color: $silver-2;
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 $shadow-size $shadow-color;
+    }
+
+    @media (any-hover: hover) {
+      &:hover:not(&--active, &--disabled) {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+
+    &:active:not(&--active, &--disabled) {
+      background-color: rgba($primary, 0.1);
+      color: $text;
+      box-shadow: inset 0 -1px 4px 2px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  &__arrow {
+    width: 11px;
+    height: 18px;
+
+    fill: currentColor;
+    transition: fill 0.3s;
+  }
+}
+
 .logo {
   display: block;
 
