@@ -409,6 +409,7 @@ body {
 
 .logo {
   display: block;
+  border-radius: $radius;
 
   &:focus-visible {
     background-color: rgba($white, 0.01);
@@ -561,6 +562,7 @@ body {
   text-decoration-skip-ink: none;
 
   color: $text-2;
+  border-radius: $radius;
 
   transition: text-decoration 0.3s, color 0.3s;
 
@@ -590,6 +592,7 @@ body {
   font-size: 14px;
 
   border: 1px solid $shadow;
+  border-radius: $radius;
 
   &::placeholder {
     transition: color 0.3s;
