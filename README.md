@@ -1,3 +1,3 @@
 # Simple Food
 
-![Скриншот сайта Simple Food](screencapture.png)
+![A screenshot of the homepage](screencapture.png)
