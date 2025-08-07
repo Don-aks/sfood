@@ -521,6 +521,7 @@ body {
 }
 
 .animation-link {
+  border-radius: $radius;
   transition: color 0.3s;
 
   &:focus-visible {
