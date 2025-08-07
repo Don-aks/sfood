@@ -10,6 +10,7 @@ $silver: #fff2ed;
 $silver-2: #c2c2c2;
 $silver-3: #eeeff3;
 $red: #ff2222;
+$star: #ffb800;
 
 $main-font: Rubik, Arial, Helvetica, sans-serif;
 $normal-lh: 1.5;
@@ -28,6 +29,11 @@ $breakpoints: (
   'tablet-2': 992px,
   'desktop': $container-width,
 );
+
+$star-size: 16px;
+$stars-gap: 6px;
+$stars-count: 5;
+
 %bg {
   background-position: center;
   background-repeat: no-repeat;
