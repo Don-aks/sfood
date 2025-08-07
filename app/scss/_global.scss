@@ -725,6 +725,21 @@ body {
   }
 }
 
+.label {
+  cursor: pointer;
+  transition: color 0.3s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: $primary;
+
+      .checkbox {
+        border-color: $primary;
+      }
+    }
+  }
+}
+
 .animation-link {
   border-radius: $radius;
   transition: color 0.3s;
