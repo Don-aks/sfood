@@ -273,6 +273,80 @@ body {
   }
 }
 
+.restaurant-swiper {
+  overflow: visible;
+
+  @include mq('tablet') {
+    padding-bottom: 30px + 15px;
+    overflow: hidden;
+  }
+
+  &__pagination {
+    display: none;
+
+    @include mq('tablet') {
+      display: flex;
+    }
+  }
+}
+
+.breadcrumbs {
+  padding: 22px 0;
+  margin-bottom: 55px;
+
+  font-size: 14px;
+  letter-spacing: 0.03em;
+
+  color: $breadcrumbs;
+  background-color: rgba($primary, 0.1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @include mq('phone') {
+    padding: 28px 0 22px;
+    margin-bottom: 38px;
+  }
+
+  &__item {
+    min-width: 0;
+  }
+
+  &__item:not(:last-child) {
+    position: relative;
+
+    flex-shrink: 0;
+    padding-right: 9px + 6px;
+    margin-right: 3px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+
+      width: 10px;
+      height: 10px;
+
+      @extend %bg-contain-center;
+      background-image: url('../img/sprite-original.svg#arrow-right');
+
+      transform: translateY(-50%);
+    }
+  }
+
+  &__link {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    border-radius: $radius;
+    overflow: hidden;
+
+    &:focus-visible {
+      box-shadow: 0 0 0 $shadow-size $shadow-color;
+    }
+  }
+}
 .logo {
   display: block;
 
