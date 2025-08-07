@@ -618,6 +618,26 @@ body {
   }
 }
 
+.count-input {
+  width: 70px;
+
+  line-height: 1;
+  letter-spacing: 0.03em;
+  text-align: center;
+
+  background-color: rgba($primary, 0.1);
+  appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  &:focus-visible {
+    border: 1px solid $primary;
+  }
+}
 
 .checkbox {
   display: block;
