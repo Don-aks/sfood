@@ -522,6 +522,7 @@
 // ======= OFFERTS ======= //
 
 .offerts {
+  position: relative;
   padding: 56px 0 120px;
 
   @include mq('phone') {
@@ -529,6 +530,7 @@
   }
 
   &__container {
+    position: relative;
     max-width: $container-width + 2px;
   }
 
