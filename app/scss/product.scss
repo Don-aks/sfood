@@ -544,6 +544,10 @@
 
   &__inner {
     padding: 1px;
+
+    @include mq('phone') {
+      padding-bottom: 30px + 15px;
+    }
   }
 
   &__list {
@@ -560,6 +564,20 @@
   &__product-wrapper {
     box-shadow: 0 0 0 $shadow-size $shadow;
   }
+
+  &__pagination {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+
+    display: none;
+    transform: translateX(-50%);
+
+    @include mq('phone') {
+      display: flex;
+    }
+  }
+}
 
 // ======= MODAL-SWIPER ======= //
 
