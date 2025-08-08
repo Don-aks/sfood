@@ -231,7 +231,7 @@
 }
 
 .filters {
-  @include mq('tablet') {
+  @include mq('tablet-2') {
     position: fixed;
     top: 0;
     left: 0;
@@ -252,7 +252,7 @@
   }
 
   &--active {
-    @include mq('tablet') {
+    @include mq('tablet-2') {
       transform: translateX(0);
     }
   }
