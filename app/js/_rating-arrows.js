@@ -1,7 +1,7 @@
 const fieldsets = getAllEls('.rating');
 
 for (ratingFieldset of fieldsets) {
-  const inputs = [...ratingFieldset.querySelectorAll('.rating__input')];
+  const inputs = [...getAllEls('.rating__input', ratingFieldset)];
 
   if (inputs.length) {
     ratingFieldset.addEventListener('keydown', e => {

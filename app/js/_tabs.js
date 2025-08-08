@@ -6,14 +6,14 @@ const contentContainerClass = 'js-tab-contents';
 const activeClass = 'is-active';
 
 function activateTabHandlers() {
-  const tabContainers = document.querySelectorAll(`.${tabContainerClass}`);
+  const tabContainers = getAllEls(`.${tabContainerClass}`);
 
   tabContainers.forEach(tabs => {
     const groupName = tabs.dataset.tabGroup;
     if (!groupName) return;
 
-    const buttons = tabs.querySelectorAll(`.${tabClass}`);
-    const contents = document.querySelectorAll(
+    const buttons = getAllEls(`.${tabClass}`, tabs);
+    const contents = getAllEls(
       `.${contentContainerClass}[data-tab-group="${groupName}"] .${contentClass}`
     );
 
@@ -89,8 +89,8 @@ function activateTab(tabButton, groupName) {
   const tabsContainer = tabButton.closest(`.${tabContainerClass}`);
   if (!tabsContainer || !groupName) return;
 
-  const buttons = tabsContainer.querySelectorAll(`.${tabClass}`);
-  const contents = document.querySelectorAll(
+  const buttons = getAllEls(`.${tabClass}`, tabsContainer);
+  const contents = getAllEls(
     `.${contentContainerClass}[data-tab-group="${groupName}"] .${contentClass}`
   );
 

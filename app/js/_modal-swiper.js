@@ -11,10 +11,7 @@ openModalBtns.forEach(btn => {
     MicroModal.show(modal, {
       onClose: () => {
         document.body.classList.remove('locked');
-        setTabIndex(
-          modal.querySelectorAll('a, button, span[role="button"]'),
-          '-1'
-        );
+        setTabIndex(getAllEls('a, button, span[role="button"]', modal), '-1');
       },
     });
     document.body.classList.add('locked');

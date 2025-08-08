@@ -1,5 +1,5 @@
 const pagination = getEl('.pagination');
-let pageLinks = pagination?.querySelectorAll('a.pagination__link');
+let pageLinks = getAllEls('a.pagination__link', pagination);
 
 function initPagination() {
   if (!pagination) return;
