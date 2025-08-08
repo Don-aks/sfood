@@ -451,6 +451,7 @@
 .catalog {
   &__list {
     flex-wrap: wrap;
+    gap: 16px 10px;
     margin-bottom: 45px;
 
     transform: translateX(19px);
@@ -459,7 +460,6 @@
   &__product {
     width: 100%;
     max-width: 210px;
-    margin: 0 10px 16px 0;
 
     .product__name {
       margin-bottom: 7px;
