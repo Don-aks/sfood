@@ -190,8 +190,6 @@
 
 .filters-btn {
   display: none;
-  align-items: center;
-  justify-content: center;
   width: 47px;
   height: 47px;
   margin-right: 19px;
@@ -200,13 +198,26 @@
   color: $primary;
   border-radius: $radius-sm;
 
-  transition: transform 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 
   &:focus-visible {
     box-shadow: 0 0 0 $shadow-size $primary;
   }
 
-  @include mq('tablet') {
+  @media (any-hover: hover) {
+    &:hover {
+      color: $white;
+      background-color: $primary;
+    }
+  }
+
+  &:active {
+    color: $primary;
+    background-color: $white;
+    box-shadow: inset 0 -5px 12px 0 rgba($primary, 0.2);
+  }
+
+  @include mq('tablet-2') {
     display: flex;
   }
 
