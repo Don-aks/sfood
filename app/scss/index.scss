@@ -310,7 +310,6 @@
     @include mq('tablet') {
       display: flex;
       justify-content: center;
-      margin: 0;
       height: auto;
       max-width: 100%;
     }
