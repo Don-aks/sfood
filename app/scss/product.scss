@@ -550,9 +550,21 @@
     }
   }
 
-  &__list {
-    gap: 30px;
-    height: 300px;
+  &__navigation {
+    top: 7px;
+    right: 15px;
+    bottom: auto;
+    left: auto;
+
+    transform: none;
+  }
+
+  &__btn {
+    position: static;
+
+    @include mq('phone') {
+      display: none;
+    }
   }
 
   &__product {
