@@ -301,10 +301,10 @@
 
   &__restaurant {
     max-width: 370px;
-    width: 100%;
+    width: 32%;
 
     @include mq('tablet-2') {
-      max-width: 100%;
+      width: 48%;
     }
 
     @include mq('tablet') {
@@ -312,6 +312,7 @@
       justify-content: center;
       margin: 0;
       height: auto;
+      max-width: 100%;
     }
   }
 }
