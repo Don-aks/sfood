@@ -355,6 +355,7 @@
   }
 
   &__pagination {
+    margin-right: 18px;
     transform: translateX(-3px);
 
     @include mq('phone') {
