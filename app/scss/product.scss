@@ -525,6 +525,10 @@
   position: relative;
   padding: 56px 0 120px;
 
+  @include mq('tablet') {
+    padding: 30px 0 40px;
+  }
+
   @include mq('phone') {
     padding-top: 8px;
   }
