@@ -173,6 +173,9 @@
       max-width: 320px + 15px; // + ширина скроллбара
     }
   }
+
+  &__filters-btn {
+    margin-right: 19px;
   }
 
   &__wrapper {
@@ -192,7 +195,6 @@
   display: none;
   width: 47px;
   height: 47px;
-  margin-right: 19px;
 
   background-color: rgba($primary, 0.1);
   color: $primary;
