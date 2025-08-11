@@ -248,17 +248,12 @@
     transform: translateX(-200%);
 
     overflow-y: auto;
-    box-sizing: content-box;
   }
 
   &--active {
     @include mq('tablet-2') {
       transform: translateX(0);
     }
-  }
-
-  @include mq('phone-2') {
-    margin-right: 10px;
   }
 
   &__btn {
