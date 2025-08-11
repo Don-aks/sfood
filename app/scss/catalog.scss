@@ -439,6 +439,7 @@
     @include mq('tablet') {
       justify-content: start;
       flex-wrap: nowrap;
+      gap: 0;
     }
   }
 
