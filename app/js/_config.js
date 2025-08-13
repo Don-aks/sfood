@@ -120,6 +120,13 @@ config.modalSwiper = {
   },
 };
 
+config.modal = {
+  onClose: () => {
+    document.body.classList.remove('locked');
+    setTabIndex(getAllEls('a, button, span[role="button"]', modal), '-1');
+  },
+};
+
 // config.modal = {
 //   onShow: () => document.body.classList.add('locked'),
 //   onClose: () => document.body.classList.remove('locked'),
