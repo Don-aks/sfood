@@ -279,16 +279,6 @@ body {
     overflow: hidden;
   }
 
-  &__wrapper {
-    @include mq('tablet') {
-      cursor: grab;
-
-      &:active {
-        cursor: grabbing;
-      }
-    }
-  }
-
   &__pagination {
     display: none;
 

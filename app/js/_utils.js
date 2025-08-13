@@ -39,3 +39,21 @@ function showToSR(btns, el) {
   });
   el?.setAttribute('aria-hidden', 'false');
 }
+
+function generateSwiperConfig(wrapperSelector, spaceBetween = 0) {
+  const slider = getEl(wrapperSelector);
+  if (slider) slider.style.cursor = 'grab';
+
+  return {
+    spaceBetween,
+    keyboard: { enabled: true },
+    on: {
+      touchStart() {
+        if (slider) slider.style.cursor = 'grabbing';
+      },
+      touchEnd() {
+        if (slider) slider.style.cursor = 'grab';
+      },
+    },
+  };
+}

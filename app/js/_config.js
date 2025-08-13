@@ -13,21 +13,16 @@ config.range = {
 };
 
 config.restaurantsSwiper = {
-  spaceBetween: 15,
-
+  ...generateSwiperConfig('.restaurant-swiper__inner'),
   pagination: {
     el: '.restaurant-swiper__pagination',
     type: 'bullets',
     clickable: true,
   },
-  keyboard: {
-    enabled: true,
-  },
 };
 
 config.reviewsSwiper = {
-  spaceBetween: 15,
-
+  ...generateSwiperConfig('.reviews-slider__inner', 15),
   navigation: {
     prevEl: '.reviews-slider__btn--prev',
     nextEl: '.reviews-slider__btn--next',
@@ -36,9 +31,6 @@ config.reviewsSwiper = {
     el: '.reviews-slider__pagination',
     type: 'bullets',
     clickable: true,
-  },
-  keyboard: {
-    enabled: true,
   },
   breakpoints: {
     320: {
@@ -58,12 +50,10 @@ config.reviewsSwiper = {
 };
 
 config.productGallerySwiper = {
+  ...generateSwiperConfig('.product-gallery__wrapper'),
   navigation: {
     prevEl: '.product-gallery__btn--prev',
     nextEl: '.product-gallery__btn--next',
-  },
-  keyboard: {
-    enabled: true,
   },
 };
 
@@ -72,9 +62,6 @@ config.offertsSwiper = {
   slidesPerGroup: 2,
   spaceBetween: 5,
   simulateTouch: false,
-  keyboard: {
-    enabled: true,
-  },
   navigation: {
     prevEl: '.offerts__btn--prev',
     nextEl: '.offerts__btn--next',
@@ -121,9 +108,7 @@ config.offertsSwiper = {
 };
 
 config.modalSwiper = {
-  keyboard: {
-    enabled: true,
-  },
+  ...generateSwiperConfig('.modal-swiper__list'),
   navigation: {
     prevEl: '.modal-swiper__btn--prev',
     nextEl: '.modal-swiper__btn--next',

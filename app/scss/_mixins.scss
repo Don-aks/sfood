@@ -24,8 +24,8 @@
 ) {
   content: $content;
   position: $pos;
-
   display: $display;
+
   @if $width != auto {
     width: $width;
   }

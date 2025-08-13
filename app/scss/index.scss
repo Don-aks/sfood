@@ -330,11 +330,6 @@
   &__inner {
     position: relative;
     padding-bottom: 30px + 34px + 4px;
-    cursor: grab;
-
-    &:active {
-      cursor: grabbing;
-    }
 
     @include mq('phone') {
       padding-bottom: 0;
