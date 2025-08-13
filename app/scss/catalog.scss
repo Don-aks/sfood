@@ -429,23 +429,26 @@
 
 .sales {
   &__list {
-    gap: 21px 31px;
+    gap: 31px;
     height: 100%;
 
-    @include mq('desktop') {
-      flex-wrap: wrap;
+    @include mq('tablet-2') {
+      gap: 10px;
     }
 
     @include mq('tablet') {
-      justify-content: start;
-      flex-wrap: nowrap;
       gap: 0;
     }
   }
 
   &__restaurant {
     height: auto;
+    width: 31%;
     max-width: 370px;
+
+    @include mq('tablet-2') {
+      width: 32%;
+    }
 
     @include mq('tablet') {
       display: flex;
