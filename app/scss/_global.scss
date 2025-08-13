@@ -172,6 +172,7 @@ body {
     width: 60px;
     height: 60px;
 
+    border-radius: $radius;
     transform: translateY(-50%) rotate(180deg);
 
     @include mq('desktop') {
@@ -183,6 +184,8 @@ body {
     }
 
     &:focus-visible {
+      box-shadow: 0 0 0 $shadow-size $shadow-color;
+
       .navigation-arrows__icon {
         fill: $primary;
       }
