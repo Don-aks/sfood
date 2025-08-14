@@ -521,18 +521,33 @@
     }
 
     .restaurant {
+      &__img {
+        @include mq('phone') {
+          height: 300px;
+        }
+      }
+
+      &__inner {
+        @include mq('phone') {
+          height: auto;
+          padding-left: 18px;
+        }
+      }
+
+      &__name {
+        margin-bottom: -8px;
+
+        @include mq('tablet-2') {
+          margin-bottom: 0;
+        }
+
+        @include mq('tablet') {
+          font-size: 24px;
+        }
+      }
+
       @include mq('tablet') {
         max-width: 370px;
-      }
-    }
-
-    .restaurant__name {
-      margin-bottom: -8px;
-    }
-
-    .restaurant__inner {
-      @include mq('tablet-2') {
-        padding-bottom: 30px;
       }
     }
   }
