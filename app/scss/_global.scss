@@ -9,7 +9,7 @@ html {
   scroll-margin-top: 84px + 20px;
 
   @include mq('tablet') {
-    padding-top: 59px + 20px;
+    scroll-margin-top: 59px + 20px;
   }
 }
 
