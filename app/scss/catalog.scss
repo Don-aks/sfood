@@ -467,6 +467,10 @@
 
   &__pagination {
     transform: translateX(14px);
+
+    @include mq('tablet-2') {
+      transform: translateX(0);
+    }
   }
 }
 
@@ -502,10 +506,18 @@
 
     &:nth-child(3n + 1) {
       transform: translateX(-4px);
+
+      @include mq('phone') {
+        transform: translateX(0);
+      }
     }
 
     &:nth-child(3n + 3) {
       transform: translateX(5px);
+
+      @include mq('phone') {
+        transform: translateX(0);
+      }
     }
 
     .restaurant {
