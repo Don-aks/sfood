@@ -20,12 +20,23 @@
   background-color: #f9faff;
 
   &__head-inner {
+    flex-wrap: wrap;
+    margin-bottom: 56px - 15px;
+
+    @include mq('tablet') {
+      margin-bottom: 27px - 15px;
+    }
+
     @include mq('phone') {
-      flex-direction: column;
+      margin-bottom: 17px - 15px;
     }
   }
 
   &__title {
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+
     @include mq('phone') {
       margin-bottom: 17px;
     }
