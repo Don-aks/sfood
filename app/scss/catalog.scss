@@ -135,6 +135,10 @@
         &--single {
           display: block;
           padding: 4px 16px 4px 4px;
+
+          @include mq('phone') {
+            padding: 4px 10px 4px 4px;
+          }
         }
 
         &--dropdown {
@@ -187,6 +191,10 @@
 
   &__filters-btn {
     margin-right: 19px;
+
+    @include mq('phone') {
+      margin-right: 10px;
+    }
   }
 
   &__wrapper {
