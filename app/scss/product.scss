@@ -539,7 +539,13 @@
   }
 
   &__title {
+    margin-bottom: 56px;
     transform: translateX(8px);
+
+    @include mq('tablet') {
+      margin-bottom: 34px;
+      transform: translateX(0);
+    }
   }
 
   &__inner {

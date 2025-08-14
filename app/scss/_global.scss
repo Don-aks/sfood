@@ -451,14 +451,6 @@ body {
       margin-bottom: 27px;
     }
   }
-
-  &--in-catalog {
-    margin-bottom: 56px;
-
-    @include mq('tablet') {
-      margin-bottom: 27px;
-    }
-  }
 }
 
 .btn {

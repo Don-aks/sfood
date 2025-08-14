@@ -37,8 +37,15 @@
     margin-bottom: 15px;
   }
 
+  &__sales-title {
+    margin-bottom: 56px;
+
+    @include mq('tablet') {
+      margin-bottom: 34px;
+    }
+
     @include mq('phone') {
-      margin-bottom: 17px;
+      text-align: center;
     }
   }
 
