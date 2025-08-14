@@ -73,8 +73,8 @@
       &:not(:last-child) {
         margin-right: 19px;
 
-        @include mq('tablet') {
-          margin-right: 21px;
+        @include mq('phone') {
+          margin-right: 15px;
         }
       }
 
@@ -199,14 +199,31 @@
 
   &__wrapper {
     padding-bottom: 60px;
+
+    @include mq('tablet') {
+      padding-bottom: 20px;
+    }
   }
 
   &__sales {
     padding: 60px 0 108px;
+
+    @include mq('tablet-2') {
+      padding: 18px 0 85px;
+    }
+
+    @include mq('phone') {
+      padding: 18px 0 36px;
+    }
   }
 
   .application {
     padding-bottom: 54px;
+
+    @include mq('tablet') {
+      padding-top: 20px;
+      padding-bottom: 18px;
+    }
   }
 }
 
