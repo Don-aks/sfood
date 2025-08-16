@@ -23,7 +23,7 @@ function browsersync() {
 
 function styles() {
   return src(['app/scss/**/*.scss', 'app/components/**/*.scss'])
-    .pipe(sass({ outputStyle: 'compressed' }))
+    .pipe(sass({ style: 'compressed' }))
     .pipe(
       rename({
         suffix: '.min',
