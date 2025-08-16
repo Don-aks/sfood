@@ -18,12 +18,9 @@ new Swiper('.product-gallery', config.productGallerySwiper);
 new Swiper('.offerts__inner', config.offertsSwiper);
 
 // SELECTS
-const selects = getAllEls('.js-select');
-if (selects.length) {
-  for (let select of selects) {
-    new Choices(select, config.select);
-  }
-}
+getAllEls('.js-select')?.forEach(select => {
+  new Choices(select, config.select);
+});
 
 // MODAL
 MicroModal.init(config.modal);
