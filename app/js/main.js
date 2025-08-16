@@ -23,16 +23,6 @@ window.addEventListener('resize', debounce(loadRestaurantsSwiper));
 new Swiper('.product-gallery', config.productGallerySwiper);
 new Swiper('.offerts__inner', config.offertsSwiper);
 
-// RANGE
-const inputMin = getEl('.js-input-min');
-const inputMax = getEl('.js-input-max');
-if (getEl(config.selector)) {
-  dualRange(config.range).on('change', (_, { start, end }) => {
-    inputMin.value = start;
-    inputMax.value = end;
-  });
-}
-
 // SELECTS
 const selects = getAllEls('.js-select');
 if (selects.length) {

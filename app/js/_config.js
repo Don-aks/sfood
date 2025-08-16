@@ -6,9 +6,9 @@ config.select = {
   itemSelectText: '',
 };
 
-config.selector = '.js-range';
+config.rangeSelector = '.js-range';
 config.range = {
-  selector: config.selector,
+  selector: config.rangeSelector,
   label: () => '',
 };
 
@@ -126,8 +126,3 @@ config.modal = {
     setTabIndex(getAllEls('a, button, span[role="button"]', modal), '-1');
   },
 };
-
-// config.modal = {
-//   onShow: () => document.body.classList.add('locked'),
-//   onClose: () => document.body.classList.remove('locked'),
-// };
