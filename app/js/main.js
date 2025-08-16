@@ -4,14 +4,8 @@ window.addEventListener('scroll', setFixedHeader);
 setFixedHeader();
 
 // MENU & FILTERS
-body.addEventListener('click', handleClickOnMenu);
-body.addEventListener('click', handleClickOnFilters);
-
-// TABS
-activateTabHandlers();
-
-// PAGINATION
-initPagination();
+document.addEventListener('click', handleClickOnMenu);
+document.addEventListener('click', handleClickOnFilters);
 
 // SWIPERS
 new Swiper('.reviews-slider', config.reviewsSwiper);
