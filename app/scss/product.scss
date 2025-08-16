@@ -57,7 +57,7 @@
     }
 
     @include mq('phone') {
-      padding-bottom: 8px;
+      padding-bottom: 10px;
     }
   }
 
@@ -530,7 +530,7 @@
   }
 
   @include mq('phone') {
-    padding-top: 8px;
+    padding-top: 10px;
   }
 
   &__container {
