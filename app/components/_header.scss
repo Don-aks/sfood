@@ -41,6 +41,7 @@
   }
 
   &__logo {
+    margin-right: 15px;
     transform: translateX(5px);
 
     @include mq('tablet') {
@@ -50,8 +51,8 @@
 
   &__logo-img {
     @include mq('phone') {
-      width: 115px;
-      height: 32px;
+      width: 160px;
+      height: auto;
     }
   }
 
