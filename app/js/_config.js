@@ -33,7 +33,7 @@ config.restaurantsSwiper = {
 };
 
 config.reviewsSwiper = {
-  ...generateSwiperConfig('.reviews-slider__inner', 15),
+  ...generateSwiperConfig('.reviews-slider', 15),
   navigation: {
     prevEl: '.reviews-slider__btn--prev',
     nextEl: '.reviews-slider__btn--next',
@@ -61,7 +61,7 @@ config.reviewsSwiper = {
 };
 
 config.productGallerySwiper = {
-  ...generateSwiperConfig('.product-gallery__wrapper'),
+  ...generateSwiperConfig('.product-gallery'),
   navigation: {
     prevEl: '.product-gallery__btn--prev',
     nextEl: '.product-gallery__btn--next',
@@ -119,7 +119,7 @@ config.offertsSwiper = {
 };
 
 config.modalSwiper = {
-  ...generateSwiperConfig('.modal-swiper__list'),
+  ...generateSwiperConfig('.modal-swiper__carousel'),
   navigation: {
     prevEl: '.modal-swiper__btn--prev',
     nextEl: '.modal-swiper__btn--next',
