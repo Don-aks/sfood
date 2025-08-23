@@ -93,6 +93,7 @@ config.offertsSwiper = {
       slidesPerView: 2,
       slidesPerGroup: 2,
       spaceBetween: 5,
+      simulateTouch: false,
     },
 
     [config.breakpoints.tablet]: {
@@ -114,6 +115,7 @@ config.offertsSwiper = {
     1200: {
       spaceBetween: 30,
       slidesPerView: 5,
+      simulateTouch: true,
     },
   },
 };
