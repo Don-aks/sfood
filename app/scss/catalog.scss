@@ -456,6 +456,12 @@
     width: 100%;
     max-width: 210px;
 
+    &--hidden-on-mobile {
+      @include mq('tablet') {
+        display: none;
+      }
+    }
+
     .product__name {
       margin-bottom: 7px;
     }
