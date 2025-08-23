@@ -8,7 +8,10 @@ function loadRestaurantsSwiper() {
       '.restaurant-swiper',
       config.restaurantsSwiper
     );
-  } else if (getEl('.restaurant-swiper.swiper-initialized')) {
-    restaurantsSwiper.destroy();
+  } else {
+    if (restaurantsSwiper) {
+      restaurantsSwiper.destroy(false, true);
+      restaurantsSwiper = null;
+    }
   }
 }

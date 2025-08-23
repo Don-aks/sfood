@@ -136,6 +136,8 @@ config.modalSwiper = {
 config.modal = {
   onClose: () => {
     document.body.classList.remove('locked');
-    setTabIndex(getAllEls('a, button, span[role="button"]', modal), '-1');
+    setTabIndex(modalFocusableEls, '-1');
+    returnFocusToLastActiveEl();
   },
 };
+config.modalId = 'modal-product-swiper';

@@ -4,16 +4,11 @@ const productMinCount = +productCounter?.getAttribute('min');
 const productMaxCount = +productCounter?.getAttribute('max');
 
 function handleClickOnProductCount(e) {
-  const targetClasses = e.target.classList;
-  let val = productCounter.valueAsNumber;
+  const btn = e.target.closest('.js-product-plus, .js-product-minus');
+  if (!btn) return;
 
-  if (targetClasses.contains('js-product-plus')) {
-    if (++val > productMaxCount) return;
-    productCounter.value = val;
-  } else if (targetClasses.contains('js-product-minus')) {
-    if (--val < productMinCount) return;
-    productCounter.value = val;
-  }
+  const delta = btn.classList.contains('js-product-plus') ? 1 : -1;
+  updateProductCount(delta);
 }
 
 function handleInputChangeOnProductCount() {
@@ -26,6 +21,15 @@ function handleInputChangeOnProductCount() {
   if (val < productMinCount) {
     val = productMinCount;
   }
+
+  productCounter.value = val;
+}
+
+function updateProductCount(delta) {
+  let val = productCounter.valueAsNumber + delta;
+
+  if (val > productMaxCount) val = productMaxCount;
+  if (val < productMinCount) val = productMinCount;
 
   productCounter.value = val;
 }

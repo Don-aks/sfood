@@ -5,29 +5,53 @@ const contentContainerClass = 'js-tab-contents';
 const activeClass = 'is-active';
 
 const tabContainers = getAllEls(`.${tabContainerClass}`);
+
 tabContainers.forEach(tabs => {
   const groupName = tabs.dataset.tabGroup;
   if (!groupName) return;
 
-  const buttons = getAllEls(`.${tabClass}`, tabs);
-  const contents = getAllEls(
-    `.${contentContainerClass}[data-tab-group="${groupName}"] .${contentClass}`
-  );
+  const buttons = [...getAllEls(`.${tabClass}`, tabs)];
+  if (!buttons.length) return;
 
-  // Клик
+  const contentContainer = getEl(
+    `.${contentContainerClass}[data-tab-group="${groupName}"]`
+  );
+  const contents = contentContainer
+    ? getAllEls(`.${contentClass}`, contentContainer)
+    : [];
+  if (!contents.length) return;
+
+  // Начальное состояние и ARIA
+  buttons.forEach((btn, i) => {
+    btn.setAttribute('role', 'tab');
+    btn.setAttribute('tabindex', i === 0 ? '0' : '-1');
+    btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    btn.setAttribute('aria-controls', `${groupName}-content-${i}`);
+    btn.id = `${groupName}-tab-${i}`;
+  });
+
+  contents.forEach((content, i) => {
+    content.setAttribute('role', 'tabpanel');
+    content.setAttribute('aria-labelledby', `${groupName}-tab-${i}`);
+    content.id = `${groupName}-content-${i}`;
+    content.hidden = i !== 0;
+    content.classList.toggle(activeClass, i === 0);
+  });
+
+  // Обработчик клика
   tabs.addEventListener('click', e => {
     const btn = e.target.closest(`.${tabClass}`);
-    if (btn && tabs.contains(btn)) {
-      activateTab(btn, groupName);
+    if (btn && buttons.includes(btn)) {
+      activateTab(btn, buttons, contents);
     }
   });
 
   // Клавиатура
   tabs.addEventListener('keydown', e => {
     const current = document.activeElement;
-    if (!current.classList.contains(tabClass)) return;
+    if (!buttons.includes(current)) return;
 
-    const index = Array.prototype.indexOf.call(buttons, current);
+    let index = buttons.indexOf(current);
     let newIndex = index;
 
     switch (e.key) {
@@ -43,54 +67,37 @@ tabContainers.forEach(tabs => {
       case 'End':
         newIndex = buttons.length - 1;
         break;
+      case 'Enter':
+      case ' ':
+        activateTab(current, buttons, contents);
+        e.preventDefault();
+        return;
       default:
         return;
     }
 
     e.preventDefault();
     buttons[newIndex].focus();
-    activateTab(buttons[newIndex], groupName);
+    activateTab(buttons[newIndex], buttons, contents);
   });
 
-  // ARIA-атрибуты и начальное состояние
-  buttons.forEach((btn, i) => {
-    btn.setAttribute('role', 'tab');
-    btn.setAttribute('tabindex', i === 0 ? '0' : '-1');
-    btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-    btn.setAttribute('aria-controls', `${groupName}-content-${i}`);
-    btn.id = `${groupName}-tab-${i}`;
-  });
-
-  contents.forEach((content, i) => {
-    content.setAttribute('role', 'tabpanel');
-    content.setAttribute('aria-labelledby', `${groupName}-tab-${i}`);
-    content.id = `${groupName}-content-${i}`;
-    content.hidden = i !== 0;
-    content.classList.toggle('active', i === 0);
-  });
-
-  // Добавляем состояние focus для tabContainer
+  // Фокус
   tabs.addEventListener('focusin', e => {
-    if (e.target.classList.contains(tabClass)) {
+    if (buttons.includes(e.target)) {
       tabs.classList.add('is-focus');
     }
   });
 
   tabs.addEventListener('focusout', e => {
-    tabs.classList.remove('is-focus');
+    if (!tabs.contains(e.relatedTarget)) {
+      tabs.classList.remove('is-focus');
+    }
   });
 });
 
-function activateTab(tabButton, groupName) {
-  const tabsContainer = tabButton.closest(`.${tabContainerClass}`);
-  if (!tabsContainer || !groupName) return;
-
-  const buttons = getAllEls(`.${tabClass}`, tabsContainer);
-  const contents = getAllEls(
-    `.${contentContainerClass}[data-tab-group="${groupName}"] .${contentClass}`
-  );
-
+function activateTab(tabButton, buttons, contents) {
   const selectedTab = tabButton.dataset.tab;
+  if (!selectedTab) return;
 
   buttons.forEach(btn => {
     const isActive = btn.dataset.tab === selectedTab;

@@ -1,13 +1,14 @@
-const openModalBtns = getAllEls('.product-gallery__open-modal');
 const modal = getEl('.modal-swiper');
-const modalSwiper = new Swiper('.modal-swiper__carousel', config.modalSwiper);
+const modalFocusableEls = getAllEls('a, button, span[role="button"]', modal);
+const openModalBtns = getAllEls('.product-gallery__open-modal');
+const modalSwiper = createSwiper(config.modalSwiper);
 
-openModalBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const productId = btn.dataset.modalSlideId;
+function openModal(e) {
+  const btn = e.target.closest('.product-gallery__open-modal');
+  const productId = btn.dataset.modalSlideId;
 
-    modalSwiper.slideTo(productId - 1, 0);
-    MicroModal.show(modal, config.modal);
-    document.body.classList.add('locked');
-  });
-});
+  lastActiveEl = document.activeElement;
+  if (productId) modalSwiper.slideToLoop(productId - 1, 0);
+  MicroModal.show(config.modalId, config.modal);
+  document.body.classList.add('locked');
+}
