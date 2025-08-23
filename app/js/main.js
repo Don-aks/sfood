@@ -1,5 +1,5 @@
 // STICKY HEADER
-const header = getEl('.header__wrapper');
+const header = getEl(config.headerSelector);
 window.addEventListener('scroll', setFixedHeader);
 setFixedHeader();
 

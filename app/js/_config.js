@@ -8,6 +8,9 @@ config.breakpoints = {
   desktop: 1200,
 };
 
+config.headerSelector = '.header__wrapper';
+config.fixedHeaderWrapperClassName = 'header__wrapper--fixed';
+
 config.select = {
   searchEnabled: false,
   shouldSort: false,

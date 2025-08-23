@@ -1,5 +1,6 @@
 function setFixedHeader() {
-  const className = 'header__wrapper--fixed';
+  const className = config.fixedHeaderWrapperClassName;
+
   if (window.scrollY > 0) {
     header.classList.add(className);
   } else {
