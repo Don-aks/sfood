@@ -20,10 +20,12 @@ function setTabIndex(elements, tabindex) {
   });
 }
 
-function blurEls(elements) {
-  elements?.forEach(el => {
-    el?.blur();
-  });
+let lastActiveEl;
+function returnFocusToLastActiveEl() {
+  if (lastActiveEl) {
+    lastActiveEl.focus();
+    lastActiveEl = null;
+  }
 }
 
 function hideFromSR(btns, el) {

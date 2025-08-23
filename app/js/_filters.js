@@ -1,40 +1,40 @@
 const filters = getEl('.filters');
-const filtersLinksAndBtns = getAllEls('a, button', filters);
+const filtersFocusableEls = getAllEls('a, button', filters);
 const filtersOpenBtn = getEl('.filters-btn');
 const filtersCloseBtn = getEl('.filters__btn');
 const filtersBtns = [filtersOpenBtn, filtersCloseBtn];
 
-if (window.innerWidth < 768) {
-  setTabIndex(filtersLinksAndBtns, '-1');
-  hideFromSR(filtersBtns, filters);
+function handleFiltersToggle(e) {
+  const btn = e.target.closest('.filters__btn, .filters-btn');
+
+  if (btn && filtersBtns.includes(btn)) {
+    isFiltersActive() ? closeFilters() : openFilters();
+    return;
+  }
+
+  if (isFiltersActive() && !e.target.closest('.filters')) {
+    closeFilters();
+  }
 }
 
-function handleClickOnFilters(e) {
-  let isActive = filters?.classList.contains('filters--active');
+function openFilters() {
+  body.classList.add('locked');
+  filters.classList.add('filters--active');
+  showToSR(filtersBtns, filters);
+  setTabIndex(filtersFocusableEls, '0');
+  lastActiveEl = document.activeElement;
+  // Сразу ставим фокус внутрь фильтров
+  requestAnimationFrame(() => filtersFocusableEls[0]?.focus());
+}
 
-  for (let i = 0; i < filtersBtns.length; i++) {
-    if (
-      filtersBtns[i] &&
-      (e.target === filtersBtns[i] ||
-        e.target.closest('.filters-btn') === filtersBtns[i])
-    ) {
-      body.classList.toggle('locked');
-      filters.classList.toggle('filters--active');
-      isActive = !isActive;
+function closeFilters() {
+  body.classList.remove('locked');
+  filters.classList.remove('filters--active');
+  hideFromSR(filtersBtns, filters);
+  returnFocusToLastActiveEl();
+  setTabIndex(filtersFocusableEls, '-1');
+}
 
-      if (isActive) showToSR(menuBtns, menu);
-      else hideFromSR(menuBtns, menu);
-
-      blurEls(menuLinksAndBtns);
-      setTabIndex(filtersLinksAndBtns, isActive ? '0' : '-1');
-      return;
-    }
-  }
-
-  if (isActive && !(e.target.closest('.filters') === filters)) {
-    body.classList.remove('locked');
-    filters.classList.remove('filters--active');
-
-    blurEls(filtersLinksAndBtns);
-  }
+function isFiltersActive() {
+  return filters?.classList.contains('filters--active');
 }
