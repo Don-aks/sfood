@@ -1,5 +1,13 @@
 const config = {};
 
+config.breakpoints = {
+  mobile2: 320,
+  mobile: 560,
+  tablet: 768,
+  tablet2: 992,
+  desktop: 1200,
+};
+
 config.select = {
   searchEnabled: false,
   shouldSort: false,
@@ -33,13 +41,13 @@ config.reviewsSwiper = {
     clickable: true,
   },
   breakpoints: {
-    320: {
+    [config.breakpoints.mobile2]: {
       pagination: {
         enabled: false,
       },
     },
 
-    560: {
+    [config.breakpoints.mobile]: {
       pagination: {
         el: '.reviews-slider__pagination',
         type: 'bullets',
@@ -73,7 +81,7 @@ config.offertsSwiper = {
     enabled: true,
   },
   breakpoints: {
-    320: {
+    [config.breakpoints.mobile2]: {
       pagination: {
         el: '.offerts__pagination',
         type: 'bullets',
@@ -84,7 +92,7 @@ config.offertsSwiper = {
       spaceBetween: 5,
     },
 
-    560: {
+    [config.breakpoints.tablet]: {
       slidesPerView: 3,
       pagination: {
         enabled: false,

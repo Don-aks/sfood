@@ -1,5 +1,5 @@
 function loadRestaurantsSwiper() {
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth < config.breakpoints.tablet) {
     if (getEl('.restaurant-swiper.swiper-initialized')) {
       return;
     }
