@@ -9,7 +9,7 @@ document.addEventListener('click', handleFiltersToggle);
 document.addEventListener('keydown', handleEscClosing);
 
 if (window.innerWidth < config.breakpoints.tablet) {
-  setTabIndex(filtresFocusableEls, '-1');
+  setTabIndex(filtersFocusableEls, '-1');
   hideFromSR(filtersBtns, filters);
 }
 
