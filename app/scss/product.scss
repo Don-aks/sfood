@@ -533,11 +533,6 @@
     padding-top: 10px;
   }
 
-  &__container {
-    position: relative;
-    max-width: $container-width + 2px;
-  }
-
   &__title {
     margin-bottom: 56px;
     transform: translateX(8px);
@@ -554,6 +549,7 @@
 
   &__inner {
     padding: 1px;
+    margin: -1px;
 
     @include mq('phone') {
       padding-bottom: 30px + 15px;
