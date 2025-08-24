@@ -69,6 +69,7 @@ config.productGallerySwiper = {
 };
 
 config.offertsSwiper = {
+  selector: '.offerts__inner',
   slidesPerView: 2,
   slidesPerGroup: 2,
   spaceBetween: 5,
@@ -96,23 +97,23 @@ config.offertsSwiper = {
       simulateTouch: false,
     },
 
-    [config.breakpoints.tablet]: {
+    [config.breakpoints.mobile]: {
       slidesPerView: 3,
       pagination: {
         enabled: false,
       },
     },
 
-    768: {
+    [config.breakpoints.tablet]: {
       slidesPerView: 4,
       slidesPerGroup: 1,
     },
 
-    992: {
+    [config.breakpoints.tablet2]: {
       spaceBetween: 15,
     },
 
-    1200: {
+    [config.breakpoints.desktop]: {
       spaceBetween: 30,
       slidesPerView: 5,
       simulateTouch: true,
