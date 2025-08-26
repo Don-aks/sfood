@@ -1398,7 +1398,17 @@
             </div>
             <div
               class="delivery__background"
-              style="background-image: url('img/food-delivery.png')"
+              style="
+                background-image: url('img/food-delivery.png');
+                background-image: image-set(
+                  url('img/food-delivery.webp') type('image/webp'),
+                  url('img/food-delivery.png') type('image/png')
+                );
+                background-image: -webkit-image-set(
+                  url('img/food-delivery.webp') type('image/webp'),
+                  url('img/food-delivery.jpg') type('image/png')
+                );
+              "
             ></div>
           </div>
         </div>
