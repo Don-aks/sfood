@@ -383,6 +383,7 @@ body {
 
     &--active {
       border: 1px solid $text-2;
+      user-select: none;
     }
 
     &--disabled {
