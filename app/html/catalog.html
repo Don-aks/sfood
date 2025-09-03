@@ -516,19 +516,19 @@
               </li>
             </ul>
 
-            <div
-              class="pagination catalog__pagination d-f ai-c jc-c"
-              role="navigation"
-            >
-              <span
-                class="pagination__link pagination__link--disabled pagination__prev d-f ai-c jc-c"
-              >
-                <svg class="pagination__arrow">
-                  <use xlink:href="img/sprite.svg#arrow-left"></use>
-                </svg>
-                <span class="sr-only">Назад</span>
-              </span>
+            <nav class="pagination catalog__pagination d-f ai-c jc-c">
+              <h2 class="sr-only">Навігація по сторінкам</h2>
               <ul class="pagination__list d-f ai-c jc-c">
+                <li class="pagination__item">
+                  <span
+                    class="pagination__link pagination__link--disabled pagination__prev d-f ai-c jc-c"
+                  >
+                    <svg class="pagination__arrow">
+                      <use xlink:href="img/sprite.svg#arrow-left"></use>
+                    </svg>
+                    <span class="sr-only">Назад</span>
+                  </span>
+                </li>
                 <li class="pagination__item">
                   <span
                     class="pagination__link pagination__link--active d-f ai-c jc-c"
@@ -548,17 +548,19 @@
                 <li class="pagination__item">
                   <a class="pagination__link d-f ai-c jc-c" href="#">10</a>
                 </li>
+                <li class="pagination__item">
+                  <a
+                    class="pagination__link pagination__next d-f ai-c jc-c"
+                    href="#"
+                  >
+                    <svg class="pagination__arrow">
+                      <use xlink:href="img/sprite.svg#arrow-right"></use>
+                    </svg>
+                    <span class="sr-only">Вперед</span>
+                  </a>
+                </li>
               </ul>
-              <a
-                class="pagination__link pagination__next d-f ai-c jc-c"
-                href="#"
-              >
-                <svg class="pagination__arrow">
-                  <use xlink:href="img/sprite.svg#arrow-right"></use>
-                </svg>
-                <span class="sr-only">Вперед</span>
-              </a>
-            </div>
+            </nav>
           </div>
         </div>
       </div>
