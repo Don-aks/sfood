@@ -24,7 +24,7 @@ config.range = {
 };
 
 config.restaurantsSwiper = {
-  ...generateSwiperConfig('.restaurant-swiper__wrapper', 15),
+  ...generateSwiperConfig('.restaurant-swiper', 15),
   pagination: {
     el: '.restaurant-swiper__pagination',
     type: 'bullets',
