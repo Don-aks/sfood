@@ -115,10 +115,6 @@
       position: relative;
       top: 1px;
     }
-
-    @include mq('tablet') {
-      position: static;
-    }
   }
 
   &__link {
