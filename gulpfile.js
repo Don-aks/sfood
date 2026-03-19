@@ -152,7 +152,14 @@ function cleanDist() {
 
 function copyToDist() {
   return src(
-    ['app/*.html', 'app/fonts/**/*', 'app/css/*.min.css', 'app/js/main.min.js'],
+    [
+      'app/*.html',
+      'app/fonts/**/*',
+      'app/css/*.min.css',
+      'app/js/main.min.js',
+      'app/img/sprite.svg',
+      'app/img/sprite-original.svg',
+    ],
     { base: 'app' },
   ).pipe(dest('dist'));
 }
