@@ -188,13 +188,5 @@ const devTasks = parallel(
   htmlInclude,
 );
 
-exports.styles = styles;
-exports.scripts = scripts;
-exports.images = images;
-exports.cleanDist = cleanDist;
-exports.svgSprites = svgSprites;
-exports.svgOriginalSprites = svgSpritesWithoutRemovingAttributes;
-exports.htmlInclude = htmlInclude;
-
 exports.build = series(cleanDist, commonTasks, copyToDist);
 exports.default = parallel(devTasks, browsersync, watching);
