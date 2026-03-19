@@ -27,13 +27,13 @@ function styles() {
     .pipe(
       rename({
         suffix: '.min',
-      })
+      }),
     )
     .pipe(
       autoprefixer({
         overrideBrowserslist: ['last 10 versions'],
         grid: true,
-      })
+      }),
     )
     .pipe(dest('app/css/'))
     .pipe(browserSync.stream());
@@ -95,7 +95,7 @@ function images() {
             },
           ],
         }),
-      ])
+      ]),
     )
     .pipe(dest('dist/img'));
 }
@@ -104,13 +104,13 @@ function svgSprites() {
   return src('app/img/icons/*.svg')
     .pipe(
       cheerio({
-        run: $ => {
+        run: ($) => {
           $('[fill]').removeAttr('fill');
           $('[stroke]').removeAttr('stroke');
           $('[style]').removeAttr('style');
         },
         parserOptions: { xmlMode: true },
-      })
+      }),
     )
     .pipe(
       svgSprite({
@@ -119,7 +119,7 @@ function svgSprites() {
             sprite: '../sprite.svg',
           },
         },
-      })
+      }),
     )
     .pipe(dest('app/img'));
 }
@@ -129,7 +129,7 @@ function svgSpritesWithoutRemovingAttributes() {
     .pipe(
       cheerio({
         parserOptions: { xmlMode: true },
-      })
+      }),
     )
     .pipe(
       svgSprite({
@@ -138,7 +138,7 @@ function svgSpritesWithoutRemovingAttributes() {
             sprite: '../sprite-original.svg',
           },
         },
-      })
+      }),
     )
     .pipe(dest('app/img'));
 }
@@ -150,7 +150,7 @@ function htmlInclude() {
         prefix: '@',
         basepath: '@file',
         indent: true,
-      })
+      }),
     )
     .pipe(dest('app'))
     .pipe(browserSync.stream());
@@ -168,7 +168,7 @@ function build() {
     ],
     {
       base: 'app',
-    }
+    },
   ).pipe(dest('dist'));
 }
 
@@ -191,7 +191,18 @@ exports.browsersync = browsersync;
 exports.watching = watching;
 exports.images = images;
 exports.cleanDist = cleanDist;
-exports.build = series(cleanDist, images, svgSprites, build);
+exports.build = series(
+  cleanDist,
+  parallel(
+    styles,
+    scripts,
+    images,
+    svgSprites,
+    svgSpritesWithoutRemovingAttributes,
+    htmlInclude,
+  ),
+  build,
+);
 exports.svgSprites = svgSprites;
 exports.svgOriginalSprites = svgSpritesWithoutRemovingAttributes;
 exports.htmlInclude = htmlInclude;
@@ -203,5 +214,5 @@ exports.default = parallel(
   svgSprites,
   svgSpritesWithoutRemovingAttributes,
   htmlInclude,
-  watching
+  watching,
 );
