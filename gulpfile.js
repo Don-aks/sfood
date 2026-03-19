@@ -24,11 +24,7 @@ function browsersync() {
 function styles() {
   return src(['app/scss/**/*.scss', 'app/components/**/*.scss'])
     .pipe(sass({ style: 'compressed' }))
-    .pipe(
-      rename({
-        suffix: '.min',
-      }),
-    )
+    .pipe(rename({ suffix: '.min' }))
     .pipe(
       autoprefixer({
         overrideBrowserslist: ['last 10 versions'],
@@ -85,14 +81,8 @@ function images() {
         imagemin.optipng({ optimizationLevel: 5 }),
         imagemin.svgo({
           plugins: [
-            {
-              name: 'removeViewBox',
-              active: true,
-            },
-            {
-              name: 'cleanupIDs',
-              active: false,
-            },
+            { name: 'removeViewBox', active: true },
+            { name: 'cleanupIDs', active: false },
           ],
         }),
       ]),
@@ -156,26 +146,18 @@ function htmlInclude() {
     .pipe(browserSync.stream());
 }
 
-function build() {
-  return src(
-    [
-      'app/*.html',
-      'app/fonts/**/*',
-      'app/css/index.min.css',
-      'app/css/catalog.min.css',
-      'app/css/product.min.css',
-      'app/js/main.min.js',
-    ],
-    {
-      base: 'app',
-    },
-  ).pipe(dest('dist'));
-}
-
 function cleanDist() {
   return del('dist');
 }
 
+function copyToDist() {
+  return src(
+    ['app/*.html', 'app/fonts/**/*', 'app/css/*.min.css', 'app/js/main.min.js'],
+    { base: 'app' },
+  ).pipe(dest('dist'));
+}
+
+// 🔹 Watch (только dev)
 function watching() {
   watch(['app/scss/**/*.scss', 'app/components/**/*.scss'], styles);
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
@@ -185,34 +167,34 @@ function watching() {
   watch(['app/html/**/*.html', 'app/components/**/*.html'], htmlInclude);
 }
 
+// =========================
+// Grouped tasks
+// =========================
+
+const commonTasks = parallel(
+  styles,
+  scripts,
+  images,
+  svgSprites,
+  svgSpritesWithoutRemovingAttributes,
+  htmlInclude,
+);
+
+const devTasks = parallel(
+  styles,
+  scripts,
+  svgSprites,
+  svgSpritesWithoutRemovingAttributes,
+  htmlInclude,
+);
+
 exports.styles = styles;
 exports.scripts = scripts;
-exports.browsersync = browsersync;
-exports.watching = watching;
 exports.images = images;
 exports.cleanDist = cleanDist;
-exports.build = series(
-  cleanDist,
-  parallel(
-    styles,
-    scripts,
-    images,
-    svgSprites,
-    svgSpritesWithoutRemovingAttributes,
-    htmlInclude,
-  ),
-  build,
-);
 exports.svgSprites = svgSprites;
 exports.svgOriginalSprites = svgSpritesWithoutRemovingAttributes;
 exports.htmlInclude = htmlInclude;
 
-exports.default = parallel(
-  styles,
-  scripts,
-  browsersync,
-  svgSprites,
-  svgSpritesWithoutRemovingAttributes,
-  htmlInclude,
-  watching,
-);
+exports.build = series(cleanDist, commonTasks, copyToDist);
+exports.default = parallel(devTasks, browsersync, watching);
