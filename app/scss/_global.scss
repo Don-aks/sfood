@@ -386,7 +386,9 @@ body {
     background-color: rgba($primary, 0.1);
     border-radius: 3px;
 
-    transition: background-color 0.3s, color 0.3s;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
 
     &--active {
       border: 1px solid $text-2;
@@ -476,7 +478,10 @@ body {
   color: $white;
   border-radius: 6px;
 
-  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    box-shadow 0.3s;
 
   &:focus-visible {
     box-shadow: 0 0 0 $shadow-size $shadow-color;
@@ -496,7 +501,8 @@ body {
     &:hover {
       background-color: rgba($white, 0.2);
       color: $primary;
-      box-shadow: 0 0 0 $shadow-size $shadow-color,
+      box-shadow:
+        0 0 0 $shadow-size $shadow-color,
         0 5px 12px 0 rgba($primary, 0.2);
 
       .btn__svg:not(.btn__svg--stroke) {
@@ -538,7 +544,9 @@ body {
   color: $text-2;
   border-radius: $radius;
 
-  transition: background-color 0.3s, box-shadow 0.3s;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
 
   &:focus-visible {
     box-shadow: 0 0 0 $shadow-size $shadow-color;
@@ -582,7 +590,9 @@ body {
   color: $text-2;
   border-radius: $radius;
 
-  transition: text-decoration 0.3s, color 0.3s;
+  transition:
+    text-decoration 0.3s,
+    color 0.3s;
 
   &:focus-visible {
     box-shadow: 0 0 0 $shadow-size $shadow-color;

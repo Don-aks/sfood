@@ -29,7 +29,10 @@
 
     color: $text-2;
     box-shadow: 0 0 0 1px $shadow;
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    transition:
+      background-color 0.3s,
+      color 0.3s,
+      box-shadow 0.3s;
 
     border-radius: $radius;
 

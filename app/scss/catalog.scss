@@ -241,7 +241,9 @@
   color: $primary;
   border-radius: $radius-sm;
 
-  transition: background-color 0.3s, transform 0.3s;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
 
   &:focus-visible {
     box-shadow: 0 0 0 $shadow-size $primary;

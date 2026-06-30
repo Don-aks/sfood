@@ -180,7 +180,9 @@
     color: $text-2;
     border-radius: $radius;
 
-    transition: background-color 0.3s, box-shadow 0.3s;
+    transition:
+      background-color 0.3s,
+      box-shadow 0.3s;
 
     @include mq('tablet') {
       display: flex;
@@ -299,6 +301,8 @@
     background-color: $primary;
     border-radius: 7px;
 
-    transition: background-color 0.3s, color 0.3s;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
   }
 }
