@@ -522,7 +522,6 @@
 // ======= OFFERTS ======= //
 
 .offerts {
-  position: relative;
   padding: 56px 0 120px;
 
   @include mq('tablet') {
@@ -531,6 +530,10 @@
 
   @include mq('phone') {
     padding-top: 10px;
+  }
+
+  &__container {
+    position: relative;
   }
 
   &__title {
