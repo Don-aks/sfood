@@ -29,4 +29,14 @@ This project was created as the final assignment for the **From 0 to 1** course.
 
 ## 📸 Screenshots
 
-![A screenshot of the homepage](screencapture.png) ![A screenshot of the catalog page](screencapture-catalog.png) ![A screenshot of the product page](screencapture-product.png)
+### Home
+
+![A screenshot of the homepage](screencapture.png)
+
+### Catalog
+
+![A screenshot of the catalog page](screencapture-catalog.png)
+
+### Product
+
+![A screenshot of the product page](screencapture-product.png)
