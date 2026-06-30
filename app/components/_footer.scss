@@ -1,6 +1,15 @@
 @use '../scss/vars' as *;
 @use '../scss/mixins' as *;
 
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .footer {
   font-size: 18px;
 
@@ -69,6 +78,11 @@
 
   &__contact {
     min-width: 265px;
+
+    &:target {
+      animation: blink 0.7s 1s linear 3;
+      will-change: opacity;
+    }
 
     @include mq('desktop') {
       min-width: 0;
