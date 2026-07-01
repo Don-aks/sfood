@@ -14,6 +14,10 @@ function handleMenuToggle(e) {
   if (isMenuActive() && !e.target.closest('.menu--mobile')) {
     closeMenu();
   }
+
+  if (isMenuActive() && e.target.closest('.menu__link')) {
+    closeMenu();
+  }
 }
 
 function openMenu() {
