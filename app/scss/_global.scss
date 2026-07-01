@@ -742,6 +742,10 @@ body {
       }
     }
   }
+
+  &__label {
+    cursor: pointer;
+  }
 }
 
 .label {
