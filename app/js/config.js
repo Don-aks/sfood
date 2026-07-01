@@ -68,18 +68,18 @@ config.productGallerySwiper = {
   },
 };
 
-config.offertsSwiper = {
-  selector: '.offerts__inner',
+config.offersSwiper = {
+  selector: '.offers__inner',
   slidesPerView: 2,
   slidesPerGroup: 2,
   spaceBetween: 5,
   simulateTouch: false,
   navigation: {
-    prevEl: '.offerts__btn--prev',
-    nextEl: '.offerts__btn--next',
+    prevEl: '.offers__btn--prev',
+    nextEl: '.offers__btn--next',
   },
   pagination: {
-    el: '.offerts__pagination',
+    el: '.offers__pagination',
     type: 'bullets',
     clickable: true,
     enabled: true,
@@ -87,7 +87,7 @@ config.offertsSwiper = {
   breakpoints: {
     [config.breakpoints.mobile2]: {
       pagination: {
-        el: '.offerts__pagination',
+        el: '.offers__pagination',
         type: 'bullets',
         clickable: true,
       },

@@ -22,7 +22,7 @@ window.addEventListener('resize', debounce(loadRestaurantsSwiper));
 
 createSwiper(config.productGallerySwiper);
 // Объявление свайпера с модальной галереей находится в _modal-swiper.js
-createSwiper(config.offertsSwiper);
+createSwiper(config.offersSwiper);
 
 // SELECTS
 getAllEls('.js-select')?.forEach(select => {
