@@ -10,11 +10,29 @@ A graduation project built in **2025** for the **[From 0 to 1](https://from0to1.
 
 ## ✨ Features
 
-- Responsive layout
-- Product catalog
-- Product details page
 - Clean and modern UI
-- TAB navigation
+- Fully responsive layout
+- Tab-based navigation
+- Interactive sliders
+
+### Homepage
+
+- Product category tabs
+- Restaurant carousel
+- Testimonials slider
+
+### Catalog Page
+
+- Custom checkbox filters
+- Select inputs
+- Price range slider
+
+### Product Page
+
+- Image gallery modal with slider
+- Quantity selector with min/max limits and step controls
+- Tabbed product details
+- Star rating system in reviews section
 
 ## 🛠️ Tech Stack
 
