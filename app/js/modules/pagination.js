@@ -22,7 +22,7 @@ function initPagination() {
   }
 
   let currentIndex = 0;
-  pagination.addEventListener('keydown', e => {
+  pagination.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') {
       currentIndex = (currentIndex + 1) % pageLinks.length;
       setFocus(currentIndex);
@@ -43,7 +43,7 @@ function initPagination() {
   });
 
   // Обновляем индекс, если фокус поставили не с клавиатуры
-  pagination.addEventListener('focusin', e => {
+  pagination.addEventListener('focusin', (e) => {
     const idx = pageLinks.indexOf(e.target);
     if (idx !== -1) currentIndex = idx;
   });

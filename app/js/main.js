@@ -25,7 +25,7 @@ createSwiper(config.productGallerySwiper);
 createSwiper(config.offersSwiper);
 
 // SELECTS
-getAllEls('.js-select')?.forEach(select => {
+getAllEls('.js-select')?.forEach((select) => {
   new Choices(select, config.select);
 });
 
@@ -45,7 +45,7 @@ initPagination();
 
 // MODAL
 MicroModal.init(config.modal);
-openModalBtns?.forEach(btn => {
+openModalBtns?.forEach((btn) => {
   btn.addEventListener('click', openModal);
 });
 

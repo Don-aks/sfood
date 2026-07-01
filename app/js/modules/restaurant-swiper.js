@@ -6,7 +6,7 @@ function loadRestaurantsSwiper() {
 
     restaurantsSwiper = new Swiper(
       '.restaurant-swiper',
-      config.restaurantsSwiper
+      config.restaurantsSwiper,
     );
   } else {
     if (restaurantsSwiper) {

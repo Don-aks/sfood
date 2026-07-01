@@ -7,14 +7,14 @@ for (const ratingFieldset of fieldsets) {
   ratingFieldset.addEventListener(
     'focus',
     () => inputs[inputs.length - 1].focus(),
-    true
+    true,
   );
 
-  ratingFieldset.addEventListener('keydown', e => {
+  ratingFieldset.addEventListener('keydown', (e) => {
     if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
     e.preventDefault();
 
-    let currentIndex = inputs.findIndex(input => input.checked);
+    let currentIndex = inputs.findIndex((input) => input.checked);
     if (currentIndex === -1) {
       currentIndex = inputs.length - 1;
     }

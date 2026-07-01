@@ -6,7 +6,7 @@ const activeClass = 'is-active';
 
 const tabContainers = getAllEls(`.${tabContainerClass}`);
 
-tabContainers.forEach(tabs => {
+tabContainers.forEach((tabs) => {
   const groupName = tabs.dataset.tabGroup;
   if (!groupName) return;
 
@@ -14,7 +14,7 @@ tabContainers.forEach(tabs => {
   if (!buttons.length) return;
 
   const contentContainer = getEl(
-    `.${contentContainerClass}[data-tab-group="${groupName}"]`
+    `.${contentContainerClass}[data-tab-group="${groupName}"]`,
   );
   const contents = contentContainer
     ? getAllEls(`.${contentClass}`, contentContainer)
@@ -39,7 +39,7 @@ tabContainers.forEach(tabs => {
   });
 
   // Обработчик клика
-  tabs.addEventListener('click', e => {
+  tabs.addEventListener('click', (e) => {
     const btn = e.target.closest(`.${tabClass}`);
     if (btn && buttons.includes(btn)) {
       activateTab(btn, buttons, contents);
@@ -47,7 +47,7 @@ tabContainers.forEach(tabs => {
   });
 
   // Клавиатура
-  tabs.addEventListener('keydown', e => {
+  tabs.addEventListener('keydown', (e) => {
     const current = document.activeElement;
     if (!buttons.includes(current)) return;
 
@@ -86,14 +86,14 @@ function activateTab(tabButton, buttons, contents) {
   const selectedTab = tabButton.dataset.tab;
   if (!selectedTab) return;
 
-  buttons.forEach(btn => {
+  buttons.forEach((btn) => {
     const isActive = btn.dataset.tab === selectedTab;
     btn.classList.toggle(activeClass, isActive);
     btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
     btn.tabIndex = isActive ? 0 : -1;
   });
 
-  contents.forEach(content => {
+  contents.forEach((content) => {
     const isActive = content.dataset.tab === selectedTab;
     content.classList.toggle(activeClass, isActive);
     content.hidden = !isActive;
