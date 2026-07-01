@@ -80,19 +80,6 @@ tabContainers.forEach(tabs => {
     buttons[newIndex].focus();
     activateTab(buttons[newIndex], buttons, contents);
   });
-
-  // Фокус
-  tabs.addEventListener('focusin', e => {
-    if (buttons.includes(e.target)) {
-      tabs.classList.add('is-focus');
-    }
-  });
-
-  tabs.addEventListener('focusout', e => {
-    if (!tabs.contains(e.relatedTarget)) {
-      tabs.classList.remove('is-focus');
-    }
-  });
 });
 
 function activateTab(tabButton, buttons, contents) {
